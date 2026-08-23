@@ -11,6 +11,7 @@ import json
 import os
 import re
 import sys
+import subprocess
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
@@ -375,6 +376,42 @@ def get_link_data(url):
     return None, None
 
 
+
+CATS_KW = [
+    ("Automotivo e Moto", [
+        "capacete", "motocicleta", "moto ", "pro tork", "bateria automotiva",
+        "bomba de ar", "pneu", "vonixx", "automotiv", "carro", "freio",
+        "multimidia",
+    ]),
+    ("Ferramentas", [
+        "furadeira", "parafusadeira", "chave de impacto", "kit ferrament",
+        "martete", "nivel a laser", "nível a laser", "laser", "alicate",
+        "serrote", "makita", "bosch", "dewalt", "jogo de chave",
+        "torquimetro", "esmeril", "kit 6 ferramentas",
+    ]),
+    ("Mobilidade", [
+        "bicicleta", "scooter", "patinete", "skate eletrico", "monociclo",
+    ]),
+    ("Games e Informatica", [
+        "gabinete", "gamer", "teclado", "mouse", "headset", "monitor",
+        "notebook", "placa de video", "memoria ram", "ssd ",
+    ]),
+    ("Eletronicos", [
+        "fone", "smartwatch", "caixa de som", "power bank", "camera",
+        "hub usb", "ring light", "smart tv", "projetor",
+    ]),
+]
+
+
+def classifica_categoria(titulo: str) -> str:
+    tl = (titulo or "").lower()
+    for cat, kws in CATS_KW:
+        for kw in kws:
+            if kw in tl:
+                return cat
+    return "Outros"
+
+
 # ---------------- registro e pedidos ----------------
 
 def carregar_registro():
@@ -449,12 +486,13 @@ BADGES = [
 ]
 
 
-def make_card(num, rel, url, titulo):
+def make_card(num, rel, url, titulo, categoria=""):
     bcls, btxt = BADGES[(num - 1) % len(BADGES)]
     t = esc(titulo or f"Produto #{num:02d}")
+    dc = esc(categoria)
     return (
-        f'\n      <!-- Produto {num:02d}: {url} -->\n'
-        f'      <div class="card">\n'
+        f'\n      <!-- Produto {num:02d} [{dc}]: {url} -->\n'
+        f'      <div class="card" data-categoria="{dc}">\n'
         f'        <div class="card-img-wrapper">\n'
         f'          <img class="card-img" src="{rel}" alt="{t}">\n'
         f'          <span class="card-badge {bcls}">{btxt}</span>\n'
@@ -474,6 +512,93 @@ def make_card(num, rel, url, titulo):
 def rebuild(reg):
     p = os.path.join(ROOT, "index.html")
     html = open(p, encoding="utf-8").read()
+
+    # --- categorizacao automatica ---
+    for r in reg:
+        if not r.get("categoria"):
+            r["categoria"] = classifica_categoria(r.get("title", ""))
+    salvar_registro(reg)
+
+    # --- monta menu de categorias com base nos produtos visiveis ---
+    visiveis = [
+        r for r in reg
+        if r.get("img_path") and os.path.exists(os.path.join(ROOT, r["img_path"]))
+    ]
+    cats_presentes = []
+    for r in visiveis:
+        c = r.get("categoria", "Outros")
+        if c not in cats_presentes:
+            cats_presentes.append(c)
+
+    botoes = ['<button class="cat-btn active" data-cat="todos">Todos</button>']
+    for c in sorted(cats_presentes):
+        botoes.append(
+            f'<button class="cat-btn" data-cat="{esc(c)}">{esc(c)}</button>'
+        )
+    pills = (
+        '<div class="cats" id="catMenu">\n'
+        + "\n".join("        " + b for b in botoes)
+        + "\n      </div>"
+    )
+    filtro_js = (
+        "<script>\n"
+        "(function(){var bs=document.querySelectorAll('.cat-btn');"
+        "bs.forEach(function(b){b.addEventListener('click',function(){"
+        "bs.forEach(function(x){x.classList.remove('active');});"
+        "b.classList.add('active');"
+        "var cat=b.getAttribute('data-cat');"
+        "document.querySelectorAll('#productGrid .card').forEach("
+        "function(c){c.style.display=(cat==='todos'||"
+        "c.getAttribute('data-categoria')===cat)?'':'none';});});});})();"
+        "\n</script>"
+    )
+
+    # limpa versoes antigas do menu/script
+    html = re.sub(
+        r'<div class="cats" id="catMenu">.*?</div>\s*', "", html, flags=re.S
+    )
+    html = re.sub(
+        r"<script>.*?var bs=.*?</script>", "", html, flags=re.S
+    )
+
+    # insere menu antes do grid e script antes de fechar o body
+    grid_i = html.find('<div class="grid" id="productGrid">')
+    if grid_i >= 0:
+        html = html[:grid_i] + pills + "\n" + html[grid_i:]
+    if "</body>" in html:
+        html = html.replace("</body>", filtro_js + "\n</body>", 1)
+
+    # css dos filtros
+    if ".cats {" not in html:
+        css_cats = (
+            "    .cats {\n"
+            "      display: flex;\n"
+            "      flex-wrap: wrap;\n"
+            "      gap: 10px;\n"
+            "      justify-content: center;\n"
+            "      padding: 0 20px 28px;\n"
+            "    }\n"
+            "    .cat-btn {\n"
+            "      background: rgba(255,255,255,0.06);\n"
+            "      color: #f8fafc;\n"
+            "      border: 1px solid rgba(255,255,255,0.15);\n"
+            "      padding: 9px 18px;\n"
+            "      border-radius: 999px;\n"
+            "      cursor: pointer;\n"
+            "      font-family: inherit;\n"
+            "      font-size: 0.92rem;\n"
+            "      font-weight: 700;\n"
+            "      transition: all 0.2s;\n"
+            "    }\n"
+            "    .cat-btn:hover { border-color: #ee4d2d; }\n"
+            "    .cat-btn.active {\n"
+            "      background: #ee4d2d;\n"
+            "      border-color: #ee4d2d;\n"
+            "      color: #fff;\n"
+            "    }\n"
+        )
+        html = html.replace("</style>", css_cats + "  </style>", 1)
+
     g0 = html.find('<div class="grid" id="productGrid">')
     if g0 < 0:
         print("grid nao encontrado!")
@@ -497,7 +622,12 @@ def rebuild(reg):
             continue
         rel = "img/" + os.path.basename(r["img_path"])
         usadas.add(os.path.basename(r["img_path"]))
-        cards.append(make_card(r["num"], rel, r["url"], r.get("title", "")))
+        cards.append(
+            make_card(
+                r["num"], rel, r["url"], r.get("title", ""),
+                r.get("categoria", ""),
+            )
+        )
 
     for f in glob.glob(os.path.join(IMG_DIR, "*")):
         if os.path.basename(f) not in usadas:
@@ -515,6 +645,30 @@ def rebuild(reg):
     new_html = html[:body_start] + "\n" + "\n".join(cards) + "\n      " + tail.lstrip()
     if ".card-img {" not in new_html:
         new_html = new_html.replace("</style>", css + "  </style>", 1)
+    if "</html>" not in new_html or "<footer" not in new_html.lower():
+        print("AVISO: html truncado detectado, restaurando final canonico...")
+        orig = subprocess.run(
+            ["git", "show", "60ad3f3:index.html"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        ).stdout
+        og0 = orig.find('<div class="grid" id="productGrid">')
+        d2 = 0
+        i2 = og0
+        while i2 < len(orig):
+            m2 = DIV_RE.search(orig, i2)
+            if not m2:
+                break
+            if m2.group(0) == "</div>":
+                d2 -= 1
+                if d2 == 0:
+                    break
+            else:
+                d2 += 1
+            i2 = m2.end()
+        new_html = new_html.rstrip() + "\n" + orig[i2:].lstrip()
+
     with open(p, "w", encoding="utf-8") as f:
         f.write(new_html)
 
@@ -607,11 +761,11 @@ def main():
             if not titulo_ruim(tn):
                 title = tn
         final_name = f"produto_{r['num']:02d}{os.path.splitext(fp)[1]}"
-        final_fp = os.path.join(IMG_DIR, final_name)
+        final_fp = "img/" + final_name
         antiga = r.get("img_path", "")
         if antiga and os.path.exists(os.path.join(ROOT, antiga)):
             os.remove(os.path.join(ROOT, antiga))
-        os.replace(fp, final_fp)
+        os.replace(fp, os.path.join(ROOT, final_fp))
         r["title"] = title
         r["img_path"] = final_fp
         r["key"] = url_key(r["url"])

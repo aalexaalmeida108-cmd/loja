@@ -235,6 +235,31 @@
       height: 100%;
       object-fit: cover;
     }
+    .cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 0 20px 28px;
+    }
+    .cat-btn {
+      background: rgba(255,255,255,0.06);
+      color: #f8fafc;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 9px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .cat-btn:hover { border-color: #ee4d2d; }
+    .cat-btn.active {
+      background: #ee4d2d;
+      border-color: #ee4d2d;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -250,10 +275,17 @@
   </header>
 
   <main class="container">
-    <div class="grid" id="productGrid">
+    <div class="cats" id="catMenu">
+        <button class="cat-btn active" data-cat="todos">Todos</button>
+        <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
+        <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
+        <button class="cat-btn" data-cat="Games e Informatica">Games e Informatica</button>
+        <button class="cat-btn" data-cat="Mobilidade">Mobilidade</button>
+      </div>
+<div class="grid" id="productGrid">
 
-      <!-- Produto 01: https://s.shopee.com.br/2qU05vxDvw -->
-      <div class="card">
+      <!-- Produto 01 [Ferramentas]: https://s.shopee.com.br/2qU05vxDvw -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_01.jpg" alt="Nível a Laser 16 Linhas com Tripé Profissional">
           <span class="card-badge badge-hot">Destaque</span>
@@ -266,8 +298,8 @@
         </div>
       </div>
 
-      <!-- Produto 02: https://s.shopee.com.br/6VNIShMSUA -->
-      <div class="card">
+      <!-- Produto 02 [Ferramentas]: https://s.shopee.com.br/6VNIShMSUA -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_02.jpg" alt="ZPER Furadeira Parafusadeira A Bateria 21V Com Duas Bateria Maleta Kit Ferramentas Complet">
           <span class="card-badge badge-toprated">Mais Vendido</span>
@@ -280,8 +312,8 @@
         </div>
       </div>
 
-      <!-- Produto 03: https://s.shopee.com.br/3B6qUbLLbJ -->
-      <div class="card">
+      <!-- Produto 03 [Mobilidade]: https://s.shopee.com.br/3B6qUbLLbJ -->
+      <div class="card" data-categoria="Mobilidade">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_03.jpg" alt="Bicicleta Elétrica Scooter Mova Way 5.0 1000w 48v Litio">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -294,8 +326,8 @@
         </div>
       </div>
 
-      <!-- Produto 04: https://s.shopee.com.br/5VUlGuPBuu -->
-      <div class="card">
+      <!-- Produto 04 [Ferramentas]: https://s.shopee.com.br/5VUlGuPBuu -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_04.jpg" alt="1200Nm Chave De Impacto Brushless 4Ah 2 Bateria">
           <span class="card-badge badge-hot">Destaque</span>
@@ -308,8 +340,8 @@
         </div>
       </div>
 
-      <!-- Produto 05: https://s.shopee.com.br/3qMXHriOq2 -->
-      <div class="card">
+      <!-- Produto 05 [Automotivo e Moto]: https://s.shopee.com.br/3qMXHriOq2 -->
+      <div class="card" data-categoria="Automotivo e Moto">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_05.jpg" alt="Vonixx Monte seu Kit Vmol Vfloc Pretinho Restaurax Blend Makker Intense Hidratante Couro R">
           <span class="card-badge badge-toprated">Mais Vendido</span>
@@ -322,8 +354,8 @@
         </div>
       </div>
 
-      <!-- Produto 06: https://s.shopee.com.br/7psg3EOA6s -->
-      <div class="card">
+      <!-- Produto 06 [Automotivo e Moto]: https://s.shopee.com.br/7psg3EOA6s -->
+      <div class="card" data-categoria="Automotivo e Moto">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_06.jpg" alt="Bomba de Ar Elétrica 12V Compressor Portátil para Pneus de Carro, Moto, Bicicleta e Acessó">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -336,8 +368,8 @@
         </div>
       </div>
 
-      <!-- Produto 07: https://s.shopee.com.br/6AkS4CyUsr -->
-      <div class="card">
+      <!-- Produto 07 [Automotivo e Moto]: https://s.shopee.com.br/6AkS4CyUsr -->
+      <div class="card" data-categoria="Automotivo e Moto">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_07.jpg" alt="Capacete Aberto Pro Tork New Liberty 3 Three Com Viseira CRISTAL">
           <span class="card-badge badge-hot">Destaque</span>
@@ -350,8 +382,8 @@
         </div>
       </div>
 
-      <!-- Produto 08: https://s.shopee.com.br/50YUg5BTIB -->
-      <div class="card">
+      <!-- Produto 08 [Ferramentas]: https://s.shopee.com.br/50YUg5BTIB -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_08.jpg" alt="Kit Ferramentas Mecânica 108 Peças Profissional Completo Jogo de Chaves Soquete com Maleta">
           <span class="card-badge badge-toprated">Mais Vendido</span>
@@ -364,8 +396,8 @@
         </div>
       </div>
 
-      <!-- Produto 09: https://s.shopee.com.br/3qMXHxfuNF -->
-      <div class="card">
+      <!-- Produto 09 [Ferramentas]: https://s.shopee.com.br/3qMXHxfuNF -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_09.jpg" alt="Kit 6 Ferramentas com Furadeira Parafusadeira Martelete Chave de Impacto Esmerilhadeira Se">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -378,8 +410,8 @@
         </div>
       </div>
 
-      <!-- Produto 10: https://s.shopee.com.br/7VFpejijv3 -->
-      <div class="card">
+      <!-- Produto 10 [Ferramentas]: https://s.shopee.com.br/7VFpejijv3 -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_10.jpg" alt="Parafusadeira Chave de Impacto 48V 800Nm Elétrica Sem Fio Alta Potência, Kit Completo com ">
           <span class="card-badge badge-hot">Destaque</span>
@@ -392,8 +424,8 @@
         </div>
       </div>
 
-      <!-- Produto 11: https://s.shopee.com.br/5ArusTHcJz -->
-      <div class="card">
+      <!-- Produto 11 [Automotivo e Moto]: https://s.shopee.com.br/5ArusTHcJz -->
+      <div class="card" data-categoria="Automotivo e Moto">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_11.jpg" alt="Carregador de Bateria Inteligente Automotivo">
           <span class="card-badge badge-toprated">Mais Vendido</span>
@@ -406,8 +438,8 @@
         </div>
       </div>
 
-      <!-- Produto 12: https://s.shopee.com.br/2gAZttMC2F -->
-      <div class="card">
+      <!-- Produto 12 [Games e Informatica]: https://s.shopee.com.br/2gAZttMC2F -->
+      <div class="card" data-categoria="Games e Informatica">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_12.jpg" alt="Gabinete Gamer Aquário Kalkan Asgard">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -420,8 +452,8 @@
         </div>
       </div>
 
-      <!-- Produto 13: https://s.shopee.com.br/5foBu7k44u -->
-      <div class="card">
+      <!-- Produto 13 [Mobilidade]: https://s.shopee.com.br/5foBu7k44u -->
+      <div class="card" data-categoria="Mobilidade">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_13.jpg" alt="Patinete Elétrico com Banco Integrado Motor 150W 3 Velocidades Rodas de Borracha para Moto">
           <span class="card-badge badge-hot">Destaque</span>
@@ -433,4 +465,33 @@
           <a href="https://s.shopee.com.br/5foBu7k44u" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      </div>
+      
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function filterItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
+        if (title.includes(input) || bodyText.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+<script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
+</body>
+</html>
