@@ -256,27 +256,55 @@ def via_jina(url):
 
 
 def get_link_data(url):
-    print("  [1] html direto...")
-    title, fp = via_html(url)
-    if fp:
-        return title, fp
-    print("  [2] api shopee...")
     try:
         final, _, _ = http_get(url, timeout=30)
     except Exception:
         final = url
-    title2, fp = via_api(final)
+    print("  [1] api shopee...")
+    t, fp = via_api(final)
     if fp:
-        return title2 or title, fp
-    print("  [3] playwright...")
-    title3, fp = via_playwright(final or url)
+        return t, fp
+    print("  [2] playwright...")
+    t2, fp = via_playwright(final or url)
     if fp:
-        return title3 or title2 or title, fp
+        return t2 or t, fp
+    print("  [3] html direto...")
+    t3, fp = via_html(url)
+    if fp:
+        return t3 or t2 or t, fp
     print("  [4] jina...")
-    title4, fp = via_jina(final or url)
+    t4, fp = via_jina(final or url)
     if fp:
-        return title4 or title3 or title2 or title, fp
+        return t4 or t3 or t2 or t, fp
     return None, None
+
+
+def fetch_name_only(final_url):
+    ids = ids_from_url(final_url)
+    if not ids:
+        return ""
+    shop, item = ids
+    for ep in (
+        f"https://shopee.com.br/api/v4/pdp/get_pc?item_id={item}&shop_id={shop}&detail_level=0",
+        f"https://mall.shopee.com.br/api/v2/item/get?itemid={item}&shopid={shop}",
+    ):
+        try:
+            _, raw, _ = http_get(
+                ep,
+                timeout=30,
+                extra={
+                    "Referer": "https://shopee.com.br/",
+                    "X-API-SOURCE": "pc",
+                    "Accept": "application/json",
+                },
+            )
+            d = json.loads(raw)
+            itemd = d.get("item") or (d.get("data") or {}).get("item")
+            if itemd and itemd.get("name"):
+                return clean_title(itemd["name"])
+        except Exception:
+            pass
+    return ""
 
 
 def url_key(url):
@@ -391,17 +419,94 @@ def main():
                         if ln.startswith("http") and ln not in links:
                             links.append(ln)
 
-    print(f"processando {len(links)} link(s)...")
+    EXPECTED = [
+        "https://s.shopee.com.br/2qU05vxDvw",
+        "https://s.shopee.com.br/6VNIShMSUA",
+        "https://s.shopee.com.br/3B6qUbLLbJ",
+        "https://s.shopee.com.br/5VUlGuPBuu",
+        "https://s.shopee.com.br/3qMXHriOq2",
+        "https://s.shopee.com.br/7psg3EOA6s",
+        "https://s.shopee.com.br/6AkS4CyUsr",
+        "https://s.shopee.com.br/50YUg5BTIB",
+        "https://s.shopee.com.br/3qMXHxfuNF",
+        "https://s.shopee.com.br/7VFpejijv3",
+        "https://s.shopee.com.br/5ArusTHcJz",
+        "https://s.shopee.com.br/2gAZttMC2F",
+    ]
+    alvos = []
+    for u in EXPECTED:
+        if u not in alvos:
+            alvos.append(u)
+    for u in links:
+        if u not in alvos:
+            alvos.append(u)
+
+    def titulo_ruim(t):
+        t = (t or "").strip()
+        return len(t) < 8 or t.lower() == "shopee brasil"
+
+    prev = {}
+    pj = os.path.join(ROOT, "produtos.json")
+    if os.path.exists(pj):
+        try:
+            for r in json.load(open(pj)):
+                prev[url_key(r["url"])] = r
+        except Exception:
+            pass
+
+    print(f"processando {len(alvos)} produto(s)...")
     os.makedirs(IMG_DIR, exist_ok=True)
     results = []
-    for i, url in enumerate(links, 1):
+    for i, url in enumerate(alvos, 1):
         key = url_key(url)
-        print(f"[{i}/{len(links)}] {key}")
+        antigo = prev.get(key)
+        tem_img = bool(antigo) and os.path.exists(str(antigo.get("img_path", "")))
+        bom_titulo = bool(antigo) and not titulo_ruim(antigo.get("title"))
+        if tem_img and bom_titulo:
+            r = dict(antigo)
+            r["num"] = i
+            results.append(r)
+            continue
+
+        falta_soh_titulo = tem_img and not bom_titulo
+        print(f"[{i}/{len(alvos)}] {key}" + (" (so titulo)" if falta_soh_titulo else ""))
+
+        title = ""
+        if falta_soh_titulo:
+            try:
+                fin, _, _ = http_get(url, timeout=30)
+            except Exception:
+                fin = url
+            title = fetch_name_only(fin)
+            if not title:
+                t2, _ = via_playwright(fin or url)
+                title = t2 or ""
+            if titulo_ruim(title):
+                print("  titulo nao recuperado, mantendo anterior")
+                title = antigo.get("title", "")
+            r = dict(antigo)
+            r["num"] = i
+            r["title"] = title
+            results.append(r)
+            print(f"  titulo: {title!r}")
+            continue
+
         d = get_link_data(url)
         if not d or not d[1]:
+            if antigo and tem_img:
+                r = dict(antigo)
+                r["num"] = i
+                results.append(r)
+                print("  mantendo imagem anterior")
+                continue
             print("  SEM DADOS - pulando")
             continue
         title, fp = d
+        if titulo_ruim(title):
+            fin = url
+            title2 = fetch_name_only(fin)
+            if not titulo_ruim(title2 or ""):
+                title = title2
         final_name = f"produto_{i:02d}{os.path.splitext(fp)[1]}"
         final_fp = os.path.join(IMG_DIR, final_name)
         os.replace(fp, final_fp)
