@@ -1,0 +1,16 @@
+name: Testa metodos alternativos
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Roda bateria de testes
+        run: python ferramentas/testa_alternativas.py
