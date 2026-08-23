@@ -419,28 +419,3 @@
           <a href="https://s.shopee.com.br/2gAZttMC2F" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function filterItems() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase();
-        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
-        if (title.includes(input) || bodyText.includes(input)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
-</html>
