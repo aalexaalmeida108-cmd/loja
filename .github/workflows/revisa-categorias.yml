@@ -1,0 +1,28 @@
+name: IA revisa categorias
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Revisa categorias com IA
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python ferramentas/revisa_categorias.py
+
+      - name: Commit se mudou
+        run: |
+          git config user.name "vitrine-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "IA ajusta categorias [skip ci]"
+          git push
