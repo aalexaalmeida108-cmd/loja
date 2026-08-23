@@ -269,12 +269,12 @@
       <!-- Produto 02: https://s.shopee.com.br/6VNIShMSUA -->
       <div class="card">
         <div class="card-img-wrapper">
-          <img class="card-img" src="img/produto_02.jpg" alt="Shopee Brasil">
+          <img class="card-img" src="img/produto_02.jpg" alt="ZPER Furadeira Parafusadeira A Bateria 21V Com Duas Bateria Maleta Kit Ferramentas Complet">
           <span class="card-badge badge-toprated">Mais Vendido</span>
         </div>
         <div class="card-body">
           <div class="card-cat">Eletroeletrônicos #02</div>
-          <h3 class="card-title">Shopee Brasil</h3>
+          <h3 class="card-title">ZPER Furadeira Parafusadeira A Bateria 21V Com Duas Bateria Maleta Kit Ferramentas Complet</h3>
           <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
           <a href="https://s.shopee.com.br/6VNIShMSUA" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
@@ -391,28 +391,3 @@
           <a href="https://s.shopee.com.br/2gAZttMC2F" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function filterItems() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase();
-        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
-        if (title.includes(input) || bodyText.includes(input)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
-</html>
