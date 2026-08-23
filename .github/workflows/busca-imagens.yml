@@ -16,7 +16,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Instala deps
-        run: pip install requests pillow
+        run: pip install requests pillow playwright
+
+      - name: Instala chromium
+        run: playwright install --with-deps chromium
 
       - name: Coleta dados reais dos produtos
         run: python ferramentas/coleta_dados.py

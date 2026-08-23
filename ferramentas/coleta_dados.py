@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Coleta dados REAIS de cada link (titulo + imagem principal validada),
-salva produtos.json e reconstrói o grid da vitrine."""
+"""Coleta dados REAIS de cada link Shopee.
+Estrategias em cascata: HTML direto -> API v4/v2 -> Playwright -> Jina."""
 import glob
 import io
 import json
 import os
 import re
-import sys
+import subprocess
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
@@ -18,35 +18,26 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG_DIR = os.path.join(ROOT, "img")
 PEDIDOS_DIR = os.path.join(ROOT, "pedidos")
 
-BAD_WORDS = ("logo", "icon", "flag", "avatar", "sprite", "user-", "pixel")
+BAD_WORDS = ("logo", "icon", "flag", "avatar", "sprite", "pixel", "-banner")
 MIN_BYTES = 8000
 MIN_DIM = 200
 
-OG_RE = re.compile(
-    r"<meta[^>]+property=[\"']og:image[\"'][^>]+content=[\"']([^\"']+)"
-)
 OGT_RE = re.compile(
     r"<meta[^>]+property=[\"']og:title[\"'][^>]+content=[\"']([^\"']+)"
 )
-TW_RE = re.compile(
-    r"<meta[^>]+name=[\"']twitter:image[\"'][^>]+content=[\"']([^\"']+)"
-)
-CDN_RE = re.compile(
-    r"https://[a-z0-9.-]*img\.susercontent\.com/[A-Za-z0-9._/-]{8,}"
-)
 TITLE_TAG_RE = re.compile(r"<title[^>]*>([^<]+)</title>", re.I)
+CDN_ANY_RE = re.compile(
+    r"https://(?:cf\.shopee\.com\.br|down-[a-z-]*\.img\.susercontent\.com|[a-z0-9.-]*img\.susercontent\.com)/file/[A-Za-z0-9._-]{10,}"
+)
 
 
-def http_get(url, timeout=40):
-    req = Request(url, headers={"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9"})
+def http_get(url, timeout=40, extra=None):
+    h = {"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9"}
+    if extra:
+        h.update(extra)
+    req = Request(url, headers=h)
     with urlopen(req, timeout=timeout) as r:
         return r.geturl(), r.read(), r.headers.get("content-type", "")
-
-
-def fetch_via_jina(url):
-    req = Request("https://r.jina.ai/" + url, headers={"User-Agent": UA})
-    with urlopen(req, timeout=120) as r:
-        return r.read().decode("utf-8", errors="replace")
 
 
 def clean_title(t):
@@ -56,32 +47,18 @@ def clean_title(t):
     return t[:90]
 
 
-def extract_title(txt):
-    m = OGT_RE.search(txt)
-    if m:
-        return clean_title(m.group(1))
-    m = TITLE_TAG_RE.search(txt)
-    if m:
-        return clean_title(m.group(1))
-    return ""
-
-
-def jsonld_products(txt):
-    out = []
-    for m in re.finditer(r"<script[^>]+ld\+json[^>]*>(.*?)</script>", txt, re.S):
-        try:
-            d = json.loads(m.group(1))
-        except Exception:
-            continue
-        stack = d if isinstance(d, list) else [d]
-        for item in stack:
-            if isinstance(item, dict):
-                if str(item.get("@type", "")).lower() == "product":
-                    out.append(item)
-                for g in item.get("@graph", []) if isinstance(item.get("@graph"), list) else []:
-                    if isinstance(g, dict) and str(g.get("@type", "")).lower() == "product":
-                        out.append(g)
-    return out
+def image_ok(data):
+    if len(data) < MIN_BYTES:
+        return False
+    try:
+        from PIL import Image
+        im = Image.open(io.BytesIO(data))
+        im.verify()
+        im = Image.open(io.BytesIO(data))
+        w, h = im.size
+        return w >= MIN_DIM and h >= MIN_DIM
+    except Exception:
+        return False
 
 
 def upgrade_shopee_url(u):
@@ -90,52 +67,216 @@ def upgrade_shopee_url(u):
     return u
 
 
-def candidate_images(txt, base):
-    cands = []
-    for jd in jsonld_products(txt):
-        img = jd.get("image")
-        if isinstance(img, str):
-            cands.append(("jsonld", urljoin(base, img)))
-        elif isinstance(img, list):
-            for x in img[:3]:
-                if isinstance(x, str):
-                    cands.append(("jsonld", urljoin(base, x)))
-    m = OG_RE.search(txt) or TW_RE.search(txt)
-    if m:
-        cands.append(("og", urljoin(base, m.group(1))))
-    seen = set()
-    for m in CDN_RE.finditer(txt):
-        u = upgrade_shopee_url(m.group(0))
+def pick_valid(candidates, tag=""):
+    for u in candidates:
+        if not u or not u.startswith("http"):
+            continue
         low = u.lower()
         if any(b in low for b in BAD_WORDS):
             continue
+        u2 = upgrade_shopee_url(u)
+        try:
+            _, data, ctype2 = http_get(u2, timeout=25)
+        except Exception:
+            try:
+                _, data, ctype2 = http_get(u, timeout=25)
+                u2 = u
+            except Exception:
+                continue
+        if image_ok(data):
+            ext = ".jpg"
+            low = u2.lower()
+            if ".png" in low or "png" in ctype2:
+                ext = ".png"
+            elif ".webp" in low or "webp" in ctype2:
+                ext = ".webp"
+            fp = os.path.join(IMG_DIR, f"cand{ext}")
+            with open(fp, "wb") as f:
+                f.write(data)
+            print(f"  imagem ok ({len(data)}b) [{tag}]")
+            return fp
+        print(f"  rejeitada ({len(data)}b): {u2[:75]}")
+    return None
+
+
+# ---------- estrategia 1: html direto ----------
+
+def via_html(url):
+    final, data, ctype = http_get(url)
+    if "image/" in ctype and image_ok(data):
+        ext = ".jpg"
+        if "png" in ctype:
+            ext = ".png"
+        elif "webp" in ctype:
+            ext = ".webp"
+        fp = os.path.join(IMG_DIR, f"cand{ext}")
+        with open(fp, "wb") as f:
+            f.write(data)
+        return "", fp
+    txt = data.decode("utf-8", errors="replace")
+    title = ""
+    m = OGT_RE.search(txt) or TITLE_TAG_RE.search(txt)
+    if m:
+        title = clean_title(m.group(1))
+    cands = []
+    seen = set()
+    for m in CDN_ANY_RE.finditer(txt):
+        u = upgrade_shopee_url(m.group(0))
         if u not in seen:
             seen.add(u)
-            cands.append(("cdn", u))
-    ranked = []
-    for src, u in cands:
-        score = {"jsonld": 3, "og": 2, "cdn": 1}[src]
-        ranked.append((score, u))
-    ranked.sort(key=lambda x: -x[0])
-    final = []
-    seen2 = set()
-    for _, u in ranked:
-        if u.startswith("http") and u not in seen2:
-            seen2.add(u)
-            final.append(u)
-    return final
+            cands.append(u)
+    # prioriza imagens grandes conhecidas do padrao shopee
+    cands.sort(key=lambda u: ("_tn" in u.lower(), len(u)))
+    fp = pick_valid(cands[:6], "html")
+    return title, fp
 
 
-def image_ok(data):
-    if len(data) < MIN_BYTES:
-        return False
+# ---------- estrategia 2: api oficial ----------
+
+def ids_from_url(u):
+    m = re.search(r"-i\.(\d+)\.(\d+)", u)
+    if m:
+        return m.group(1), m.group(2)
+    m = re.search(r"/product/(\d+)/(\d+)", u)
+    if m:
+        return m.group(1), m.group(2)
+    return None
+
+
+def via_api(final_url):
+    ids = ids_from_url(final_url)
+    if not ids:
+        print("  sem ids na url")
+        return None, None
+    shop, item = ids
+    endpoints = [
+        f"https://shopee.com.br/api/v4/pdp/get_pc?item_id={item}&shop_id={shop}&detail_level=0",
+        f"https://mall.shopee.com.br/api/v2/item/get?itemid={item}&shopid={shop}",
+    ]
+    for ep in endpoints:
+        try:
+            _, raw, _ = http_get(
+                ep,
+                timeout=30,
+                extra={
+                    "Referer": "https://shopee.com.br/",
+                    "X-API-SOURCE": "pc",
+                    "Accept": "application/json",
+                },
+            )
+            d = json.loads(raw)
+            itemd = d.get("item") or (d.get("data") or {}).get("item")
+            if not itemd:
+                continue
+            name = clean_title(itemd.get("name", ""))
+            imgs = []
+            for im in itemd.get("images", []):
+                u = im if str(im).startswith("http") else (
+                    "https://cf.shopee.com.br/file/" + str(im)
+                )
+                imgs.append(u)
+            fp = pick_valid(imgs[:5], "api")
+            if fp:
+                return name, fp
+        except Exception as e:
+            print(f"  api falhou ({ep[:55]}): {str(e)[:80]}")
+    return None, None
+
+
+# ---------- estrategia 3: playwright ----------
+
+def via_playwright(url):
     try:
-        from PIL import Image
-        im = Image.open(io.BytesIO(data))
-        w, h = im.size
-        return w >= MIN_DIM and h >= MIN_DIM
+        from playwright.sync_api import sync_playwright
+    except Exception as e:
+        print(f"  playwright indisponivel: {e}")
+        return None, None
+    try:
+        with sync_playwright() as pw:
+            b = pw.chromium.launch(
+                args=["--disable-blink-features=AutomationControlled", "--no-sandbox"]
+            )
+            pg = b.new_page(user_agent=UA, viewport={"width": 1280, "height": 900})
+            pg.goto(url, timeout=60000, wait_until="domcontentloaded")
+            pg.wait_for_timeout(5000)
+            title = clean_title(pg.title() or "")
+            srcs = pg.eval_on_selector_all(
+                "img", "els => els.map(e => e.src)"
+            )
+            content = pg.content()
+            b.close()
+    except Exception as e:
+        print(f"  playwright erro: {str(e)[:100]}")
+        return None, None
+
+    cands = []
+    seen = set()
+    for u in srcs or []:
+        if "susercontent" in u or "cf.shopee" in u:
+            u = upgrade_shopee_url(u.split("?")[0])
+            if u not in seen:
+                seen.add(u)
+                cands.append(u)
+    # procura no estado embutido tambem
+    for m in CDN_ANY_RE.finditer(content):
+        u = upgrade_shopee_url(m.group(0))
+        if u not in seen:
+            seen.add(u)
+            cands.append(u)
+    if not title:
+        m = OGT_RE.search(content)
+        if m:
+            title = clean_title(m.group(1))
+    fp = pick_valid(cands[:10], "playwright")
+    return title, fp
+
+
+# ---------- estrategia 4: jina ----------
+
+def via_jina(url):
+    try:
+        req = Request("https://r.jina.ai/" + url, headers={"User-Agent": UA})
+        txt = urlopen(req, timeout=120).read().decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"  jina falhou: {str(e)[:80]}")
+        return None, None
+    title = ""
+    m = OGT_RE.search(txt) or TITLE_TAG_RE.search(txt)
+    if m:
+        title = clean_title(m.group(1))
+    cands = []
+    seen = set()
+    for m in CDN_ANY_RE.finditer(txt):
+        u = upgrade_shopee_url(m.group(0))
+        if u not in seen:
+            seen.add(u)
+            cands.append(u)
+    fp = pick_valid(cands[:6], "jina")
+    return title, fp
+
+
+def get_link_data(url):
+    print("  [1] html direto...")
+    title, fp = via_html(url)
+    if fp:
+        return title, fp
+    print("  [2] api shopee...")
+    try:
+        final, _, _ = http_get(url, timeout=30)
     except Exception:
-        return False
+        final = url
+    title2, fp = via_api(final)
+    if fp:
+        return title2 or title, fp
+    print("  [3] playwright...")
+    title3, fp = via_playwright(final or url)
+    if fp:
+        return title3 or title2 or title, fp
+    print("  [4] jina...")
+    title4, fp = via_jina(final or url)
+    if fp:
+        return title4 or title3 or title2 or title, fp
+    return None, None
 
 
 def url_key(url):
@@ -144,49 +285,6 @@ def url_key(url):
         return m.group(1)
     u = re.sub(r"[?#].*$", "", url)
     return u.rstrip("/").split("/")[-1] or u
-
-
-def get_link_data(url):
-    """Retorna dict {title, img_path} ou None. Tenta direto, depois jina."""
-    final = url
-    try:
-        final, data, ctype = http_get(url)
-    except Exception as exc:
-        print(f"  abertura falhou: {exc}")
-        final = None
-    fontes = []
-    if final:
-        fontes.append(data.decode("utf-8", errors="replace"))
-    fontes.append(None)  # marcador para tentar jina depois
-
-    title = ""
-    for txt in fontes:
-        if txt is None:
-            try:
-                txt = fetch_via_jina(final or url)
-            except Exception as je:
-                print(f"  jina falhou: {je}")
-                continue
-        if not title:
-            title = extract_title(txt)
-        for u in candidate_images(txt, final or url):
-            try:
-                _, data, ctype2 = http_get(u)
-            except Exception:
-                continue
-            if image_ok(data):
-                ext = ".jpg"
-                low = u.lower()
-                if ".png" in low or "png" in ctype2:
-                    ext = ".png"
-                elif ".webp" in low or "webp" in ctype2:
-                    ext = ".webp"
-                fp = os.path.join(IMG_DIR, f"tmp{ext}")
-                with open(fp, "wb") as f:
-                    f.write(data)
-                return {"title": title, "img_path": fp}
-            print(f"  imagem rejeitada ({len(data)}b): {u[:80]}")
-    return None
 
 
 # ---------- reconstrucao da vitrine ----------
@@ -250,7 +348,7 @@ def rebuild(results):
     g0 = html.find('<div class="grid" id="productGrid">')
     if g0 < 0:
         print("grid nao encontrado!")
-        return
+        sys.exit(1)
     g_end = block_span(html, g0)
     body_start = html.find(">", g0) + 1
 
@@ -259,7 +357,6 @@ def rebuild(results):
         rel = "img/" + os.path.basename(r["img_path"])
         cards.append(make_card(n, rel, r["url"], r["title"]))
 
-    # limpa imagens antigas nao usadas
     usadas = {os.path.basename(r["img_path"]) for r in results}
     for f in glob.glob(os.path.join(IMG_DIR, "*")):
         if os.path.basename(f) not in usadas:
@@ -301,16 +398,17 @@ def main():
         key = url_key(url)
         print(f"[{i}/{len(links)}] {key}")
         d = get_link_data(url)
-        if not d:
+        if not d or not d[1]:
             print("  SEM DADOS - pulando")
             continue
-        final_name = f"produto_{i:02d}{os.path.splitext(d['img_path'])[1]}"
+        title, fp = d
+        final_name = f"produto_{i:02d}{os.path.splitext(fp)[1]}"
         final_fp = os.path.join(IMG_DIR, final_name)
-        os.replace(d["img_path"], final_fp)
+        os.replace(fp, final_fp)
         results.append(
-            {"num": i, "key": key, "url": url, "title": d["title"], "img_path": final_fp}
+            {"num": i, "key": key, "url": url, "title": title, "img_path": final_fp}
         )
-        print(f"  OK: {d['title']!r}")
+        print(f"  OK: {title!r}")
 
     with open(os.path.join(ROOT, "produtos.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=1)
