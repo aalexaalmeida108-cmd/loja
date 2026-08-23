@@ -1,0 +1,30 @@
+name: Busca imagens dos links
+
+on:
+  push:
+    paths:
+      - "pedidos/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  buscar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instala deps
+        run: pip install requests
+
+      - name: Busca imagens e atualiza vitrine
+        run: python ferramentas/atualiza_vitrine.py
+
+      - name: Commit e push
+        run: |
+          git config user.name "vitrine-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Imagens buscadas automaticamente [skip ci]"
+          git push
