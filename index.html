@@ -280,9 +280,7 @@
         <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
         <button class="cat-btn" data-cat="Eletrônicos">Eletrônicos</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
-        <button class="cat-btn" data-cat="Marketplace">Marketplace</button>
         <button class="cat-btn" data-cat="Mobilidade Elétrica">Mobilidade Elétrica</button>
-        <button class="cat-btn" data-cat="Ofertas">Ofertas</button>
       </div>
 <div class="grid" id="productGrid">
 
@@ -496,8 +494,8 @@
         </div>
       </div>
 
-      <!-- Produto 16 [Ofertas]: https://s.shopee.com.br/5ArvLAKPWw -->
-      <div class="card" data-categoria="Ofertas">
+      <!-- Produto 16 [Mobilidade Elétrica]: https://s.shopee.com.br/5ArvLAKPWw -->
+      <div class="card" data-categoria="Mobilidade Elétrica">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_16.jpg" alt="Kart elétrico infantil dobrável de quatro rodas sem instalação com controle remoto de 6 a ">
           <span class="card-badge badge-hot">Destaque</span>
@@ -524,8 +522,8 @@
         </div>
       </div>
 
-      <!-- Produto 18 [Marketplace]: https://s.shopee.com.br/9AO48fHagy -->
-      <div class="card" data-categoria="Marketplace">
+      <!-- Produto 18 [Automotivo e Moto]: https://s.shopee.com.br/9AO48fHagy -->
+      <div class="card" data-categoria="Automotivo e Moto">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_18.jpg" alt="Gravação De Espelho Retrovisor Lente Dupla De 64GB Monitoramento De Carro HD 1080P Diantei">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -551,6 +549,8 @@
           <a href="https://s.shopee.com.br/3VjhOVoA5D" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      </div>
+      <script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
 </body>
 </html>
