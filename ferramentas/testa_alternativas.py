@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bateria de testes de metodos alternativos para os links bloqueados."""
+"""Bateria de testes v2: inclui API oficial com IDs extraidos."""
 import json
 import re
 import urllib.parse
@@ -32,30 +32,8 @@ def get(url, timeout=45):
         return r.read()
 
 
-def analisa(tag, txt, base):
-    t = ""
-    m = OG_RE.search(txt) or TT_RE.search(txt)
-    if m:
-        t = m.group(1)[:60]
-    imgs = []
-    seen = set()
-    m2 = OGI_RE.search(txt)
-    if m2:
-        imgs.append(m2.group(1))
-    for m3 in CDN_RE.finditer(txt):
-        u = m3.group(0)
-        if u not in seen:
-            seen.add(u)
-            imgs.append(u)
-    print(f"    [{tag}] titulo={t!r} | imgs={len(imgs)}")
-    for u in imgs[:2]:
-        print(f"       {u[:90]}")
-    return bool(t and "shopee brasil" not in t.lower()) or len(imgs) > 0
-
-
 for num, url in PROBLEMAS.items():
     print(f"=== LINK {num}: {url}")
-    # resolve final
     final = url
     try:
         req = Request(url, headers={"User-Agent": UA})
@@ -65,50 +43,44 @@ for num, url in PROBLEMAS.items():
     except Exception as e:
         print(f"  resolve falhou: {str(e)[:80]}")
 
-    enc = urllib.parse.quote(final, safe="")
-
-    # 1. AllOrigins
-    try:
-        txt = get(f"https://api.allorigins.win/raw?url={enc}").decode("utf-8", "replace")
-        analisa("allorigins", txt, final)
-    except Exception as e:
-        print(f"    [allorigins] ERRO: {str(e)[:80]}")
-
-    # 2. CodeTabs
-    try:
-        txt = get(f"https://api.codetabs.com/v1/proxy?quest={enc}").decode("utf-8", "replace")
-        analisa("codetabs", txt, final)
-    except Exception as e:
-        print(f"    [codetabs] ERRO: {str(e)[:80]}")
-
-    # 3. CorsProxy
-    try:
-        txt = get(f"https://corsproxy.io/?url={enc}").decode("utf-8", "replace")
-        analisa("corsproxy", txt, final)
-    except Exception as e:
-        print(f"    [corsproxy] ERRO: {str(e)[:80]}")
-
-    # 4. site mobile direto
-    try:
-        mob = final.replace("shopee.com.br", "m.shopee.com.br")
-        txt = get(mob).decode("utf-8", "replace")
-        analisa("mobile", txt, mob)
-    except Exception as e:
-        print(f"    [mobile] ERRO: {str(e)[:80]}")
-
-    # 5. Wayback
-    try:
-        d = json.loads(
-            get(f"http://archive.org/wayback/available?url={urllib.parse.quote(final)}", 20)
-        )
-        snap = d.get("archived_snapshots", {}).get("closest", {})
-        if snap.get("url"):
-            print(f"    [wayback] snapshot: {snap['url'][:90]}")
-            txt = get(snap["url"]).decode("utf-8", "replace")
-            analisa("wayback", txt, final)
-        else:
-            print("    [wayback] sem snapshot")
-    except Exception as e:
-        print(f"    [wayback] ERRO: {str(e)[:80]}")
+    # API oficial com IDs (padroes opaanlp, -i., /product/)
+    m = (
+        re.search(r"/opaanlp/(\d+)/(\d+)", final)
+        or re.search(r"-i\.(\d+)\.(\d+)", final)
+        or re.search(r"/product/(\d+)/(\d+)", final)
+    )
+    if m:
+        shop, item = m.group(1), m.group(2)
+        print(f"  IDs: shop={shop} item={item}")
+        for ep in (
+            f"https://shopee.com.br/api/v4/pdp/get_pc?item_id={item}&shop_id={shop}&detail_level=0",
+            f"https://mall.shopee.com.br/api/v2/item/get?itemid={item}&shopid={shop}",
+        ):
+            try:
+                req2 = Request(
+                    ep,
+                    headers={
+                        "User-Agent": UA,
+                        "Referer": final,
+                        "X-API-SOURCE": "pc",
+                        "Accept": "application/json",
+                    },
+                )
+                d = json.loads(urlopen(req2, timeout=30).read())
+                it = d.get("item") or (d.get("data") or {}).get("item") or {}
+                nome = str(it.get("name", "(vazio)"))
+                qtd = len(it.get("images", []))
+                print(f"  [api] nome={nome[:70]!r} | images={qtd}")
+                if it.get("images"):
+                    im0 = it["images"][0]
+                    if not str(im0).startswith("http"):
+                        im0 = "https://cf.shopee.com.br/file/" + str(im0)
+                    print(f"     img0: {im0[:90]}")
+                if nome != "(vazio)":
+                    break
+            except Exception as e:
+                print(f"  [api] ERRO {ep[:55]}: {str(e)[:60]}")
+    else:
+        print("  sem IDs na URL final!")
 
 print("FIM DOS TESTES")
