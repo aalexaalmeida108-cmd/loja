@@ -227,6 +227,18 @@ def via_playwright(url):
                 except Exception:
                     pass
                 pg.wait_for_timeout(3000)
+            if not title:
+                try:
+                    dom_names = pg.eval_on_selector_all(
+                        "h1, h2",
+                        "els => els.map(e => (e.innerText || '').trim())"
+                        ".filter(t => t && t.length >= 10 && t.length <= 130)",
+                    )
+                    if dom_names:
+                        title = clean_title(max(dom_names, key=len))
+                        print(f"  titulo do DOM: {title[:50]!r}")
+                except Exception:
+                    pass
             srcs = pg.eval_on_selector_all("img", "els => els.map(e => e.src)")
             content = pg.content()
             if not title:
