@@ -199,11 +199,23 @@ def via_playwright(url):
             pg = b.new_page(user_agent=UA, viewport={"width": 1280, "height": 900})
             pg.goto(url, timeout=60000, wait_until="domcontentloaded")
             pg.wait_for_timeout(5000)
-            title = clean_title(pg.title() or "")
             srcs = pg.eval_on_selector_all(
                 "img", "els => els.map(e => e.src)"
             )
             content = pg.content()
+            m_og = OGT_RE.search(content)
+            if m_og:
+                title = clean_title(m_og.group(1))
+            else:
+                title = clean_title(pg.title() or "")
+            try:
+                for jd in jsonld_products(content):
+                    if jd.get("name"):
+                        t2 = clean_title(str(jd["name"]))
+                        if len(t2) > len(title):
+                            title = t2
+            except Exception:
+                pass
             b.close()
     except Exception as e:
         print(f"  playwright erro: {str(e)[:100]}")
