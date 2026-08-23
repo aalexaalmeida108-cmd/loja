@@ -561,6 +561,27 @@ def make_card(num, rel, url, titulo, categoria=""):
     )
 
 
+_CANONICAL_TAIL_CACHE = None
+
+
+def _canonical_tail() -> str:
+    """Final da pagina a partir do fechamento do grid no original."""
+    global _CANONICAL_TAIL_CACHE
+    if _CANONICAL_TAIL_CACHE is None:
+        orig = subprocess.run(
+            ["git", "show", "60ad3f3:index.html"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        ).stdout
+        gi = orig.find('<div class="grid" id="productGrid">')
+        bs_pos = orig.find(">", gi) + 1
+        end = block_span(orig, gi)
+        start_close = orig.rfind("</div>", bs_pos, end)
+        _CANONICAL_TAIL_CACHE = orig[start_close:]
+    return _CANONICAL_TAIL_CACHE
+
+
 def rebuild(reg):
     p = os.path.join(ROOT, "index.html")
     html = open(p, encoding="utf-8").read()
@@ -655,14 +676,8 @@ def rebuild(reg):
     if g0 < 0:
         print("grid nao encontrado!")
         sys.exit(1)
-    g_end = block_span(html, g0)
-    if g_end >= len(html):
-        # html sem cauda conhecida: fecha o grid antes do fim
-        mb = re.search(r"</body>", html)
-        tail = "</div>\n" + (html[mb.start():] if mb else "")
-        g_end = len(html)
-    else:
-        tail = html[g_end:]
+    body_start = html.find(">", g0) + 1
+    tail = _canonical_tail()
     body_start = html.find(">", g0) + 1
 
     cards = []
@@ -697,29 +712,6 @@ def rebuild(reg):
     new_html = html[:body_start] + "\n" + "\n".join(cards) + "\n      " + tail.lstrip()
     if ".card-img {" not in new_html:
         new_html = new_html.replace("</style>", css + "  </style>", 1)
-    if "</html>" not in new_html or "<footer" not in new_html.lower():
-        print("AVISO: html truncado detectado, restaurando final canonico...")
-        orig = subprocess.run(
-            ["git", "show", "60ad3f3:index.html"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-        ).stdout
-        og0 = orig.find('<div class="grid" id="productGrid">')
-        d2 = 0
-        i2 = og0
-        while i2 < len(orig):
-            m2 = DIV_RE.search(orig, i2)
-            if not m2:
-                break
-            if m2.group(0) == "</div>":
-                d2 -= 1
-                if d2 == 0:
-                    break
-            else:
-                d2 += 1
-            i2 = m2.end()
-        new_html = new_html.rstrip() + "\n" + orig[i2:].lstrip()
 
     with open(p, "w", encoding="utf-8") as f:
         f.write(new_html)

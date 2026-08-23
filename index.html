@@ -549,29 +549,28 @@
           <a href="https://s.shopee.com.br/3VjhOVoA5D" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      <script>
-(function(){
-function aplicarFiltros(){
-var termo=(document.getElementById('searchInput')?document.getElementById('searchInput').value:'').toLowerCase().trim();
-var ativa=document.querySelector('.cat-btn.active');
-var cat=ativa?ativa.getAttribute('data-cat'):'todos';
-document.querySelectorAll('#productGrid .card').forEach(function(c){
-var txt=((c.querySelector('.card-title')||{textContent:''}).textContent||'')+' '+((c.querySelector('.card-desc')||{textContent:''}).textContent||'');
-var okCat=(cat==='todos'||c.getAttribute('data-categoria')===cat);
-var okBusca=!termo||txt.toLowerCase().indexOf(termo)!==-1;
-c.style.display=(okCat&&okBusca)?'':'none';
-});
-}
-window.filterItems=aplicarFiltros;
-var si=document.getElementById('searchInput');
-if(si){si.addEventListener('keyup',aplicarFiltros);si.addEventListener('input',aplicarFiltros);}
-var bs=document.querySelectorAll('.cat-btn');
-bs.forEach(function(b){b.addEventListener('click',function(){
-bs.forEach(function(x){x.classList.remove('active');});
-b.classList.add('active');
-aplicarFiltros();
-});});
-})();
-</script>
+      </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function filterItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
+        if (title.includes(input) || bodyText.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
