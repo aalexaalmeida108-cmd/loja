@@ -615,14 +615,30 @@ def rebuild(reg):
     )
     filtro_js = (
         "<script>\n"
-        "(function(){var bs=document.querySelectorAll('.cat-btn');"
-        "bs.forEach(function(b){b.addEventListener('click',function(){"
-        "bs.forEach(function(x){x.classList.remove('active');});"
-        "b.classList.add('active');"
-        "var cat=b.getAttribute('data-cat');"
-        "document.querySelectorAll('#productGrid .card').forEach("
-        "function(c){c.style.display=(cat==='todos'||"
-        "c.getAttribute('data-categoria')===cat)?'':'none';});});});})();"
+        "(function(){\n"
+        "function aplicarFiltros(){\n"
+        "var termo=(document.getElementById('searchInput')?"
+        "document.getElementById('searchInput').value:'').toLowerCase().trim();\n"
+        "var ativa=document.querySelector('.cat-btn.active');\n"
+        "var cat=ativa?ativa.getAttribute('data-cat'):'todos';\n"
+        "document.querySelectorAll('#productGrid .card').forEach(function(c){\n"
+        "var txt=((c.querySelector('.card-title')||{textContent:''}).textContent||'')"
+        "+' '+((c.querySelector('.card-desc')||{textContent:''}).textContent||'');\n"
+        "var okCat=(cat==='todos'||c.getAttribute('data-categoria')===cat);\n"
+        "var okBusca=!termo||txt.toLowerCase().indexOf(termo)!==-1;\n"
+        "c.style.display=(okCat&&okBusca)?'':'none';\n"
+        "});\n"
+        "}\n"
+        "window.filterItems=aplicarFiltros;\n"
+        "var si=document.getElementById('searchInput');\n"
+        "if(si){si.addEventListener('keyup',aplicarFiltros);"
+        "si.addEventListener('input',aplicarFiltros);}\n"
+        "var bs=document.querySelectorAll('.cat-btn');\n"
+        "bs.forEach(function(b){b.addEventListener('click',function(){\n"
+        "bs.forEach(function(x){x.classList.remove('active');});\n"
+        "b.classList.add('active');aplicarFiltros();\n"
+        "});});\n"
+        "})();\n"
         "\n</script>"
     )
 
@@ -712,6 +728,14 @@ def rebuild(reg):
     new_html = html[:body_start] + "\n" + "\n".join(cards) + "\n      " + tail.lstrip()
     if ".card-img {" not in new_html:
         new_html = new_html.replace("</style>", css + "  </style>", 1)
+
+    if "</html>" not in new_html or "<footer" not in new_html.lower():
+        print("AVISO: final ausente, anexando cauda canonica...")
+        new_html = (
+            new_html.rstrip()
+            + "\n"
+            + _canonical_tail().lstrip()
+        )
 
     with open(p, "w", encoding="utf-8") as f:
         f.write(new_html)

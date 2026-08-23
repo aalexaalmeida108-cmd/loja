@@ -270,7 +270,7 @@
     <p class="subtitle">Os melhores gadgets, eletrônicos e acessórios com descontos especiais, cupons e frete grátis!</p>
     
     <div class="search-wrapper">
-      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar ofertas..." onkeyup="filterItems()">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar eletroeletrônicos..." onkeyup="filterItems()">
     </div>
   </header>
 
@@ -550,3 +550,32 @@
         </div>
       </div>
       
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function filterItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
+        if (title.includes(input) || bodyText.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+<script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
+</body>
+</html>
