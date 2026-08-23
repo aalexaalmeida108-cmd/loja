@@ -228,6 +228,13 @@
       color: var(--text-muted);
       font-size: 0.85rem;
     }
+      .card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -248,7 +255,7 @@
       <!-- Item 1 -->
       <div class="card" data-title="Fone Bluetooth Sem Fio TWS Smart">
         <div class="card-img-wrapper">
-          <span class="card-icon">🎧</span>
+          <img class="card-img" src="img/produto_01.png" alt="Produto">
           <span class="card-badge badge-hot">Destaque</span>
         </div>
         <div class="card-body">
