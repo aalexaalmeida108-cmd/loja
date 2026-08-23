@@ -278,12 +278,10 @@
     <div class="cats" id="catMenu">
         <button class="cat-btn active" data-cat="todos">Todos</button>
         <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
-        <button class="cat-btn" data-cat="E-Commerce">E-Commerce</button>
+        <button class="cat-btn" data-cat="Eletrônicos">Eletrônicos</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
-        <button class="cat-btn" data-cat="Games e Informatica">Games e Informatica</button>
-        <button class="cat-btn" data-cat="Jogos De Ferramentas">Jogos De Ferramentas</button>
-        <button class="cat-btn" data-cat="Marketplace">Marketplace</button>
-        <button class="cat-btn" data-cat="Mobilidade">Mobilidade</button>
+        <button class="cat-btn" data-cat="Mobilidade Elétrica">Mobilidade Elétrica</button>
+        <button class="cat-btn" data-cat="Outros">Outros</button>
       </div>
 <div class="grid" id="productGrid">
 
@@ -315,8 +313,8 @@
         </div>
       </div>
 
-      <!-- Produto 03 [Mobilidade]: https://s.shopee.com.br/3B6qUbLLbJ -->
-      <div class="card" data-categoria="Mobilidade">
+      <!-- Produto 03 [Mobilidade Elétrica]: https://s.shopee.com.br/3B6qUbLLbJ -->
+      <div class="card" data-categoria="Mobilidade Elétrica">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_03.jpg" alt="Bicicleta Elétrica Scooter Mova Way 5.0 1000w 48v Litio">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -441,8 +439,8 @@
         </div>
       </div>
 
-      <!-- Produto 12 [Games e Informatica]: https://s.shopee.com.br/2gAZttMC2F -->
-      <div class="card" data-categoria="Games e Informatica">
+      <!-- Produto 12 [Eletrônicos]: https://s.shopee.com.br/2gAZttMC2F -->
+      <div class="card" data-categoria="Eletrônicos">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_12.jpg" alt="Gabinete Gamer Aquário Kalkan Asgard">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -455,8 +453,8 @@
         </div>
       </div>
 
-      <!-- Produto 13 [Mobilidade]: https://s.shopee.com.br/5foBu7k44u -->
-      <div class="card" data-categoria="Mobilidade">
+      <!-- Produto 13 [Mobilidade Elétrica]: https://s.shopee.com.br/5foBu7k44u -->
+      <div class="card" data-categoria="Mobilidade Elétrica">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_13.jpg" alt="Patinete Elétrico com Banco Integrado Motor 150W 3 Velocidades Rodas de Borracha para Moto">
           <span class="card-badge badge-hot">Destaque</span>
@@ -469,8 +467,8 @@
         </div>
       </div>
 
-      <!-- Produto 14 [Jogos De Ferramentas]: https://s.shopee.com.br/9AO46NzkrH -->
-      <div class="card" data-categoria="Jogos De Ferramentas">
+      <!-- Produto 14 [Ferramentas]: https://s.shopee.com.br/9AO46NzkrH -->
+      <div class="card" data-categoria="Ferramentas">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_14.jpg" alt="Jogo Caixa De Ferramentas Chave Soquete Catraca Chave Combinada 121 Peças Multi Funções">
           <span class="card-badge badge-toprated">Mais Vendido</span>
@@ -483,8 +481,8 @@
         </div>
       </div>
 
-      <!-- Produto 15 [Marketplace]: https://s.shopee.com.br/4AzO9Er2VK -->
-      <div class="card" data-categoria="Marketplace">
+      <!-- Produto 15 [Outros]: https://s.shopee.com.br/4AzO9Er2VK -->
+      <div class="card" data-categoria="Outros">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_15.jpg" alt="Shopee Brasil">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -497,8 +495,8 @@
         </div>
       </div>
 
-      <!-- Produto 16 [E-Commerce]: https://s.shopee.com.br/5ArvLAKPWw -->
-      <div class="card" data-categoria="E-Commerce">
+      <!-- Produto 16 [Outros]: https://s.shopee.com.br/5ArvLAKPWw -->
+      <div class="card" data-categoria="Outros">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_16.jpg" alt="Shopee Brasil">
           <span class="card-badge badge-hot">Destaque</span>
@@ -510,8 +508,31 @@
           <a href="https://s.shopee.com.br/5ArvLAKPWw" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      <script>
-(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
-</script>
+      </div>
+</body>
+</html>
+</div>
+  </main>
+
+  <footer>
+    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function filterItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
+        if (title.includes(input) || bodyText.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

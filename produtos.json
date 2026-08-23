@@ -21,7 +21,7 @@
   "url": "https://s.shopee.com.br/3B6qUbLLbJ",
   "title": "Bicicleta Elétrica Scooter Mova Way 5.0 1000w 48v Litio",
   "img_path": "img/produto_03.jpg",
-  "categoria": "Mobilidade"
+  "categoria": "Mobilidade Elétrica"
  },
  {
   "num": 4,
@@ -93,7 +93,7 @@
   "url": "https://s.shopee.com.br/2gAZttMC2F",
   "title": "Gabinete Gamer Aquário Kalkan Asgard",
   "img_path": "img/produto_12.jpg",
-  "categoria": "Games e Informatica"
+  "categoria": "Eletrônicos"
  },
  {
   "num": 13,
@@ -101,7 +101,7 @@
   "url": "https://s.shopee.com.br/5foBu7k44u",
   "title": "Patinete Elétrico com Banco Integrado Motor 150W 3 Velocidades Rodas de Borracha para Moto",
   "img_path": "img/produto_13.jpg",
-  "categoria": "Mobilidade"
+  "categoria": "Mobilidade Elétrica"
  },
  {
   "num": 14,
@@ -109,22 +109,22 @@
   "url": "https://s.shopee.com.br/9AO46NzkrH",
   "title": "Jogo Caixa De Ferramentas Chave Soquete Catraca Chave Combinada 121 Peças Multi Funções",
   "img_path": "img/produto_14.jpg",
-  "categoria": "Jogos De Ferramentas"
+  "categoria": "Ferramentas"
  },
  {
   "num": 15,
   "key": "4AzO9Er2VK",
   "url": "https://s.shopee.com.br/4AzO9Er2VK",
-  "title": "Shopee Brasil",
+  "title": "Oferta Especial #15",
   "img_path": "img/produto_15.jpg",
-  "categoria": "Marketplace"
+  "categoria": "Ofertas"
  },
  {
   "num": 16,
   "key": "5ArvLAKPWw",
   "url": "https://s.shopee.com.br/5ArvLAKPWw",
-  "title": "Shopee Brasil",
+  "title": "Oferta Especial #16",
   "img_path": "img/produto_16.jpg",
-  "categoria": "E-Commerce"
+  "categoria": "Ofertas"
  }
 ]
