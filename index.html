@@ -278,6 +278,7 @@
     <div class="cats" id="catMenu">
         <button class="cat-btn active" data-cat="todos">Todos</button>
         <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
+        <button class="cat-btn" data-cat="E-Commerce">E-Commerce</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
         <button class="cat-btn" data-cat="Games e Informatica">Games e Informatica</button>
         <button class="cat-btn" data-cat="Jogos De Ferramentas">Jogos De Ferramentas</button>
@@ -495,6 +496,22 @@
           <a href="https://s.shopee.com.br/4AzO9Er2VK" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
+
+      <!-- Produto 16 [E-Commerce]: https://s.shopee.com.br/5ArvLAKPWw -->
+      <div class="card" data-categoria="E-Commerce">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="img/produto_16.jpg" alt="Shopee Brasil">
+          <span class="card-badge badge-hot">Destaque</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Oferta #16</div>
+          <h3 class="card-title">Shopee Brasil</h3>
+          <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
+          <a href="https://s.shopee.com.br/5ArvLAKPWw" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
       </div>
+      <script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
 </body>
 </html>
