@@ -485,12 +485,12 @@
       <!-- Produto 15 [Ofertas]: https://s.shopee.com.br/4AzO9Er2VK -->
       <div class="card" data-categoria="Ofertas">
         <div class="card-img-wrapper">
-          <img class="card-img" src="img/produto_15.jpg" alt="Produto #15">
+          <img class="card-img" src="img/produto_15.jpg" alt="Oferta Especial #15">
           <span class="card-badge badge-shipping">Frete Grátis</span>
         </div>
         <div class="card-body">
           <div class="card-cat">Oferta #15</div>
-          <h3 class="card-title">Produto #15</h3>
+          <h3 class="card-title">Oferta Especial #15</h3>
           <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
           <a href="https://s.shopee.com.br/4AzO9Er2VK" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
@@ -523,12 +523,9 @@
           <a href="https://s.shopee.com.br/1qbTMrp1Aj" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      <script>
-(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
-</script>
-</body>
-</html>
-</div>
+      
+
+    </div>
   </main>
 
   <footer>
@@ -551,5 +548,8 @@
       });
     }
   </script>
+<script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
 </body>
 </html>
