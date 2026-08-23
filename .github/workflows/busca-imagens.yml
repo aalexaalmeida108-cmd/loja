@@ -23,6 +23,8 @@ jobs:
 
       - name: Coleta dados reais dos produtos
         run: python ferramentas/coleta_dados.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Commit e push
         run: |

@@ -412,6 +412,58 @@ def classifica_categoria(titulo: str) -> str:
     return "Outros"
 
 
+def classifica_gemini(titulo: str) -> str:
+    """Pede ao Gemini uma categoria curta quando as regras nao conhecem."""
+    key = os.getenv("GEMINI_API_KEY", "")
+    if not key or not titulo:
+        return ""
+    try:
+        import requests as _rq
+        r = _rq.post(
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            "gemini-2.5-flash:generateContent?key=" + key,
+            json={
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": (
+                                    "Voce categoriza produtos de e-commerce. "
+                                    "Responda APENAS com o nome de UMA categoria "
+                                    "curta em português (1 a 3 palavras) para o "
+                                    "produto abaixo. Nao explique.\n"
+                                    "Produto: " + titulo
+                                )
+                            }
+                        ]
+                    }
+                ],
+                "generationConfig": {"temperature": 0.2},
+            },
+            timeout=30,
+        )
+        d = r.json()
+        cat = (
+            d["candidates"][0]["content"]["parts"][0]["text"]
+            .strip()
+            .strip(".")
+            .splitlines()[0]
+        )
+        if 2 <= len(cat) <= 32 and "shopee" not in cat.lower():
+            return cat.title()
+    except Exception as e:
+        print(f"  gemini classify falhou: {str(e)[:80]}")
+    return ""
+
+
+def classifica_final(titulo: str) -> str:
+    c = classifica_categoria(titulo)
+    if c != "Outros":
+        return c
+    g = classifica_gemini(titulo)
+    return g if g else "Outros"
+
+
 # ---------------- registro e pedidos ----------------
 
 def carregar_registro():
@@ -516,7 +568,7 @@ def rebuild(reg):
     # --- categorizacao automatica ---
     for r in reg:
         if not r.get("categoria"):
-            r["categoria"] = classifica_categoria(r.get("title", ""))
+            r["categoria"] = classifica_final(r.get("title", ""))
     salvar_registro(reg)
 
     # --- monta menu de categorias com base nos produtos visiveis ---
