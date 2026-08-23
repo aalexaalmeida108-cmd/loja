@@ -198,24 +198,43 @@ def via_playwright(url):
             )
             pg = b.new_page(user_agent=UA, viewport={"width": 1280, "height": 900})
             pg.goto(url, timeout=60000, wait_until="domcontentloaded")
-            pg.wait_for_timeout(5000)
-            srcs = pg.eval_on_selector_all(
-                "img", "els => els.map(e => e.src)"
-            )
+
+            def _smart_title():
+                c = pg.content()
+                m = OGT_RE.search(c)
+                if m:
+                    t = clean_title(m.group(1))
+                    if t and t.lower() != "shopee brasil":
+                        return t
+                try:
+                    for jd in jsonld_products(c):
+                        nm = jd.get("name")
+                        if nm:
+                            t = clean_title(str(nm))
+                            if t and t.lower() != "shopee brasil":
+                                return t
+                except Exception:
+                    pass
+                return ""
+
+            title = ""
+            for _ in range(6):
+                title = _smart_title()
+                if title:
+                    break
+                try:
+                    pg.mouse.wheel(0, 1500)
+                except Exception:
+                    pass
+                pg.wait_for_timeout(3000)
+            srcs = pg.eval_on_selector_all("img", "els => els.map(e => e.src)")
             content = pg.content()
-            m_og = OGT_RE.search(content)
-            if m_og:
-                title = clean_title(m_og.group(1))
-            else:
-                title = clean_title(pg.title() or "")
-            try:
-                for jd in jsonld_products(content):
-                    if jd.get("name"):
-                        t2 = clean_title(str(jd["name"]))
-                        if len(t2) > len(title):
-                            title = t2
-            except Exception:
-                pass
+            if not title:
+                m_og = OGT_RE.search(content)
+                if m_og:
+                    title = clean_title(m_og.group(1))
+                else:
+                    title = clean_title(pg.title() or "")
             b.close()
     except Exception as e:
         print(f"  playwright erro: {str(e)[:100]}")
