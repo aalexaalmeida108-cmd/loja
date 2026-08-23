@@ -281,7 +281,8 @@
         <button class="cat-btn" data-cat="Eletrônicos">Eletrônicos</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
         <button class="cat-btn" data-cat="Mobilidade Elétrica">Mobilidade Elétrica</button>
-        <button class="cat-btn" data-cat="Outros">Outros</button>
+        <button class="cat-btn" data-cat="Ofertas">Ofertas</button>
+        <button class="cat-btn" data-cat="Triciclos Elétricos">Triciclos Elétricos</button>
       </div>
 <div class="grid" id="productGrid">
 
@@ -481,34 +482,50 @@
         </div>
       </div>
 
-      <!-- Produto 15 [Outros]: https://s.shopee.com.br/4AzO9Er2VK -->
-      <div class="card" data-categoria="Outros">
+      <!-- Produto 15 [Ofertas]: https://s.shopee.com.br/4AzO9Er2VK -->
+      <div class="card" data-categoria="Ofertas">
         <div class="card-img-wrapper">
-          <img class="card-img" src="img/produto_15.jpg" alt="Shopee Brasil">
+          <img class="card-img" src="img/produto_15.jpg" alt="Produto #15">
           <span class="card-badge badge-shipping">Frete Grátis</span>
         </div>
         <div class="card-body">
           <div class="card-cat">Oferta #15</div>
-          <h3 class="card-title">Shopee Brasil</h3>
+          <h3 class="card-title">Produto #15</h3>
           <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
           <a href="https://s.shopee.com.br/4AzO9Er2VK" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
 
-      <!-- Produto 16 [Outros]: https://s.shopee.com.br/5ArvLAKPWw -->
-      <div class="card" data-categoria="Outros">
+      <!-- Produto 16 [Ofertas]: https://s.shopee.com.br/5ArvLAKPWw -->
+      <div class="card" data-categoria="Ofertas">
         <div class="card-img-wrapper">
-          <img class="card-img" src="img/produto_16.jpg" alt="Shopee Brasil">
+          <img class="card-img" src="img/produto_16.jpg" alt="Kart elétrico infantil dobrável de quatro rodas sem instalação com controle remoto de 6 a ">
           <span class="card-badge badge-hot">Destaque</span>
         </div>
         <div class="card-body">
           <div class="card-cat">Oferta #16</div>
-          <h3 class="card-title">Shopee Brasil</h3>
+          <h3 class="card-title">Kart elétrico infantil dobrável de quatro rodas sem instalação com controle remoto de 6 a </h3>
           <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
           <a href="https://s.shopee.com.br/5ArvLAKPWw" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
+
+      <!-- Produto 17 [Triciclos Elétricos]: https://s.shopee.com.br/1qbTMrp1Aj -->
+      <div class="card" data-categoria="Triciclos Elétricos">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="img/produto_17.jpg" alt="Triciclo Infantil Elétrico Com Bluetooth MP3 Drift Farol e Luz LED - Modelo Especial">
+          <span class="card-badge badge-toprated">Mais Vendido</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Oferta #17</div>
+          <h3 class="card-title">Triciclo Infantil Elétrico Com Bluetooth MP3 Drift Farol e Luz LED - Modelo Especial</h3>
+          <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
+          <a href="https://s.shopee.com.br/1qbTMrp1Aj" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
       </div>
+      <script>
+(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
+</script>
 </body>
 </html>
 </div>
