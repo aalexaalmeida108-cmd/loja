@@ -278,7 +278,7 @@
     <div class="cats" id="catMenu">
         <button class="cat-btn active" data-cat="todos">Todos</button>
         <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
-        <button class="cat-btn" data-cat="Eletrônicos">Eletrônicos</button>
+        <button class="cat-btn" data-cat="Computadores">Computadores</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
         <button class="cat-btn" data-cat="Mobilidade Elétrica">Mobilidade Elétrica</button>
       </div>
@@ -438,8 +438,8 @@
         </div>
       </div>
 
-      <!-- Produto 12 [Eletrônicos]: https://s.shopee.com.br/2gAZttMC2F -->
-      <div class="card" data-categoria="Eletrônicos">
+      <!-- Produto 12 [Computadores]: https://s.shopee.com.br/2gAZttMC2F -->
+      <div class="card" data-categoria="Computadores">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_12.jpg" alt="Gabinete Gamer Aquário Kalkan Asgard">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -480,8 +480,8 @@
         </div>
       </div>
 
-      <!-- Produto 15 [Eletrônicos]: https://s.shopee.com.br/4AzO9Er2VK -->
-      <div class="card" data-categoria="Eletrônicos">
+      <!-- Produto 15 [Computadores]: https://s.shopee.com.br/4AzO9Er2VK -->
+      <div class="card" data-categoria="Computadores">
         <div class="card-img-wrapper">
           <img class="card-img" src="img/produto_15.jpg" alt="CPU Gamer i3 8GB SSD 240GB + WiFi + Fonte + Placa de Video">
           <span class="card-badge badge-shipping">Frete Grátis</span>
@@ -549,28 +549,4 @@
           <a href="https://s.shopee.com.br/3VjhOVoA5D" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      </div>
-  </main>
-
-  <footer>
-    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function filterItems() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase();
-        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
-        if (title.includes(input) || bodyText.includes(input)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
-</html>
+      
