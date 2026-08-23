@@ -281,6 +281,7 @@
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
         <button class="cat-btn" data-cat="Games e Informatica">Games e Informatica</button>
         <button class="cat-btn" data-cat="Jogos De Ferramentas">Jogos De Ferramentas</button>
+        <button class="cat-btn" data-cat="Marketplace">Marketplace</button>
         <button class="cat-btn" data-cat="Mobilidade">Mobilidade</button>
       </div>
 <div class="grid" id="productGrid">
@@ -480,8 +481,20 @@
           <a href="https://s.shopee.com.br/9AO46NzkrH" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      <script>
-(function(){var bs=document.querySelectorAll('.cat-btn');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('active');});b.classList.add('active');var cat=b.getAttribute('data-cat');document.querySelectorAll('#productGrid .card').forEach(function(c){c.style.display=(cat==='todos'||c.getAttribute('data-categoria')===cat)?'':'none';});});});})();
-</script>
+
+      <!-- Produto 15 [Marketplace]: https://s.shopee.com.br/4AzO9Er2VK -->
+      <div class="card" data-categoria="Marketplace">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="img/produto_15.jpg" alt="Shopee Brasil">
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Oferta #15</div>
+          <h3 class="card-title">Shopee Brasil</h3>
+          <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
+          <a href="https://s.shopee.com.br/4AzO9Er2VK" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+      </div>
 </body>
 </html>
