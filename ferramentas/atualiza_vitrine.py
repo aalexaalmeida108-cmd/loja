@@ -199,12 +199,12 @@ def main():
         alvo = None
         for s, e in card_blocks(html):
             blk = html[s:e]
-            if "card-img" not in blk and key in blk:
+            if 'class="card-img"' not in blk and key in blk:
                 alvo = (s, e)
                 break
         if alvo is None:
             for s, e in card_blocks(html):
-                if "card-img" not in html[s:e]:
+                if 'class="card-img"' not in html[s:e]:
                     alvo = (s, e)
                     break
         if alvo is None:
