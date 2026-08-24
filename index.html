@@ -279,6 +279,7 @@
         <button class="cat-btn active" data-cat="todos">Todos</button>
         <button class="cat-btn" data-cat="Automotivo e Moto">Automotivo e Moto</button>
         <button class="cat-btn" data-cat="Computadores">Computadores</button>
+        <button class="cat-btn" data-cat="Câmera Veicular">Câmera Veicular</button>
         <button class="cat-btn" data-cat="Ferramentas">Ferramentas</button>
         <button class="cat-btn" data-cat="Mobilidade Elétrica">Mobilidade Elétrica</button>
       </div>
@@ -549,54 +550,17 @@
           <a href="https://s.shopee.com.br/3VjhOVoA5D" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
         </div>
       </div>
-      
 
-    </div>
-  </main>
-
-  <footer>
-    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function filterItems() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase();
-        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
-        if (title.includes(input) || bodyText.includes(input)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-<script>
-(function(){
-function aplicarFiltros(){
-var termo=(document.getElementById('searchInput')?document.getElementById('searchInput').value:'').toLowerCase().trim();
-var ativa=document.querySelector('.cat-btn.active');
-var cat=ativa?ativa.getAttribute('data-cat'):'todos';
-document.querySelectorAll('#productGrid .card').forEach(function(c){
-var txt=((c.querySelector('.card-title')||{textContent:''}).textContent||'')+' '+((c.querySelector('.card-desc')||{textContent:''}).textContent||'');
-var okCat=(cat==='todos'||c.getAttribute('data-categoria')===cat);
-var okBusca=!termo||txt.toLowerCase().indexOf(termo)!==-1;
-c.style.display=(okCat&&okBusca)?'':'none';
-});
-}
-window.filterItems=aplicarFiltros;
-var si=document.getElementById('searchInput');
-if(si){si.addEventListener('keyup',aplicarFiltros);si.addEventListener('input',aplicarFiltros);}
-var bs=document.querySelectorAll('.cat-btn');
-bs.forEach(function(b){b.addEventListener('click',function(){
-bs.forEach(function(x){x.classList.remove('active');});
-b.classList.add('active');aplicarFiltros();
-});});
-})();
-
-</script>
-</body>
-</html>
+      <!-- Produto 20 [Câmera Veicular]: https://s.shopee.com.br/AAGbO9NgYv -->
+      <div class="card" data-categoria="Câmera Veicular">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="img/produto_20.png" alt="Câmera Veicular Frontal e Traseira Dashcam 4 Câmeras 1080P HD Gravador de Veículo DVR com ">
+          <span class="card-badge badge-toprated">Mais Vendido</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Oferta #20</div>
+          <h3 class="card-title">Câmera Veicular Frontal e Traseira Dashcam 4 Câmeras 1080P HD Gravador de Veículo DVR com </h3>
+          <p class="card-desc">Oferta especial direto na Shopee, aproveite enquanto durar o estoque!</p>
+          <a href="https://s.shopee.com.br/AAGbO9NgYv" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
