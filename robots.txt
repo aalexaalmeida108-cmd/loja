@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aalexaalmeida108-cmd.github.io/loja/sitemap.xml

@@ -126,6 +126,34 @@ def make_card(num, rel, url, titulo, categoria):
     )
 
 
+
+SEO_TITLE = 'Ofertas Shopee - Ferramentas, Automotivo e Mobilidade Elétrica | Achadinhos'
+SEO_DESC = 'As melhores ofertas da Shopee com frete grátis: ferramentas profissionais, acessórios automotivos e de moto, mobilidade elétrica e eletrônicos. Preços imbatíveis direto dos fornecedores!'
+SEO_URL = 'https://aalexaalmeida108-cmd.github.io/loja/'
+SEO_IMG = 'https://aalexaalmeida108-cmd.github.io/loja/img/produto_03.jpg'
+
+
+def aplicar_seo(tpl):
+    bloco = (
+        "<title>" + SEO_TITLE + "</title>\n"
+        '    <meta name="description" content="' + SEO_DESC + '">\n'
+        '    <meta name="robots" content="index, follow">\n'
+        '    <link rel="canonical" href="' + SEO_URL + '">\n'
+        '    <meta property="og:type" content="website">\n'
+        '    <meta property="og:site_name" content="Achadinhos Shopee">\n'
+        '    <meta property="og:title" content="' + SEO_TITLE + '">\n'
+        '    <meta property="og:description" content="' + SEO_DESC + '">\n'
+        '    <meta property="og:image" content="' + SEO_IMG + '">\n'
+        '    <meta property="og:url" content="' + SEO_URL + '">\n'
+        '    <meta name="twitter:card" content="summary_large_image">\n'
+        '    <meta name="twitter:title" content="' + SEO_TITLE + '">\n'
+        '    <meta name="twitter:description" content="' + SEO_DESC + '">\n'
+        '    <meta name="twitter:image" content="' + SEO_IMG + '">'
+    )
+    return re.sub(r"<title>.*?</title>", bloco, tpl, count=1, flags=re.S)
+
+
+
 def gerar(reg=None):
     if reg is None:
         try:
@@ -175,6 +203,7 @@ def gerar(reg=None):
 
     tpl = open(TPL, encoding="utf-8").read()
     tpl = re.sub(r"<script>.*?</script>", "", tpl, flags=re.S)
+    tpl = aplicar_seo(tpl)
     tpl = tpl.replace("</style>", CSS_EXTRA + "  </style>", 1)
 
     g0 = tpl.find('<div class="grid" id="productGrid">')
