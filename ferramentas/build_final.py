@@ -6,7 +6,7 @@ import re
 import subprocess
 import sys
 
-ROOT = "/home/daytona/tgbot/vitrine"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "ferramentas"))
 import coleta_dados as cd
 
