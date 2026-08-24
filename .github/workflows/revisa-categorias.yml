@@ -1,4 +1,4 @@
-name: IA revisa categorias
+name: IA revisa categorias e pagina
 
 on:
   schedule:
@@ -19,10 +19,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python ferramentas/revisa_categorias.py
 
+      - name: Verifica e corrige pagina
+        run: python ferramentas/verifica_pagina.py
+
       - name: Commit se mudou
         run: |
           git config user.name "vitrine-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "IA ajusta categorias [skip ci]"
+          git diff --cached --quiet || git commit -m "Manutencao automatica da pagina [skip ci]"
           git push

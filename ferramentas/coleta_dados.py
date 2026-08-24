@@ -650,12 +650,10 @@ def rebuild(reg):
         r"<script>.*?var bs=.*?</script>", "", html, flags=re.S
     )
 
-    # insere menu antes do grid e script antes de fechar o body
+    # insere menu antes do grid (script vai no pos-montagem, na cauda final)
     grid_i = html.find('<div class="grid" id="productGrid">')
     if grid_i >= 0:
         html = html[:grid_i] + pills + "\n" + html[grid_i:]
-    if "</body>" in html:
-        html = html.replace("</body>", filtro_js + "\n</body>", 1)
 
     # css dos filtros
     if ".cats {" not in html:
@@ -728,6 +726,12 @@ def rebuild(reg):
     new_html = html[:body_start] + "\n" + "\n".join(cards) + "\n      " + tail.lstrip()
     if ".card-img {" not in new_html:
         new_html = new_html.replace("</style>", css + "  </style>", 1)
+    if "<script" not in new_html:
+        new_html = new_html.replace(
+            "</body>", filtro_js + "\n</body>", 1
+        )
+        if "<script" not in new_html:
+            new_html += filtro_js
 
     if "</html>" not in new_html or "<footer" not in new_html.lower():
         print("AVISO: final ausente, anexando cauda canonica...")
