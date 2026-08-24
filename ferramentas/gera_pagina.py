@@ -174,6 +174,7 @@ def gerar(reg=None):
             os.remove(f)
 
     tpl = open(TPL, encoding="utf-8").read()
+    tpl = re.sub(r"<script>.*?</script>", "", tpl, flags=re.S)
     tpl = tpl.replace("</style>", CSS_EXTRA + "  </style>", 1)
 
     g0 = tpl.find('<div class="grid" id="productGrid">')
