@@ -565,20 +565,28 @@ _CANONICAL_TAIL_CACHE = None
 
 
 def _canonical_tail() -> str:
-    """Final da pagina a partir do fechamento do grid no original."""
+    """Final da pagina (fechamento do grid + rodape) de arquivo estatico."""
     global _CANONICAL_TAIL_CACHE
     if _CANONICAL_TAIL_CACHE is None:
-        orig = subprocess.run(
-            ["git", "show", "60ad3f3:index.html"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-        ).stdout
-        gi = orig.find('<div class="grid" id="productGrid">')
-        bs_pos = orig.find(">", gi) + 1
-        end = block_span(orig, gi)
-        start_close = orig.rfind("</div>", bs_pos, end)
-        _CANONICAL_TAIL_CACHE = orig[start_close:]
+        fp = os.path.join(ROOT, "ferramentas", "cauda.html")
+        if os.path.exists(fp):
+            with open(fp, encoding="utf-8") as f:
+                _CANONICAL_TAIL_CACHE = f.read()
+            return _CANONICAL_TAIL_CACHE
+        try:
+            orig = subprocess.run(
+                ["git", "show", "60ad3f3:index.html"],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+            ).stdout
+            gi = orig.find('<div class="grid" id="productGrid">')
+            bs_pos = orig.find(">", gi) + 1
+            end = block_span(orig, gi)
+            start_close = orig.rfind("</div>", bs_pos, end)
+            _CANONICAL_TAIL_CACHE = orig[start_close:]
+        except Exception:
+            _CANONICAL_TAIL_CACHE = "</div>"
     return _CANONICAL_TAIL_CACHE
 
 
