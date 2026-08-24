@@ -576,5 +576,115 @@ def rebuild(reg):
 
 
 
+
+
+def main():
+    reg = carregar_registro()
+    novos, trocas, rems = parse_pedidos()
+    mudanca = bool(novos or trocas or rems)
+
+    if rems:
+        antes = len(reg)
+        reg = [r for r in reg if r["num"] not in rems]
+        print(f"removidos: {antes - len(reg)}")
+
+    for num, u in trocas.items():
+        achou = False
+        for r in reg:
+            if r["num"] == num:
+                r["url"] = u
+                r["key"] = url_key(u)
+                r["title"] = ""
+                antiga = r.get("img_path", "")
+                if antiga and os.path.exists(os.path.join(ROOT, antiga)):
+                    os.remove(os.path.join(ROOT, antiga))
+                r["img_path"] = ""
+                achou = True
+        if not achou:
+            reg.append(
+                {"num": num, "key": url_key(u), "url": u, "title": "", "img_path": ""}
+            )
+        print(f"substituicao marcada: #{num}")
+
+    prox = max([r["num"] for r in reg], default=0) + 1
+    for u in novos:
+        if any(r.get("url") == u for r in reg):
+            print(f"ja existe: {u[:60]}")
+            continue
+        reg.append(
+            {"num": prox, "key": url_key(u), "url": u, "title": "", "img_path": ""}
+        )
+        print(f"novo produto #{prox}: {u[:60]}")
+        prox += 1
+
+    salvar_registro(reg)
+
+    results = []
+    alterou = False
+    for r in sorted(reg, key=lambda x: x["num"]):
+        tem_img = bool(r.get("img_path")) and os.path.exists(
+            os.path.join(ROOT, r["img_path"])
+        )
+        bom_titulo = not titulo_ruim(r.get("title"))
+        print(f"[#{r['num']:02d}] {r['url'][:60]}")
+
+        if tem_img and bom_titulo:
+            results.append(r)
+            continue
+        alterou = True
+
+        if tem_img and not bom_titulo:
+            print("  buscando apenas titulo...")
+            try:
+                fin, _, _ = http_get(r["url"], timeout=30)
+            except Exception:
+                fin = r["url"]
+            novo_t = fetch_name_only(fin)
+            if titulo_ruim(novo_t):
+                t2, _ = via_playwright(fin or r["url"])
+                novo_t = t2 or ""
+            if titulo_ruim(novo_t):
+                print("  mantendo titulo anterior")
+                novo_t = r.get("title", "")
+            r["title"] = novo_t
+            results.append(r)
+            continue
+
+        d = get_link_data(r["url"])
+        if not d or not d[1]:
+            if tem_img:
+                print("  coleta falhou, mantendo imagem anterior")
+                results.append(r)
+                continue
+            print("  SEM DADOS - produto fica fora da pagina")
+            continue
+        title, fp = d
+        if titulo_ruim(title):
+            tn = fetch_name_only(r["url"])
+            if not titulo_ruim(tn):
+                title = tn
+        final_name = f"produto_{r['num']:02d}{os.path.splitext(fp)[1]}"
+        final_fp = "img/" + final_name
+        antiga = r.get("img_path", "")
+        if antiga and os.path.exists(os.path.join(ROOT, antiga)):
+            os.remove(os.path.join(ROOT, antiga))
+        os.replace(fp, os.path.join(ROOT, final_fp))
+        r["title"] = title
+        r["img_path"] = final_fp
+        r["key"] = url_key(r["url"])
+        results.append(r)
+        print(f"  OK: {title!r}")
+
+    salvar_registro(results)
+
+    if alterou or mudanca:
+        rebuild([r for r in results if r.get("img_path")])
+
+    if os.path.isdir(PEDIDOS_DIR):
+        for fn in os.listdir(PEDIDOS_DIR):
+            os.remove(os.path.join(PEDIDOS_DIR, fn))
+    print(f"fim: {len(results)} produto(s)")
+
+
 if __name__ == "__main__":
     main()
