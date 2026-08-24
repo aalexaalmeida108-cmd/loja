@@ -631,29 +631,6 @@
       });
     }
   </script>
-<script>
-(function(){
-function aplicarFiltros(){
-var termo=(document.getElementById('searchInput')?document.getElementById('searchInput').value:'').toLowerCase().trim();
-var ativa=document.querySelector('.cat-btn.active');
-var cat=ativa?ativa.getAttribute('data-cat'):'todos';
-document.querySelectorAll('#productGrid .card').forEach(function(c){
-var txt=((c.querySelector('.card-title')||{textContent:''}).textContent||'')+' '+((c.querySelector('.card-desc')||{textContent:''}).textContent||'');
-var okCat=(cat==='todos'||c.getAttribute('data-categoria')===cat);
-var okBusca=!termo||txt.toLowerCase().indexOf(termo)!==-1;
-c.style.display=(okCat&&okBusca)?'':'none';
-});
-}
-window.filterItems=aplicarFiltros;
-var si=document.getElementById('searchInput');
-if(si){si.addEventListener('keyup',aplicarFiltros);si.addEventListener('input',aplicarFiltros);}
-var bs=document.querySelectorAll('.cat-btn');
-bs.forEach(function(b){b.addEventListener('click',function(){
-bs.forEach(function(x){x.classList.remove('active');});
-b.classList.add('active');aplicarFiltros();
-});});
-})();
 
-</script>
 </body>
 </html>
