@@ -98,7 +98,7 @@ def grid_span(html, start):
     return len(html)
 
 
-def make_card(num, rel, url, titulo, categoria):
+def make_card(num, rel, url, titulo, categoria, desc=None):
     badges = [
         ("badge-hot", "Destaque"),
         ("badge-toprated", "Mais Vendido"),
@@ -107,6 +107,10 @@ def make_card(num, rel, url, titulo, categoria):
     bcls, btxt = badges[(num - 1) % len(badges)]
     t = esc(titulo or f"Produto #{num:02d}")
     dc = esc(categoria)
+    dtxt = esc(desc) if desc else (
+        "Oferta especial direto na Shopee, aproveite enquanto "
+        "durar o estoque!"
+    )
     return (
         f'\n      <!-- Produto {num:02d} [{dc}]: {url} -->\n'
         f'      <div class="card" data-categoria="{dc}">\n'
@@ -117,8 +121,7 @@ def make_card(num, rel, url, titulo, categoria):
         f'        <div class="card-body">\n'
         f'          <div class="card-cat">Oferta #{num:02d}</div>\n'
         f'          <h3 class="card-title">{t}</h3>\n'
-        f'          <p class="card-desc">Oferta especial direto na Shopee, '
-        f'aproveite enquanto durar o estoque!</p>\n'
+        f'          <p class="card-desc">{dtxt}</p>\n'
         f'          <a href="{url}" target="_blank" rel="noopener noreferrer" '
         f'class="btn-buy">Ver Oferta na Shopee 🛒</a>\n'
         f"        </div>\n"
@@ -197,7 +200,10 @@ def gerar(reg=None):
         rel = "img/" + os.path.basename(r["img_path"])
         usadas.add(os.path.basename(r["img_path"]))
         cards.append(
-            make_card(r["num"], rel, r["url"], r.get("title", ""), r["categoria"])
+            make_card(
+                r["num"], rel, r["url"], r.get("title", ""),
+                r["categoria"], r.get("desc"),
+            )
         )
 
     for f in glob.glob(os.path.join(ROOT, "img", "*")):

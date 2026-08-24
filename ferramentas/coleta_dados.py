@@ -481,7 +481,7 @@ def salvar_registro(reg):
 
 
 def parse_pedidos():
-    novos, trocas, rems = [], {}, []
+    novos, trocas, rems, descs = [], {}, [], {}
     if os.path.isdir(PEDIDOS_DIR):
         for fn in sorted(os.listdir(PEDIDOS_DIR)):
             p = os.path.join(PEDIDOS_DIR, fn)
@@ -496,13 +496,17 @@ def parse_pedidos():
                     if m:
                         trocas[int(m.group(1))] = m.group(2)
                         continue
+                    m = re.match(r"^desc\s+(\d+)\s+(.+)$", ln, re.I)
+                    if m:
+                        descs[int(m.group(1))] = m.group(2).strip()
+                        continue
                     m = re.match(r"^rem\s+(\d+)$", ln, re.I)
                     if m:
                         rems.append(int(m.group(1)))
                         continue
                     if ln.startswith("http"):
                         novos.append(ln)
-    return novos, trocas, rems
+    return novos, trocas, rems, descs
 
 
 # ---------------- reconstrucao da pagina ----------------
@@ -580,13 +584,23 @@ def rebuild(reg):
 
 def main():
     reg = carregar_registro()
-    novos, trocas, rems = parse_pedidos()
-    mudanca = bool(novos or trocas or rems)
+    novos, trocas, rems, descs = parse_pedidos()
+    mudanca = bool(novos or trocas or rems or descs)
 
     if rems:
         antes = len(reg)
         reg = [r for r in reg if r["num"] not in rems]
         print(f"removidos: {antes - len(reg)}")
+
+    for num, texto in descs.items():
+        achou = False
+        for r in reg:
+            if r["num"] == num:
+                r["desc"] = texto[:300]
+                achou = True
+                print(f"descricao marcada: #{num}")
+        if not achou:
+            print(f"produto #{num} nao existe para descricao")
 
     for num, u in trocas.items():
         achou = False
