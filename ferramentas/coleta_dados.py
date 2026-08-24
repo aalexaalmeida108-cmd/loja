@@ -565,6 +565,64 @@ def make_card(num, rel, url, titulo, categoria=""):
     )
 
 
+def atualiza_categorias_pagina(reg):
+    """Atualizacao CIRURGICA: muda apenas data-categoria dos cards e o menu.
+    Nao regenera a pagina — zero risco de quebra."""
+    p = os.path.join(ROOT, "index.html")
+    if not os.path.exists(p):
+        return False
+    html = open(p, encoding="utf-8").read()
+    original = html
+    mudou = False
+
+    # 1. atualiza data-categoria de cada card pelo numero no comentario
+    for r in sorted(reg, key=lambda x: x["num"]):
+        alvo = f"<!-- Produto {r['num']:02d}"
+        i = html.find(alvo)
+        if i < 0:
+            continue
+        gs = html.find('<div class="card"', i)
+        if gs < 0:
+            continue
+        ge_s = html.find("</div>", gs)
+        bloco_close = html.find("      </div>", gs)
+        fim_bloco = bloco_close if bloco_close > 0 else len(html)
+        bloco = html[gs:fim_bloco]
+        novo_bloco, k = re.subn(
+            r'data-categoria="[^"]*"',
+            f'data-categoria="{r.get("categoria", "")}"',
+            bloco,
+            count=1,
+        )
+        if k and novo_bloco != bloco:
+            html = html[:gs] + novo_bloco + html[fim_bloco:]
+            mudou = True
+
+    # 2. reconstrui o menu com as categorias finais
+    cats_presentes = []
+    for m in re.finditer(r'data-categoria="([^"]*)"', html):
+        if m.group(1) not in cats_presentes:
+            cats_presentes.append(m.group(1))
+    botoes = ['<button class="cat-btn active" data-cat="todos">Todos</button>']
+    for c in sorted(cats_presentes):
+        botoes.append(f'<button class="cat-btn" data-cat="{c}">{c}</button>')
+    novo_menu = (
+        '<div class="cats" id="catMenu">\n'
+        + "\n".join("        " + b for b in botoes)
+        + "\n      </div>"
+    )
+    html, k = re.subn(
+        r'<div class="cats" id="catMenu">.*?</div>', novo_menu, html, flags=re.S
+    )
+    if k:
+        mudou = True
+
+    if mudou:
+        open(p, "w", encoding="utf-8").write(html)
+    return mudou
+
+
+
 def rebuild(reg):
     """Delega a geracao da pagina ao gerador deterministico."""
     salvar_registro(reg)

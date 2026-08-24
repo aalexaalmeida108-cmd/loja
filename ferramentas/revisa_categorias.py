@@ -16,6 +16,19 @@ if not reg:
     print("vitrine vazia")
     sys.exit(0)
 
+
+# --- skip rapido: registry igual à ultima revisao? ---
+import hashlib
+_hf = os.path.join(ROOT, "ferramentas", ".last_review_hash")
+_hash_atual = hashlib.md5(
+    json.dumps(sorted(reg, key=lambda x: x["num"]), sort_keys=True).encode()
+).hexdigest()
+if os.path.exists(_hf):
+    _ultimo = open(_hf).read().strip()
+    if _ultimo == _hash_atual:
+        print("nada mudou desde a ultima revisao - skip ✓")
+        sys.exit(0)
+
 linhas = "\n".join(
     f"{r['num']} [{r.get('categoria', '(sem)')}] {r.get('title', '')}"
     for r in reg
@@ -70,6 +83,8 @@ except Exception as e:
 
 if mapa.get("sem_mudancas"):
     print("IA revisou: sem mudancas necessarias ✓")
+    with open(_hf, "w") as f:
+        f.write(_hash_atual)
     sys.exit(0)
 
 mudaram = 0
@@ -83,7 +98,7 @@ for r in reg:
 
 if mudaram == 0:
     print("IA respondeu sem mudancas aplicaveis")
-    sys.exit(0)
+    pass
 
 # limite de seguranca: maximo 6 categorias
 cats = {r["categoria"] for r in reg}
@@ -92,5 +107,8 @@ if len(cats) > 6:
     sys.exit(0)
 
 cd.salvar_registro(reg)
-cd.rebuild(reg)
-print(f"concluido: {mudaram} produto(s) reclassificado(s)")
+mudou_pagina = cd.atualiza_categorias_pagina(reg)
+print(
+    f"concluido: {mudaram} reclassificado(s) | "
+    f"pagina {'atualizada (cirurgica)' if mudou_pagina else 'ja estava correta'}"
+)
