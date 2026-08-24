@@ -45,6 +45,7 @@ if "og:title" not in html:
     seo_block = (
         "<title>" + TITLE + "</title>\n"
         '    <meta name="description" content="' + DESC + '">\n'
+        '    <meta name="google-site-verification" content="gqn4su5kU4SzdRJQc886KAFFLqaYM7p4kXiX_iglPKo">
         '    <meta name="robots" content="index, follow">\n'
         '    <link rel="canonical" href="' + URL + '">\n'
         '    <meta property="og:type" content="website">\n'
@@ -83,6 +84,7 @@ def aplicar_seo(tpl):
     bloco = (
         "<title>" + SEO_TITLE + "</title>\\n"
         '    <meta name="description" content="' + SEO_DESC + '">\\n'
+        '    <meta name="google-site-verification" content="gqn4su5kU4SzdRJQc886KAFFLqaYM7p4kXiX_iglPKo">
         '    <meta name="robots" content="index, follow">\\n'
         '    <link rel="canonical" href="' + SEO_URL + '">\\n'
         '    <meta property="og:type" content="website">\\n'

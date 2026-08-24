@@ -154,6 +154,9 @@ def aplicar_seo(tpl):
 
 
 
+
+GSC_META = "<meta name=\"google-site-verification\" content=\"gqn4su5kU4SzdRJQc886KAFFLqaYM7p4kXiX_iglPKo\">"
+
 def gerar(reg=None):
     if reg is None:
         try:
@@ -224,6 +227,7 @@ def gerar(reg=None):
         1,
     )
     new_html = new_html.replace("</body>", FILTRO_JS + "\n</body>", 1)
+    new_html = new_html.replace("<title>", GSC_META + "\n    <title>", 1)
 
     with open(IDX, "w", encoding="utf-8") as f:
         f.write(new_html)
