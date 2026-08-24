@@ -38,7 +38,7 @@ if not problemas:
 print("PROBLEMAS DETECTADOS:", "; ".join(problemas))
 print("reconstruindo pagina...")
 r = subprocess.run(
-    ["python", os.path.join(ROOT, "ferramentas", "build_final.py")],
+    [sys.executable, os.path.join(ROOT, "ferramentas", "gera_pagina.py")],
     capture_output=True,
     text=True,
 )

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eletroeletrônicos Shopee - Melhores Ofertas & Achadinhos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ee4d2d;
+      --primary-dark: #d73211;
+      --primary-light: #fff5f2;
+      --accent: #ff6533;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --badge-gold: #f59e0b;
+      --badge-green: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, rgba(238, 77, 45, 0.15) 0%, rgba(15, 23, 42, 0) 100%);
+      padding: 40px 20px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      border: 1px solid rgba(238, 77, 45, 0.3);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff, #fca5a5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    /* Search bar */
+    .search-wrapper {
+      max-width: 540px;
+      margin: 0 auto 30px;
+      position: relative;
+      padding: 0 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(238, 77, 45, 0.25);
+    }
+
+    /* Products Grid */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+      border-color: rgba(238, 77, 45, 0.4);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      height: 180px;
+      background: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card-icon {
+      font-size: 3.5rem;
+      opacity: 0.85;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-hot {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .badge-toprated {
+      background: var(--badge-gold);
+      color: #000;
+    }
+
+    .badge-shipping {
+      background: var(--badge-green);
+      color: #fff;
+    }
+
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-cat {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .btn-buy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+
+    .btn-buy:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge-top">⚡ OFERTAS EXCLUSIVAS SHOPEE</div>
+    <h1>Eletroeletrônicos & Achadinhos</h1>
+    <p class="subtitle">Os melhores gadgets, eletrônicos e acessórios com descontos especiais, cupons e frete grátis!</p>
+    
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar eletroeletrônicos..." onkeyup="filterItems()">
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid" id="productGrid">
+
+      <!-- Item 1 -->
+      <div class="card" data-title="Fone Bluetooth Sem Fio TWS Smart">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🎧</span>
+          <span class="card-badge badge-hot">Destaque</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #01</div>
+          <h3 class="card-title">Fone de Ouvido Bluetooth TWS</h3>
+          <p class="card-desc">Áudio de alta definição, cancelamento de ruído e bateria de longa duração.</p>
+          <a href="https://s.shopee.com.br/2qU05vxDvw" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="card" data-title="Smartwatch Relógio Inteligente Fitness">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⌚</span>
+          <span class="card-badge badge-toprated">Mais Vendido</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #02</div>
+          <h3 class="card-title">Smartwatch Inteligente Fitness</h3>
+          <p class="card-desc">Monitoramento cardíaco, notificações de mensagens e modo esportivo.</p>
+          <a href="https://s.shopee.com.br/6VNIShMSUA" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="card" data-title="Carregador Rápido Turbo USB-C Power Delivery">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⚡</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #03</div>
+          <h3 class="card-title">Carregador Rápido Turbo USB-C</h3>
+          <p class="card-desc">Carga super rápida compatível com diversos modelos de smartphones.</p>
+          <a href="https://s.shopee.com.br/3B6qUbLLbJ" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="card" data-title="Caixa de Som Bluetooth Portátil Potente">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🔊</span>
+          <span class="card-badge badge-hot">Super Oferta</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #04</div>
+          <h3 class="card-title">Caixa de Som Bluetooth Portátil</h3>
+          <p class="card-desc">Graves potentes, resistente à água e ideal para festas e viagens.</p>
+          <a href="https://s.shopee.com.br/5VUlGuPBuu" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="card" data-title="Power Bank Bateria Portátil Carregamento Rápido">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🔋</span>
+          <span class="card-badge badge-toprated">Top Vendas</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #05</div>
+          <h3 class="card-title">Power Bank Bateria Portátil</h3>
+          <p class="card-desc">Alta capacidade para várias cargas completas em qualquer lugar.</p>
+          <a href="https://s.shopee.com.br/3qMXHriOq2" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="card" data-title="Câmera de Segurança Wi-Fi 360 HD">
+        <div class="card-img-wrapper">
+          <span class="card-icon">📹</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #06</div>
+          <h3 class="card-title">Câmera de Segurança Inteligente Wi-Fi</h3>
+          <p class="card-desc">Visão noturna, rotação 360° e monitoramento direto no celular.</p>
+          <a href="https://s.shopee.com.br/7psg3EOA6s" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="card" data-title="Suporte Articulado de Celular para Mesa e Carro">
+        <div class="card-img-wrapper">
+          <span class="card-icon">📱</span>
+          <span class="card-badge badge-hot">Achadinho</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #07</div>
+          <h3 class="card-title">Suporte Ajustável para Celular/Tablet</h3>
+          <p class="card-desc">Design ergonômico, dobrável e firme para gravações e visualização.</p>
+          <a href="https://s.shopee.com.br/6AkS4CyUsr" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="card" data-title="Lâmpada LED Inteligente Smart RGB Wi-Fi">
+        <div class="card-img-wrapper">
+          <span class="card-icon">💡</span>
+          <span class="card-badge badge-toprated">Smart Home</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #08</div>
+          <h3 class="card-title">Lâmpada LED Smart RGB Wi-Fi</h3>
+          <p class="card-desc">Controle de cores e intensidade pelo app ou assistentes de voz.</p>
+          <a href="https://s.shopee.com.br/50YUg5BTIB" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="card" data-title="Mini Teclado Sem Fio com Touchpad">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⌨️</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #09</div>
+          <h3 class="card-title">Mini Teclado Sem Fio com Touchpad</h3>
+          <p class="card-desc">Compatível com Smart TV, TV Box, computadores e consoles.</p>
+          <a href="https://s.shopee.com.br/3qMXHxfuNF" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="card" data-title="Mouse Gamer Sem Fio Recarregável RGB">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🖱️</span>
+          <span class="card-badge badge-hot">Gamer</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #10</div>
+          <h3 class="card-title">Mouse Sem Fio Silencioso Recarregável</h3>
+          <p class="card-desc">Alta precisão de DPI, iluminação LED e cliques super silenciosos.</p>
+          <a href="https://s.shopee.com.br/7VFpejijv3" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="card" data-title="Ring Light LED com Tripé para Gravações">
+        <div class="card-img-wrapper">
+          <span class="card-icon">💍</span>
+          <span class="card-badge badge-toprated">Top Escolha</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #11</div>
+          <h3 class="card-title">Ring Light Iluminador com Tripé</h3>
+          <p class="card-desc">Iluminação perfeita com ajustes de temperatura para fotos e vídeos.</p>
+          <a href="https://s.shopee.com.br/5ArusTHcJz" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="card" data-title="Adaptador Hub USB Multiportas Tipo-C">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🔌</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #12</div>
+          <h3 class="card-title">Hub Adaptador Multiportas USB / HDMI</h3>
+          <p class="card-desc">Expansão essencial para notebooks, tablets e computadores modernos.</p>
+          <a href="https://s.shopee.com.br/2gAZttMC2F" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 13 -->
+      <div class="card" data-title="Mini Processador e Triturador Elétrico USB">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⚡</span>
+          <span class="card-badge badge-hot">Praticidade</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #13</div>
+          <h3 class="card-title">Mini Triturador Elétrico Recarregável</h3>
+          <p class="card-desc">Praticidade máxima na cozinha com lâminas em inox e recarga USB.</p>
+          <a href="https://s.shopee.com.br/2Vr9hbVMOi" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 14 -->
+      <div class="card" data-title="Microfone de Lapela Sem Fio para Celular">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🎙️</span>
+          <span class="card-badge badge-toprated">Criadores</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #14</div>
+          <h3 class="card-title">Microfone Lapela Sem Fio Plug & Play</h3>
+          <p class="card-desc">Áudio profissional com captação limpa para lives e gravações.</p>
+          <a href="https://s.shopee.com.br/AAGapifVMP" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 15 -->
+      <div class="card" data-title="Umidificador e Aromatizador de Ar Ultrassônico">
+        <div class="card-img-wrapper">
+          <span class="card-icon">💨</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #15</div>
+          <h3 class="card-title">Umidificador & Difusor Ultrassônico LED</h3>
+          <p class="card-desc">Melhora a qualidade do ar com iluminação ambiente relaxante.</p>
+          <a href="https://s.shopee.com.br/W65Jybcqk" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 16 -->
+      <div class="card" data-title="Balança Digital de Alta Precisão">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⚖️</span>
+          <span class="card-badge badge-hot">Destaque</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #16</div>
+          <h3 class="card-title">Balança Digital Bioimpedância Smart</h3>
+          <p class="card-desc">Acompanhe seu peso e dados de saúde direto pelo aplicativo.</p>
+          <a href="https://s.shopee.com.br/7psg3TMVEK" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 17 -->
+      <div class="card" data-title="Cabo Magnético 3 em 1 de Carga Rápida">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🔗</span>
+          <span class="card-badge badge-toprated">Essencial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #17</div>
+          <h3 class="card-title">Cabo Magnético Multifuncional 3 em 1</h3>
+          <p class="card-desc">Conexão magnética compatível com Type-C, Lightning e Micro USB.</p>
+          <a href="https://s.shopee.com.br/112Luw86z2" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 18 -->
+      <div class="card" data-title="Controle Joystick Sem Fio Bluetooth Gamer">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🎮</span>
+          <span class="card-badge badge-shipping">Gamer</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #18</div>
+          <h3 class="card-title">Controle Joystick Bluetooth para Celular/PC</h3>
+          <p class="card-desc">Resposta rápida, pegada anatômica e bateria de excelente autonomia.</p>
+          <a href="https://s.shopee.com.br/50YUgJW4re" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 19 -->
+      <div class="card" data-title="Mini Projetor Portátil LED Smart">
+        <div class="card-img-wrapper">
+          <span class="card-icon">📽️</span>
+          <span class="card-badge badge-hot">Cinema em Casa</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #19</div>
+          <h3 class="card-title">Mini Projetor Portátil de Alta Resolução</h3>
+          <p class="card-desc">Transforme qualquer ambiente em uma sala de cinema com tela gigante.</p>
+          <a href="https://s.shopee.com.br/8V8MqlVkp3" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 20 -->
+      <div class="card" data-title="Suporte Veicular para Celular com Carregamento por Indução">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🚗</span>
+          <span class="card-badge badge-toprated">Top Carro</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #20</div>
+          <h3 class="card-title">Suporte Veicular Inteligente Indução Wireless</h3>
+          <p class="card-desc">Sensor automático de aproximação e carregamento sem fio por indução.</p>
+          <a href="https://s.shopee.com.br/AUtRESWbXo" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 21 -->
+      <div class="card" data-title="Fita LED RGB Inteligente com Controle Remoto">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🌈</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #21</div>
+          <h3 class="card-title">Fita LED RGB 5 Metros com Controle</h3>
+          <p class="card-desc">Crie cenários incríveis para quarto, setup gamer ou sala de TV.</p>
+          <a href="https://s.shopee.com.br/7psg3b6D2M" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 22 -->
+      <div class="card" data-title="Adaptador Receptor Bluetooth para Som e Carro">
+        <div class="card-img-wrapper">
+          <span class="card-icon">📻</span>
+          <span class="card-badge badge-hot">Super Útil</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #22</div>
+          <h3 class="card-title">Receptor de Áudio Bluetooth P2 Auxiliar</h3>
+          <p class="card-desc">Adicione conexão Bluetooth a qualquer aparelho de som ou som automotivo.</p>
+          <a href="https://s.shopee.com.br/9V0u2gCnWi" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 23 -->
+      <div class="card" data-title="Aspirador de Pó Portátil Sem Fio para Carro e Casa">
+        <div class="card-img-wrapper">
+          <span class="card-icon">🧹</span>
+          <span class="card-badge badge-toprated">Achado Top</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #23</div>
+          <h3 class="card-title">Mini Aspirador de Pó Portátil Recarregável</h3>
+          <p class="card-desc">Alta sucção, compacto e perfeito para teclados, sofás e interiores de carros.</p>
+          <a href="https://s.shopee.com.br/1gI2iJt0fP" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+      <!-- Item 24 -->
+      <div class="card" data-title="Relógio Despertador Digital LED com Temperatura">
+        <div class="card-img-wrapper">
+          <span class="card-icon">⏰</span>
+          <span class="card-badge badge-shipping">Frete Grátis</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Eletroeletrônicos #24</div>
+          <h3 class="card-title">Relógio Despertador Digital LED Espelhado</h3>
+          <p class="card-desc">Design espelhado moderno com exibição de horas, alarme e temperatura.</p>
+          <a href="https://s.shopee.com.br/9AO3e8hBE0" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Oferta na Shopee 🛒</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Vitrine de Eletroeletrônicos & Achadinhos Shopee. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function filterItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const bodyText = card.querySelector('.card-body').innerText.toLowerCase();
+        if (title.includes(input) || bodyText.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
