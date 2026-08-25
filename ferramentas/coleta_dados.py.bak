@@ -24,20 +24,6 @@ IMG_DIR = os.path.join(ROOT, "img")
 PEDIDOS_DIR = os.path.join(ROOT, "pedidos")
 REG_PATH = os.path.join(ROOT, "produtos.json")
 
-BAD_URL_MARKERS = (
-    "vertexaisearch", "grounding-api-redirect",
-    "github.io/loja", "google.com/search", "google.com/url",
-    "accounts.google", "localhost", "127.0.0.1",
-)
-
-
-def url_valido(u):
-    u = (u or "").strip()
-    return bool(u) and u.startswith("http") and not any(
-        m in u.lower() for m in BAD_URL_MARKERS
-    )
-
-
 BAD_WORDS = ("logo", "icon", "flag", "avatar", "sprite", "pixel", "-banner")
 MIN_BYTES = 8000
 MIN_DIM = 200
@@ -371,23 +357,22 @@ def get_link_data(url):
         final, _, _ = http_get(url, timeout=30)
     except Exception:
         final = url
-    estrategias = [
-        ("api shopee", lambda: via_api(final)),
-        ("playwright", lambda: via_playwright(final or url)),
-        ("html direto", lambda: via_html(url)),
-        ("jina", lambda: via_jina(final or url)),
-    ]
-    titulo = None
-    for i, (nome, fn) in enumerate(estrategias, 1):
-        print(f"  [{i}] {nome}...")
-        try:
-            t, fp = fn()
-        except Exception as e:
-            print(f"  {nome} erro: {str(e)[:90]}")
-            continue
-        if fp:
-            return t or titulo, fp
-        titulo = t or titulo
+    print("  [1] api shopee...")
+    t, fp = via_api(final)
+    if fp:
+        return t, fp
+    print("  [2] playwright...")
+    t2, fp = via_playwright(final or url)
+    if fp:
+        return t2 or t, fp
+    print("  [3] html direto...")
+    t3, fp = via_html(url)
+    if fp:
+        return t3 or t2 or t, fp
+    print("  [4] jina...")
+    t4, fp = via_jina(final or url)
+    if fp:
+        return t4 or t3 or t2 or t, fp
     return None, None
 
 
@@ -520,14 +505,7 @@ def parse_pedidos():
                         rems.append(int(m.group(1)))
                         continue
                     if ln.startswith("http"):
-                        if url_valido(ln):
-                            novos.append(ln)
-                        else:
-                            print(f"url invalida ignorada: {ln[:60]}")
-    trocas = {
-        n: u for n, u in trocas.items()
-        if url_valido(u) or print(f"url invalida ignorada no -{n}: {u[:50]}")
-    }
+                        novos.append(ln)
     return novos, trocas, rems, descs
 
 
