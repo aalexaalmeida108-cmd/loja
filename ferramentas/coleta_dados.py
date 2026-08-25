@@ -393,6 +393,11 @@ def get_link_data(url):
 
 
 CATS_KW = [
+    ("Casa e Limpeza", [
+        "panos de limpeza", "limpeza", "tira manchas", "percarbonato",
+        "detergente", "desinfetante", "esponja", "agua sanitaria",
+        "vassoura", "mop", "alvejante", "sabao",
+    ]),
     ("Automotivo e Moto", [
         "capacete", "motocicleta", "moto ", "pro tork", "bateria automotiva",
         "bomba de ar", "pneu", "vonixx", "automotiv", "carro", "freio",
