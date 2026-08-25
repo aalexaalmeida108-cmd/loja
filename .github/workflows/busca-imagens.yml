@@ -42,4 +42,4 @@ jobs:
             if git pull --rebase origin main && git push; then ok=1; break; fi
             sleep 10
           done
-          [ -n "" ]
+          [ -n "$ok" ]
