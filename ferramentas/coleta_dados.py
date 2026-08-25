@@ -393,80 +393,86 @@ def get_link_data(url):
 
 
 CATS_KW = [
-    ("Casa e Limpeza", [
-        "panos de limpeza", "limpeza", "tira manchas", "percarbonato",
-        "detergente", "desinfetante", "esponja", "agua sanitaria",
-        "vassoura", "mop", "alvejante", "sabao",
+    # ORDEM IMPORTA: grupos mais especificos primeiro (primeiro match ganha)
+    ("Celulares", [
+        "celular", "smartphone", "iphone", "xiaomi", "redmi", "poco",
+        "motorola", "moto g", "samsung galaxy", "galaxy a", "galaxy s",
+        "galaxy m", "capinha", "película", "pelicula", "vidro temperado",
+        "5g dual", "dual e-sim", "e-sim",
+    ]),
+    ("Mobilidade Elétrica", [
+        "bicicleta eletrica", "bicycle", "scooter", "patinete",
+        "kart eletrico", "triciclo eletrico", "triciclo infantil",
+        "monociclo", "skate eletrico", "hoverboard", "mova way",
+        "bike eletrica", "cicloeletrico",
     ]),
     ("Automotivo e Moto", [
         "capacete", "motocicleta", "moto ", "pro tork", "bateria automotiva",
         "bomba de ar", "pneu", "vonixx", "automotiv", "carro", "freio",
-        "multimidia",
+        "multimidia", "multimídia", "retrovisor", "dvr", "camera de re",
+        "câmera de ré", "som de carro", "som automotivo", "alarme",
+        "rastreador", "volante", "calota", "farol", "lampada automotiva",
+        "óleo de motor", "oleo de motor", "filtro de ar", "borracharia",
+        "compressor 12v", "caminhao", "camioneta", "quadriciclo",
     ]),
     ("Ferramentas", [
-        "furadeira", "parafusadeira", "chave de impacto", "kit ferrament",
-        "martete", "nivel a laser", "nível a laser", "laser", "alicate",
-        "serrote", "makita", "bosch", "dewalt", "jogo de chave",
-        "torquimetro", "esmeril", "kit 6 ferramentas",
+        "furadeira", "parafusadeira", "chave de impacto", "chave de fenda",
+        "chave combinada", "jogo de chave", "soquete", "catraca",
+        "kit ferrament", "caixa de ferramentas", "maleta de ferramentas",
+        "martelo", "marrete", "trena", "nivel a laser", "nível a laser",
+        "laser", "alicate", "serrote", "makita", "bosch", "dewalt",
+        "stanley", "esmerilhadeira", "lixadeira", "torquimetro",
+        "maquina de solda", "solda", "estanho", "broca", "disco de corte",
+        "morsa", "torno", "grampos", "serra circular", "tapioca",
+        "parafuso", "rebite", "politriz", "retifica",
     ]),
-    ("Mobilidade", [
-        "bicicleta", "scooter", "patinete", "skate eletrico", "monociclo",
+    ("Computadores", [
+        "computador", "pc gamer", "cpu gamer", "notebook", "macbook",
+        "monitor", "teclado", "mouse", "mousepad", "headset", "gabinete",
+        "placa de video", "placa mãe", "placa mae", "memoria ram",
+        "memória ram", "ssd", "hd externo", "processador", "fonte atx",
+        "cooler", "webcam", "roteador", "impressora", "tablet", "ipad",
     ]),
-    ("Games e Informatica", [
-        "gabinete", "gamer", "teclado", "mouse", "headset", "monitor",
-        "notebook", "placa de video", "memoria ram", "ssd ",
+    ("Eletrônicos e Gadgets", [
+        "fone", "earbuds", "airpods", "smartwatch", "relogio inteligente",
+        "relógio inteligente", "caixa de som", "soundbar", "power bank",
+        "camera", "hub usb", "ring light", "smart tv", "projetor",
+        "microfone", "drone", "controle remoto universal", " Alexa ",
+        "google home", "carregador sem fio", "tripé", "tripé ",
     ]),
-    ("Eletronicos", [
-        "fone", "smartwatch", "caixa de som", "power bank", "camera",
-        "hub usb", "ring light", "smart tv", "projetor",
+    ("Moda e Beleza", [
+        "calcinha", "lingerie", "sutiã", "sutia", "vestido", "camiseta",
+        "blusa", "calça", "calca jeans", "short", "bolsa", "mochila fem",
+        "perfume", "maquiagem", "paleta", "batom", "sobrancelha",
+        "depilador", "secador", "chapinha", "escova de cabelo", "creme",
+        "skincare", "esmalte", "unhas", "shampoo", "condicionador",
+        "modeladora", "emagrecedora",
+    ]),
+    ("Casa e Limpeza", [
+        "panos de limpeza", "limpeza", "tira manchas", "percarbonato",
+        "detergente", "desinfetante", "esponja", "agua sanitaria",
+        "vassoura", "mop", "alvejante", "sabao", "organizador",
+        "jogo de cozinha", "utensilio", "toalha", "cortina", "lençol",
+        "jogo de cama",
     ]),
 ]
 
 
-def titulo_via_gemini(descricao: str) -> str:
-    """Deriva um titulo comercial limpo a partir da descricao do usuario."""
-    key = os.getenv("GEMINI_API_KEY", "")
-    if not key or not descricao:
-        return ""
-    try:
-        import requests as _rq
-        r = _rq.post(
-            "https://generativelanguage.googleapis.com/v1beta/models/"
-            "gemini-2.5-flash:generateContent?key=" + key,
-            json={
-                "contents": [
-                    {
-                        "parts": [
-                            {
-                                "text": (
-                                    "Responda APENAS com o nome comercial curto "
-                                    "do produto (maximo 80 caracteres), sem "
-                                    "explicacao, baseado nesta descricao de "
-                                    "anuncio:\n" + descricao[:500]
-                                )
-                            }
-                        ]
-                    }
-                ],
-                "generationConfig": {"temperature": 0.2},
-            },
-            timeout=30,
-        )
-        d = r.json()
-        t = clean_title(d["candidates"][0]["content"]["parts"][0]["text"])
-        if not titulo_ruim(t):
-            return t
-    except Exception as e:
-        print(f"  gemini titulo falhou: {str(e)[:70]}")
-    return ""
+def _norm_txt(t: str) -> str:
+    """minusculo sem acentos, para comparar titulo com palavras-chave."""
+    import unicodedata
+    t = (t or "").lower()
+    return "".join(
+        c for c in unicodedata.normalize("NFD", t)
+        if unicodedata.category(c) != "Mn"
+    )
 
 
 def classifica_categoria(titulo: str) -> str:
-    tl = (titulo or "").lower()
+    tl = _norm_txt(titulo)
     for cat, kws in CATS_KW:
-        for kw in kws:
-            if kw in tl:
-                return cat
+        if any(_norm_txt(kw) in tl for kw in kws):
+            return cat
     return "Outros"
 
 
