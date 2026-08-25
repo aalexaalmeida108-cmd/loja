@@ -36,6 +36,10 @@ jobs:
           git config user.name "vitrine-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -A
-          git pull --rebase origin main || true
           git diff --cached --quiet || git commit -m "Produtos coletados automaticamente [skip ci]"
-          git push
+          ok=""
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then ok=1; break; fi
+            sleep 10
+          done
+          [ -n "" ]
