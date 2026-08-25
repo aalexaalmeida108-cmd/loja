@@ -418,6 +418,44 @@ CATS_KW = [
 ]
 
 
+def titulo_via_gemini(descricao: str) -> str:
+    """Deriva um titulo comercial limpo a partir da descricao do usuario."""
+    key = os.getenv("GEMINI_API_KEY", "")
+    if not key or not descricao:
+        return ""
+    try:
+        import requests as _rq
+        r = _rq.post(
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            "gemini-2.5-flash:generateContent?key=" + key,
+            json={
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": (
+                                    "Responda APENAS com o nome comercial curto "
+                                    "do produto (maximo 80 caracteres), sem "
+                                    "explicacao, baseado nesta descricao de "
+                                    "anuncio:\n" + descricao[:500]
+                                )
+                            }
+                        ]
+                    }
+                ],
+                "generationConfig": {"temperature": 0.2},
+            },
+            timeout=30,
+        )
+        d = r.json()
+        t = clean_title(d["candidates"][0]["content"]["parts"][0]["text"])
+        if not titulo_ruim(t):
+            return t
+    except Exception as e:
+        print(f"  gemini titulo falhou: {str(e)[:70]}")
+    return ""
+
+
 def classifica_categoria(titulo: str) -> str:
     tl = (titulo or "").lower()
     for cat, kws in CATS_KW:
@@ -679,6 +717,17 @@ def main():
                 r["desc"] = texto[:300]
                 achou = True
                 print(f"descricao marcada: #{num}")
+                cat_atual = (r.get("categoria") or "").strip()
+                if not cat_atual or cat_atual.lower() == "outros":
+                    nova = classifica_final(f"{r.get('title', '')} {texto}")
+                    if nova and nova.lower() != "outros":
+                        r["categoria"] = nova
+                        print(f"  categoria pela descricao: [{nova}]")
+                if titulo_ruim(r.get("title")):
+                    novo_t = titulo_via_gemini(texto)
+                    if novo_t:
+                        r["title"] = novo_t
+                        print(f"  titulo derivado da descricao: {novo_t!r}")
         if not achou:
             print(f"produto #{num} nao existe para descricao")
 
