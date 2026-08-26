@@ -573,6 +573,29 @@ def classifica_final(titulo: str) -> str:
     return g if g else "Outros"
 
 
+CMD_FIM_RE = re.compile(r"\s*/[a-zA-Z]+\s*$")
+
+
+def limpa_desc(texto: str) -> str:
+    """Remove comandos digitados por engano no fim da descricao (ex: /listar)."""
+    t = (texto or "").strip()
+    while True:
+        novo = CMD_FIM_RE.sub("", t).strip()
+        if novo == t:
+            break
+        t = novo
+    return t
+
+
+def titulo_do_texto(texto: str) -> str:
+    """Fallback local: deriva titulo do padrao 'NOME por R$...' da Shopee."""
+    t = limpa_desc(texto)
+    m = re.search(r"^(.*?)\s+por\s+R\$", t, re.IGNORECASE)
+    if m and len(m.group(1).strip()) >= 8:
+        return m.group(1).strip()
+    return ""
+
+
 # ---------------- registro e pedidos ----------------
 
 def carregar_registro():
@@ -607,7 +630,7 @@ def parse_pedidos():
                         continue
                     m = re.match(r"^desc\s+(\d+)\s+(.+)$", ln, re.I)
                     if m:
-                        descs[int(m.group(1))] = m.group(2).strip()
+                        descs[int(m.group(1))] = limpa_desc(m.group(2))
                         continue
                     m = re.match(r"^rem\s+(\d+)$", ln, re.I)
                     if m:
@@ -780,7 +803,7 @@ def main():
                         r["categoria"] = nova
                         print(f"  categoria pela descricao: [{nova}]")
                 if titulo_ruim(r.get("title")):
-                    novo_t = titulo_via_gemini(texto)
+                    novo_t = titulo_via_gemini(texto) or titulo_do_texto(texto)
                     if novo_t:
                         r["title"] = novo_t
                         print(f"  titulo derivado da descricao: {novo_t!r}")
