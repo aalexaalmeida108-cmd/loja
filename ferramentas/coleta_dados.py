@@ -476,6 +476,51 @@ def classifica_categoria(titulo: str) -> str:
     return "Outros"
 
 
+def titulo_via_gemini(texto: str) -> str:
+    """Deriva um titulo limpo de produto a partir do texto da descricao."""
+    key = os.getenv("GEMINI_API_KEY", "")
+    if not key or not texto:
+        return ""
+    try:
+        import requests as _rq
+        r = _rq.post(
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            "gemini-2.5-flash:generateContent?key=" + key,
+            json={
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": (
+                                    "Extraia o NOME do produto do texto abaixo "
+                                    "(descricao copiada da Shopee). Responda APENAS "
+                                    "com o nome curto do produto em portugues "
+                                    "(max 10 palavras), sem preco, sem 'Compre na "
+                                    "Shopee', sem comandos como /listar. "
+                                    "Nao explique.\nTexto: " + texto
+                                )
+                            }
+                        ]
+                    }
+                ],
+                "generationConfig": {"temperature": 0.2},
+            },
+            timeout=30,
+        )
+        d = r.json()
+        t = (
+            d["candidates"][0]["content"]["parts"][0]["text"]
+            .strip()
+            .strip(".")
+            .splitlines()[0]
+        )
+        if 8 <= len(t) <= 100 and "shopee" not in t.lower():
+            return t
+    except Exception as e:
+        print(f"  gemini titulo falhou: {str(e)[:80]}")
+    return ""
+
+
 def classifica_gemini(titulo: str) -> str:
     """Pede ao Gemini uma categoria curta quando as regras nao conhecem."""
     key = os.getenv("GEMINI_API_KEY", "")
