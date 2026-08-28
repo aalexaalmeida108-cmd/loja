@@ -1,0 +1,5 @@
+URL: https://example.com
+Final: https://example.com/
+Titulo: Example Domain
+
+Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more
