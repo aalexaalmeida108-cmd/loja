@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 28/08/2026 19:51
+📈 Maiores Altas da Bolsa - 28/08/2026 20:10
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -9,22 +9,22 @@ Fonte: Investing.com (Brasil)
 | Ambev ON | 15,19 | +0,46% | 16,64M |
 | Banco do Brasil ON | 20,17 | +1,00% | 21,6M |
 | Bradesco ON | 15,04 | +0,53% | 3,77M |
-| Bradesco PN | 17,03 | +0,89% | 30,89M |
-| Braskem PN | 4,29 | +3,08% | 9,3M |
+| Bradesco PN | 17,08 | +0,89% | 30,89M |
+| Braskem PN | 4,35 | +3,08% | 9,3M |
 | B3 ON | 16,04 | +1,97% | 25,16M |
-| Cemig PN | 10,50 | +1,06% | 9,79M |
-| CPFL ON | 44,83 | +1,68% | 1,16M |
+| Cemig PN | 10,51 | +1,06% | 9,79M |
+| CPFL ON | 44,80 | +1,68% | 1,16M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
 | 1 | FII Grupo RCFA | 0,87 | +480,00% | 1,00 |
-| 2 | Casas Bahia ON | 0,40 | +17,65% | 21,64M |
-| 3 | Triunfo ON | 10,00 | +16,28% | 137,20mil |
-| 4 | Arandu Investimentos | 0,58 | +16,00% | 2,90mil |
-| 5 | Wetzel PN | 25,00 | +15,79% | 200,00 |
-| 6 | Fiset Reflorestamento | 0,080 | +14,29% | 3,00mil |
-| 7 | Gap BDR | 123,65 | +13,57% | 1,99mil |
+| 2 | Casas Bahia ON | 0,40 | +17,65% | 21,65M |
+| 3 | Casas Bahia ON | 0,40 | +17,65% | 21,64M |
+| 4 | Triunfo ON | 10,00 | +16,28% | 137,20mil |
+| 5 | Arandu Investimentos | 0,58 | +16,00% | 2,90mil |
+| 6 | Wetzel PN | 25,00 | +15,79% | 200,00 |
+| 7 | Fiset Reflorestamento | 0,080 | +14,29% | 3,00M |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
