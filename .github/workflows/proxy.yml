@@ -17,7 +17,7 @@ permissions:
 jobs:
   proxy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -30,32 +30,41 @@ jobs:
           pip install --quiet playwright
           python -m playwright install --with-deps chromium
 
-      - name: Define pedido
-        env:
-          INPUT_URL: ${{ inputs.url }}
+      - name: Cria pedido (modo dispatch por URL)
+        if: github.event_name == 'workflow_dispatch' && inputs.url != ''
         run: |
-          if [ -n "$INPUT_URL" ]; then
-            id=$(date +%s)
-            mkdir -p proxy/pedidos
-            echo "$INPUT_URL" > "proxy/pedidos/${id}.txt"
-          else
-            cd proxy/pedidos
-            id=$(ls -t *.txt 2>/dev/null | head -1 | sed 's/\.txt$//')
-            cd ../..
-          fi
-          echo "PROXY_ID=$id" >> "$GITHUB_ENV"
-          echo "Pedido id=$id url=$(cat proxy/pedidos/$id.txt)"
+          id=$(date +%s)
+          mkdir -p proxy/pedidos
+          echo "${{ inputs.url }}" > "proxy/pedidos/${id}.txt"
 
-      - name: Busca a pagina
+      - name: Processa todos os pedidos pendentes
         run: |
-          python proxy/busca/busca_pagina.py "$(cat proxy/pedidos/${{ env.PROXY_ID }}.txt)" "proxy/resultados/${{ env.PROXY_ID }}.txt"
+          erro_total=0
+          for pedido in proxy/pedidos/*.txt; do
+            [ -e "$pedido" ] || continue
+            id=$(basename "$pedido" .txt)
+            saida="proxy/resultados/${id}.txt"
+            if [ -e "$saida" ]; then
+              echo "Ja processado: $id - remove pedido"
+              rm -f "$pedido"
+              continue
+            fi
+            echo "Processando pedido $id: $(cat "$pedido")"
+            if python proxy/busca/busca_pagina.py "$(cat "$pedido")" "$saida"; then
+              echo "OK: $id"
+            else
+              echo "FALHOU: $id"
+              erro_total=1
+            fi
+            rm -f "$pedido"
+          done
 
-      - name: Commit resultado
+      - name: Commit resultados e remove pedidos processados
         run: |
           git config user.name "vitrine-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add proxy/resultados
-          git diff --cached --quiet || git commit -m "Resultado proxy ${{ env.PROXY_ID }} [skip ci]"
+          git add proxy/resultados proxy/pedidos
+          git diff --cached --quiet || git commit -m "Resultados proxy [skip ci]"
           ok=""
           for i in 1 2 3; do
             if git pull --rebase origin main && git push; then ok=1; break; fi
