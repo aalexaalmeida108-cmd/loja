@@ -1,0 +1,64 @@
+name: Proxy web (busca qualquer site)
+
+on:
+  push:
+    paths:
+      - "proxy/pedidos/**"
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL a ser acessada"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  proxy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instala dependencias
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Define pedido
+        env:
+          INPUT_URL: ${{ inputs.url }}
+        run: |
+          if [ -n "$INPUT_URL" ]; then
+            id=$(date +%s)
+            mkdir -p proxy/pedidos
+            echo "$INPUT_URL" > "proxy/pedidos/${id}.txt"
+          else
+            cd proxy/pedidos
+            id=$(ls -t *.txt 2>/dev/null | head -1 | sed 's/\.txt$//')
+            cd ../..
+          fi
+          echo "PROXY_ID=$id" >> "$GITHUB_ENV"
+          echo "Pedido id=$id url=$(cat proxy/pedidos/$id.txt)"
+
+      - name: Busca a pagina
+        run: |
+          python proxy/busca/busca_pagina.py "$(cat proxy/pedidos/${{ env.PROXY_ID }}.txt)" "proxy/resultados/${{ env.PROXY_ID }}.txt"
+
+      - name: Commit resultado
+        run: |
+          git config user.name "vitrine-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add proxy/resultados
+          git diff --cached --quiet || git commit -m "Resultado proxy ${{ env.PROXY_ID }} [skip ci]"
+          ok=""
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then ok=1; break; fi
+            sleep 10
+          done
+          [ -n "$ok" ]
