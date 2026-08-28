@@ -1,0 +1,61 @@
+URL: https://retaguarda.sambats.com.br/fortaleza/Principal.aspx
+
+Preciso que vc acesse essa página 
+Vai até relatórios 
+Manutenção 
+Relatórios por mecânicos 
+Coloque a data de de ontem 27 e baixe o relatório e depois coloque aqui no para eu ver ok
+Final: https://retaguarda.sambats.com.br/fortaleza/Principal.aspxPreciso%20que%20vc%20acesse%20essa%20p%C3%A1gina%20Vai%20at%C3%A9%20relat%C3%B3rios%20Manuten%C3%A7%C3%A3o%20Relat%C3%B3rios%20por%20mec%C3%A2nicos%20Coloque%20a%20data%20de%20de%20ontem%2027%20e%20baixe%20o%20relat%C3%B3rio%20e%20depois%20coloque%20aqui%20no%20para%20eu%20ver%20ok
+Titulo: IIS 8.5 Detailed Error - 404.0 - Not Found
+
+ 
+ 
+ 
+  HTTP Error 404.0 - Not Found 
+  The resource you are looking for has been removed, had its name changed, or is temporarily unavailable. 
+ 
+ 
+ Most likely causes: 
+   	The directory or file specified does not exist on the Web server. 	The URL contains a typographical error. 	A custom filter or module, such as URLScan, restricts access to the file.  
+  
+ 
+ 
+ Things you can try: 
+   	Create the content on the Web server. 	Review the browser URL. 	Create a tracing rule to track failed requests for this HTTP status code and see which module is calling SetStatus. For more information about creating a tracing rule for failed requests, click here.   
+  
+ 
+ 
+ 
+ Detailed Error Information: 
+   
+    
+    Module   IIS Web Core 
+    Notification   MapRequestHandler 
+    Handler   StaticFile 
+    Error Code   0x80070002 
+     
+    
+   
+   
+    
+    Requested URL   https://retaguarda.sambats.com.br:443/fortaleza/Principal.aspxPreciso que vc acesse essa página Vai até relatórios Manutenção Relatórios por mecânicos Coloque a data de de ontem 27 e baixe o relatório e depois coloque aqui no para eu ver ok 
+    Physical Path   E:\Sites\SAMBA\retaguarda.sambats.com.br\fortaleza\Principal.aspxPreciso que vc acesse essa página Vai até relatórios Manutenção Relatórios por mecânicos Coloque a data de de ontem 27 e baixe o relatório e depois coloque aqui no para eu ver ok 
+    Logon Method   Anonymous 
+    Logon User   Anonymous 
+     
+    
+    
+   
+  
+ 
+ 
+ 
+ More Information: 
+  This error means that the file or directory does not exist on the server. Create the file or directory and try the request again. 
+  View more information » 
+   
+  
+ 
+ 
+ 
+ 
