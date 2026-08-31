@@ -1,41 +1,42 @@
-📈 Maiores Altas da Bolsa - 28/08/2026 20:10
+📈 Maiores Altas da Bolsa - 31/08/2026 16:21
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 14,88 | +0,47% | 4,08M |
-| Allos ON | 26,41 | +0,76% | 2,34M |
-| Ambev ON | 15,19 | +0,46% | 16,64M |
-| Banco do Brasil ON | 20,17 | +1,00% | 21,6M |
-| Bradesco ON | 15,04 | +0,53% | 3,77M |
-| Bradesco PN | 17,08 | +0,89% | 30,89M |
-| Braskem PN | 4,35 | +3,08% | 9,3M |
-| B3 ON | 16,04 | +1,97% | 25,16M |
-| Cemig PN | 10,51 | +1,06% | 9,79M |
-| CPFL ON | 44,80 | +1,68% | 1,16M |
+| Rumo ON | 15,17 | +1,95% | 4,59M |
+| Allos ON | 26,83 | +1,59% | 2,84M |
+| Azzas 2154 ON | 14,97 | +2,11% | 1,63M |
+| Banco do Brasil ON | 20,77 | +2,97% | 33,09M |
+| Bradesco ON | 15,17 | +0,86% | 3,12M |
+| Bradesco PN | 17,20 | +0,70% | 16,09M |
+| B3 ON | 16,41 | +2,31% | 14,72M |
+| Motiva ON | 15,60 | +3,59% | 14,26M |
+| Cemig PN | 10,70 | +1,81% | 7,46M |
+| CPFL ON | 44,90 | +0,22% | 1,02M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | FII Grupo RCFA | 0,87 | +480,00% | 1,00 |
-| 2 | Casas Bahia ON | 0,40 | +17,65% | 21,65M |
-| 3 | Casas Bahia ON | 0,40 | +17,65% | 21,64M |
-| 4 | Triunfo ON | 10,00 | +16,28% | 137,20mil |
-| 5 | Arandu Investimentos | 0,58 | +16,00% | 2,90mil |
-| 6 | Wetzel PN | 25,00 | +15,79% | 200,00 |
-| 7 | Fiset Reflorestamento | 0,080 | +14,29% | 3,00M |
+| 1 | Casas Bahia ON | 0,63 | +57,50% | 28,10M |
+| 2 | GoPro BDR | 4,20 | +35,48% | 39,35mil |
+| 3 | FII RBR Desenvolvimento Comercial Feeder FOF | 80,00 | +33,33% | 1,00 |
+| 4 | Azevedo & Travassos ON | 5,27 | +28,22% | 2,08M |
+| 5 | CEG ON | 35,00 | +16,67% | 600,00 |
+| 6 | Fiagro High | 14,00 | +15,61% | 139,00 |
+| 7 | FII Europar | 350,00 | +15,14% | 211,00 |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 141.50 | +0.45% |
-| AMZN | Amazon.com, Inc. | 266.43 | +3.97% |
-| AAPL | Apple Inc. | 319.70 | +1.63% |
-| RIG | Transocean Ltd. | 5.80 | +1.05% |
-| BAC | Bank of America Corporation | 62.32 | +1.88% |
-| AUR | Aurora Innovation, Inc. | 5.83 | +2.46% |
-| CRM | Salesforce, Inc. | 256.00 | +1.57% |
+| NU | Nu Holdings Ltd. | 14.56 | +1.85% |
+| NVDA | NVIDIA Corporation | 219.01 | +0.67% |
+| PATH | UiPath, Inc. | 18.47 | +1.78% |
+| TSLA | Tesla, Inc. | 365.80 | +4.89% |
+| SPCX | Space Exploration Technologies Corp. | 142.41 | +0.64% |
+| ABEV | Ambev S.A. | 2.87 | +0.38% |
+| PURR | Hyperliquid Strategies Inc. | 11.88 | +2.28% |
+| SNAP | Snap Inc. | 5.53 | +1.84% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
