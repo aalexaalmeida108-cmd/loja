@@ -1,42 +1,41 @@
-📈 Maiores Altas da Bolsa - 31/08/2026 21:01
+📈 Maiores Altas da Bolsa - 01/09/2026 14:07
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 15,08 | +1,34% | 9,66M |
-| Allos ON | 26,69 | +1,06% | 4,71M |
-| Azzas 2154 ON | 14,86 | +1,36% | 2,11M |
-| Banco do Brasil ON | 20,74 | +2,83% | 44,96M |
-| Bradesco ON | 15,17 | +0,86% | 10,22M |
-| Bradesco PN | 17,19 | +0,64% | 40,26M |
-| B3 ON | 16,22 | +1,12% | 32,5M |
-| Motiva ON | 15,46 | +2,66% | 19,58M |
-| Cemig PN | 10,70 | +1,81% | 20,27M |
-| COPEL ON | 14,95 | +1,84% | 22,66M |
+| Rumo ON | 15,35 | +1,79% | 3,39M |
+| Allos ON | 27,36 | +2,51% | 4,22M |
+| Ambev ON | 15,23 | +1,33% | 19M |
+| Azzas 2154 ON | 15,21 | +2,36% | 1,31M |
+| Banco do Brasil ON | 21,32 | +2,80% | 13,33M |
+| Bradesco ON | 15,26 | +0,59% | 3,41M |
+| Bradesco PN | 17,32 | +0,76% | 22,9M |
+| Minerva ON | 3,88 | +1,57% | 9,81M |
+| Bradespar PN | 22,46 | +2,09% | 825,3K |
+| B3 ON | 16,73 | +3,14% | 22,89M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | Casas Bahia ON | 0,67 | +67,50% | 34,99M |
-| 2 | Casas Bahia ON | 0,66 | +65,00% | 34,56M |
-| 3 | GoPro BDR | 4,57 | +47,42% | 57,72mil |
-| 4 | FII RBR Desenvolvimento Comercial Feeder FOF | 80,00 | +33,33% | 1,00 |
-| 5 | Azevedo & Travassos ON | 5,45 | +32,60% | 2,38M |
-| 6 | Azul Unt | 7,34 | +24,41% | 10,00 |
-| 7 | Fiagro High | 14,74 | +21,72% | 140,00 |
+| 1 | Phillips 66 BDR | 79,92 | +49,19% | 204,00 |
+| 2 | GoPro BDR | 6,71 | +46,83% | 55,51mil |
+| 3 | Casas Bahia ON | 0,91 | +37,88% | 39,34M |
+| 4 | Wetzel PN | 31,50 | +21,15% | 2,30mil |
+| 5 | Azevedo & Travassos ON | 6,47 | +18,72% | 995,50mil |
+| 6 | Huntington Ingalls Industries BDR | 23,53 | +15,36% | 1,00 |
+| 7 | Raizen PN | 0,27 | +17,39% | 26,13M |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| CNH | CNH Industrial N.V. | 11.83 | +1.28% |
-| NVDA | NVIDIA Corporation | 220.78 | +1.48% |
-| NU | Nu Holdings Ltd. | 14.55 | +1.75% |
-| INTC | Intel Corporation | 89.51 | +0.04% |
-| SPCX | Space Exploration Technologies Corp. | 143.69 | +1.55% |
-| PATH | UiPath, Inc. | 18.67 | +2.87% |
-| TSLA | Tesla, Inc. | 367.95 | +5.51% |
-| ABEV | Ambev S.A. | 2.87 | +0.35% |
+| PCG | PG&E Corporation | 13.41 | +1.02% |
+| AAPL | Apple Inc. | 325.31 | +2.67% |
+| FRVO | Fervo Energy Company | 19.57 | +27.26% |
+| PFE | Pfizer Inc. | 28.60 | +0.51% |
+| GRAB | Grab Holdings Limited | 3.56 | +0.44% |
+| BBD | Banco Bradesco S.A. | 3.33 | +1.37% |
+| RIG | Transocean Ltd. | 5.97 | +2.67% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
