@@ -1,42 +1,42 @@
-📈 Maiores Altas da Bolsa - 03/09/2026 13:52
+📈 Maiores Altas da Bolsa - 03/09/2026 14:07
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 14,70 | +0,27% | 7,93M |
-| Allos ON | 28,96 | +1,51% | 6,26M |
-| Ambev ON | 15,70 | +0,64% | 15,49M |
-| Azzas 2154 ON | 17,59 | +4,89% | 3,2M |
-| B3 ON | 17,43 | +0,98% | 23,81M |
-| Motiva ON | 16,30 | +0,80% | 9,79M |
-| Cemig PN | 11,12 | +1,37% | 8,91M |
-| CPFL ON | 47,02 | +2,04% | 556,9K |
-| COPEL ON | 15,78 | +1,15% | 10,92M |
-| Cosan ON | 3,80 | +0,26% | 25,98M |
+| Allos ON | 28,95 | +1,47% | 6,42M |
+| Ambev ON | 15,68 | +0,51% | 16,11M |
+| Azzas 2154 ON | 17,67 | +5,37% | 3,3M |
+| B3 ON | 17,44 | +1,04% | 24,7M |
+| Motiva ON | 16,31 | +0,87% | 10,2M |
+| Cemig PN | 11,12 | +1,37% | 9,24M |
+| CPFL ON | 47,02 | +2,04% | 586K |
+| COPEL ON | 15,77 | +1,09% | 11,32M |
+| Cosan ON | 3,83 | +1,06% | 28,27M |
+| CSN ON | 6,17 | +3,18% | 31,94M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
 | 1 | Perrigo Co BDR | 73,22 | +47,49% | 18,00 |
-| 2 | Grupo Toky | 11,30 | +33,57% | 47,90mil |
-| 3 | Snowflake BDR | 47,09 | +20,10% | 7,35mil |
-| 4 | Azevedo & Travassos ON | 7,85 | +18,22% | 699,60mil |
-| 5 | Microstrategy DRC | 10,24 | +14,80% | 2,69M |
+| 2 | Grupo Toky | 11,31 | +33,69% | 48,50mil |
+| 3 | Snowflake BDR | 47,57 | +21,32% | 7,40mil |
+| 4 | Azevedo & Travassos ON | 7,90 | +18,98% | 811,10mil |
+| 5 | Microstrategy DRC | 10,25 | +14,91% | 2,74M |
 | 6 | Cigna Corp BDR | 66,20 | +10,91% | 15,00 |
-| 7 | Paranapanema ON | 0,21 | +10,53% | 9,83M |
+| 7 | Alnylam Pharmaceuticals BDR | 67,41 | +9,29% | 365,00 |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 151.41 | +7.60% |
-| NVDA | NVIDIA Corporation | 227.50 | +1.38% |
-| TSLA | Tesla, Inc. | 382.12 | +7.03% |
-| NU | Nu Holdings Ltd. | 15.48 | +0.49% |
-| NIO | NIO Inc. | 3.87 | +0.25% |
-| ONDS | Ondas Inc. | 7.64 | +0.46% |
-| MARA | MARA Holdings, Inc. | 11.45 | +9.37% |
-| BMNR | Bitmine Immersion Technologies, Inc. | 25.86 | +12.16% |
+| SPCX | Space Exploration Technologies Corp. | 150.79 | +7.16% |
+| NVDA | NVIDIA Corporation | 227.53 | +1.39% |
+| NU | Nu Holdings Ltd. | 15.56 | +1.07% |
+| TSLA | Tesla, Inc. | 382.49 | +7.14% |
+| NIO | NIO Inc. | 3.87 | +0.26% |
+| ONDS | Ondas Inc. | 7.62 | +0.08% |
+| MARA | MARA Holdings, Inc. | 11.43 | +9.17% |
+| BMNR | Bitmine Immersion Technologies, Inc. | 25.88 | +12.21% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
