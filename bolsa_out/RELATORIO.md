@@ -1,42 +1,42 @@
-📈 Maiores Altas da Bolsa - 08/09/2026 14:21
+📈 Maiores Altas da Bolsa - 08/09/2026 17:07
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 14,59 | +0,27% | 5,26M |
-| Allos ON | 29,01 | +0,69% | 3,29M |
-| Ambev ON | 15,79 | +0,32% | 13,68M |
-| Banco do Brasil ON | 22,72 | +0,89% | 20,15M |
-| Bradesco ON | 16,10 | +1,83% | 4,86M |
-| Bradesco PN | 18,24 | +1,90% | 27,47M |
-| Bradespar PN | 22,94 | +2,05% | 1,06M |
-| B3 ON | 17,63 | +1,50% | 24,74M |
-| Motiva ON | 16,22 | +0,23% | 7,34M |
-| Cemig PN | 11,60 | +3,02% | 9,26M |
+| Allos ON | 29,12 | +1,08% | 5,33M |
+| Ambev ON | 15,80 | +0,38% | 23,22M |
+| Banco do Brasil ON | 22,65 | +0,58% | 28,16M |
+| Bradesco ON | 16,10 | +1,83% | 7,08M |
+| Bradesco PN | 18,20 | +1,68% | 39,4M |
+| Bradespar PN | 22,90 | +1,87% | 1,64M |
+| B3 ON | 17,60 | +1,32% | 31,7M |
+| Motiva ON | 16,27 | +0,54% | 12,8M |
+| Cemig PN | 11,67 | +3,64% | 16,47M |
+| CPFL ON | 47,13 | +0,64% | 1,81M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | Roblox Corp BDR | 23,18 | +21,87% | 7,54mil |
-| 2 | Paranapanema ON | 0,37 | +15,63% | 21,05M |
-| 3 | iQIYI DRC | 2,48 | +12,22% | 247,00 |
-| 4 | FII Vida Nova | 2,88 | +10,77% | 551,00 |
-| 5 | Solaredge Tech DRC | 5,38 | +10,70% | 92,40mil |
-| 6 | Viveo ON | 0,82 | +7,89% | 2,42M |
-| 7 | FII Novo Horizonte | 14,19 | +10,00% | 1,00 |
+| 1 | Paranapanema ON | 0,49 | +53,13% | 39,73M |
+| 2 | Roblox Corp BDR | 22,83 | +20,03% | 7,97mil |
+| 3 | iQIYI DRC | 2,49 | +12,67% | 357,00 |
+| 4 | Solaredge Tech DRC | 5,43 | +11,73% | 99,10mil |
+| 5 | Banco Mercantil de Investimentos PN | 21,000 | +11,35% | 100,00 |
+| 6 | Bilibili BDR | 16,58 | +10,02% | 628,00 |
+| 7 | Lumen Tech BDR | 34,22 | +9,68% | 595,00 |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| INTC | Intel Corporation | 105.85 | +10.49% |
-| NOK | Nokia Oyj | 10.81 | +7.73% |
-| SPCX | Space Exploration Technologies Corp. | 152.85 | +3.31% |
-| PLUG | Plug Power Inc. | 2.31 | +6.22% |
-| NU | Nu Holdings Ltd. | 15.38 | +0.03% |
-| CRWV | CoreWeave, Inc. | 103.17 | +15.45% |
-| TSLA | Tesla, Inc. | 367.80 | +3.88% |
-| IREN | IREN Limited | 48.34 | +8.19% |
+| INTC | Intel Corporation | 104.47 | +9.05% |
+| NOK | Nokia Oyj | 10.66 | +6.28% |
+| SPCX | Space Exploration Technologies Corp. | 153.47 | +3.73% |
+| PLUG | Plug Power Inc. | 2.26 | +4.15% |
+| PCG | PG&E Corporation | 14.82 | +3.63% |
+| MARA | MARA Holdings, Inc. | 11.83 | +4.60% |
+| CRWV | CoreWeave, Inc. | 99.81 | +11.69% |
+| SMR | NuScale Power Corporation | 11.16 | +15.11% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
