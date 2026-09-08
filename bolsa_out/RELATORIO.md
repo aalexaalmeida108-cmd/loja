@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 08/09/2026 17:37
+📈 Maiores Altas da Bolsa - 08/09/2026 19:54
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -23,8 +23,8 @@ Fonte: Investing.com (Brasil)
 | 3 | iQIYI DRC | 2,53 | +14,48% | 557,00 |
 | 4 | Banco Mercantil de Investimentos PN | 21,000 | +11,35% | 100,00 |
 | 5 | Solaredge Tech DRC | 5,41 | +11,32% | 99,15mil |
-| 6 | Seagate Technology BDR | 84,99 | +9,66% | 16,88mil |
-| 7 | Bilibili BDR | 16,46 | +9,22% | 1,28mil |
+| 6 | MRS Logistica B | 36,03 | +10,28% | 4,00 |
+| 7 | Seagate Technology BDR | 84,99 | +9,66% | 16,88mil |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
