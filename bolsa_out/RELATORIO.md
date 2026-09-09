@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 09/09/2026 19:11
+📈 Maiores Altas da Bolsa - 09/09/2026 19:41
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -30,7 +30,6 @@ Fonte: Investing.com (Brasil)
 | AAL | American Airlines Group Inc. | 12.94 | +0.23% |
 | MARA | MARA Holdings, Inc. | 11.92 | +0.76% |
 | BAC | Bank of America Corporation | 62.67 | +0.45% |
-| META | Meta Platforms, Inc. | 653.69 | +6.55% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
