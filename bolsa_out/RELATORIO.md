@@ -1,42 +1,32 @@
-📈 Maiores Altas da Bolsa - 08/09/2026 20:07
+📈 Maiores Altas da Bolsa - 09/09/2026 13:59
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Allos ON | 29,22 | +1,42% | 5,79M |
-| Ambev ON | 15,82 | +0,51% | 25,56M |
-| Banco do Brasil ON | 22,60 | +0,36% | 30,08M |
-| Bradesco ON | 16,04 | +1,45% | 8,61M |
-| Bradesco PN | 18,22 | +1,79% | 43,05M |
-| Minerva ON | 3,96 | +0,25% | 30,9M |
-| Bradespar PN | 22,90 | +1,87% | 1,77M |
-| B3 ON | 17,64 | +1,55% | 35,79M |
-| Motiva ON | 16,28 | +1,37% | 14,24M |
-| Cemig PN | 11,70 | +3,91% | 18,85M |
+| CSN ON | 6,89 | +4,08% | 19,48M |
+| Embraer ON | 95,44 | +1,28% | 2,78M |
+| YDUQS ON | 10,14 | +1,91% | 4,48M |
+| Prio ON | 62,57 | +0,92% | 11,68M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | FII Grupo RCFA | 0,90 | +1.700,00% | 1,00 |
-| 2 | Paranapanema ON | 0,49 | +53,13% | 40,58M |
-| 3 | Roblox Corp BDR | 22,83 | +20,03% | 7,97mil |
-| 4 | iQIYI DRC | 2,53 | +14,48% | 557,00 |
-| 5 | Banco Mercantil de Investimentos PN | 21,000 | +11,35% | 100,00 |
-| 6 | Solaredge Tech DRC | 5,41 | +11,32% | 99,15mil |
-| 7 | MRS Logistica B | 36,03 | +10,28% | 4,00 |
+| 1 | FII Novo Horizonte | 14,24 | +16,72% | 61,00 |
+| 2 | Azevedo Travassos Energia | 1,73 | +15,33% | 1,93M |
+| 3 | Estrela PN | 1,420 | +13,60% | 1,90mil |
+| 4 | Fiset Reflorestamento | 0,090 | +12,50% | 19,00mil |
+| 5 | Marisa ON | 0,87 | +11,54% | 487,00mil |
+| 6 | Datadog BDR | 114,77 | +8,06% | 3,12mil |
+| 7 | Mosaic BDR | 22,66 | +7,23% | 12,35mil |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| INTC | Intel Corporation | 104.47 | +9.05% |
-| NOK | Nokia Oyj | 10.65 | +6.18% |
-| SPCX | Space Exploration Technologies Corp. | 153.47 | +3.73% |
-| PLUG | Plug Power Inc. | 2.26 | +4.15% |
-| PCG | PG&E Corporation | 14.82 | +3.64% |
-| SMR | NuScale Power Corporation | 11.18 | +15.26% |
-| MARA | MARA Holdings, Inc. | 11.83 | +4.60% |
-| CRWV | CoreWeave, Inc. | 99.83 | +11.72% |
+| NOK | Nokia Oyj | 10.86 | +2.02% |
+| INTC | Intel Corporation | 105.52 | +1.01% |
+| META | Meta Platforms, Inc. | 650.55 | +6.04% |
+| TSLA | Tesla, Inc. | 369.08 | +0.25% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
