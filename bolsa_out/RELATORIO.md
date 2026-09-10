@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 10/09/2026 19:13
+📈 Maiores Altas da Bolsa - 10/09/2026 19:44
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -8,7 +8,7 @@ Fonte: Investing.com (Brasil)
 | Allos ON | 29,07 | +1,93% | 3,94M |
 | Ambev ON | 15,74 | +1,03% | 21,31M |
 | Azzas 2154 ON | 17,00 | +2,16% | 2,27M |
-| Banco do Brasil ON | 22,80 | +2,80% | 32,4M |
+| Banco do Brasil ON | 22,80 | +2,80% | 32,52M |
 | Bradesco ON | 16,24 | +2,59% | 8,1M |
 | Bradesco PN | 18,41 | +3,88% | 51,41M |
 | Minerva ON | 4,00 | +0,76% | 37,29M |
