@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 14/09/2026 19:15
+📈 Maiores Altas da Bolsa - 14/09/2026 19:40
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -28,7 +28,7 @@ Fonte: Investing.com (Brasil)
 |---------|------|-------|------|
 | AAL | American Airlines Group Inc. | 13.10 | +0.69% |
 | PATH | UiPath, Inc. | 14.66 | +6.62% |
-| BMNR | Bitmine Immersion Technologies, Inc. | 25.72 | +2.74% |
+| BMNR | Bitmine Immersion Technologies, Inc. | 25.76 | +2.92% |
 | T | AT&T Inc. | 26.51 | +1.73% |
 | AAPL | Apple Inc. | 333.08 | +0.24% |
 | KVUE | Kenvue Inc. | 17.91 | +0.73% |
