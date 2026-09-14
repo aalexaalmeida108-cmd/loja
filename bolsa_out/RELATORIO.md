@@ -1,38 +1,39 @@
-📈 Maiores Altas da Bolsa - 14/09/2026 15:49
+📈 Maiores Altas da Bolsa - 14/09/2026 19:15
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Ambev ON | 15,85 | +1,47% | 20,4M |
-| B3 ON | 17,38 | +0,58% | 27,69M |
-| Copasa ON | 57,23 | +2,29% | 2,16M |
-| Axia Energia | 55,12 | +0,58% | 12,59M |
-| Fleury ON | 21,53 | +2,23% | 2,41M |
-| Hypera ON | 23,35 | +2,59% | 1,75M |
+| Ambev ON | 15,87 | +1,60% | 29,3M |
+| B3 ON | 17,36 | +0,52% | 38,21M |
+| Copasa ON | 57,05 | +1,64% | 3,15M |
+| Axia Energia | 54,98 | +0,49% | 15,42M |
+| YDUQS ON | 9,92 | +0,10% | 3,2M |
+| Fleury ON | 21,56 | +1,61% | 4M |
+| Hypera ON | 23,53 | +3,38% | 3,13M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
 | 1 | Fiagro High | 11,88 | +60,76% | 4,00 |
-| 2 | Azevedo & Travassos ON | 8,73 | +26,16% | 1,72M |
-| 3 | Fasa | 0,26 | +23,81% | 358,60mil |
-| 4 | FII RB Capital Desenvolvimento Residencial II | 2,00 | +16,28% | 46,00 |
-| 5 | Bombril PN | 1,58 | +17,91% | 82,70mil |
-| 6 | Sequoia ON | 0,08 | +14,29% | 10,02M |
-| 7 | RDVC City | 6,55 | +13,91% | 400,00 |
+| 2 | Contax Participacoes SA em Recuperacao Judicial | 1,46 | +38,19% | 500,00 |
+| 3 | FII Presidente Vargas | 30,99 | +20,44% | 1,00 |
+| 4 | Bombril PN | 1,60 | +19,40% | 141,40mil |
+| 5 | Azevedo & Travassos ON | 8,25 | +19,22% | 2,17M |
+| 6 | Fasa | 0,25 | +19,05% | 499,00mil |
+| 7 | Economatica | 1,24 | +16,98% | 61,80mil |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| ONDS | Ondas Inc. | 7.24 | +0.07% |
-| AAL | American Airlines Group Inc. | 13.19 | +1.42% |
-| PATH | UiPath, Inc. | 14.68 | +6.73% |
-| BMNR | Bitmine Immersion Technologies, Inc. | 25.64 | +2.44% |
-| SMR | NuScale Power Corporation | 8.63 | +0.19% |
-| KVUE | Kenvue Inc. | 18.08 | +1.66% |
-| AAPL | Apple Inc. | 334.57 | +0.69% |
-| SOFI | SoFi Technologies, Inc. | 17.54 | +1.27% |
+| AAL | American Airlines Group Inc. | 13.10 | +0.69% |
+| PATH | UiPath, Inc. | 14.66 | +6.62% |
+| BMNR | Bitmine Immersion Technologies, Inc. | 25.72 | +2.74% |
+| T | AT&T Inc. | 26.51 | +1.73% |
+| AAPL | Apple Inc. | 333.08 | +0.24% |
+| KVUE | Kenvue Inc. | 17.91 | +0.73% |
+| GOOGL | Alphabet Inc. | 349.39 | +3.22% |
+| SOFI | SoFi Technologies, Inc. | 17.65 | +1.91% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
