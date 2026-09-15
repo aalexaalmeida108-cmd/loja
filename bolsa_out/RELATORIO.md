@@ -1,39 +1,42 @@
-📈 Maiores Altas da Bolsa - 14/09/2026 19:40
+📈 Maiores Altas da Bolsa - 15/09/2026 14:27
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Ambev ON | 15,87 | +1,60% | 29,3M |
-| B3 ON | 17,36 | +0,52% | 38,21M |
-| Copasa ON | 57,05 | +1,64% | 3,15M |
-| Axia Energia | 54,98 | +0,49% | 15,42M |
-| YDUQS ON | 9,92 | +0,10% | 3,2M |
-| Fleury ON | 21,56 | +1,61% | 4M |
-| Hypera ON | 23,53 | +3,38% | 3,13M |
+| Rumo ON | 14,68 | +0,96% | 2,78M |
+| Allos ON | 28,46 | +0,07% | 1,39M |
+| Banco do Brasil ON | 22,23 | +0,50% | 10,77M |
+| Bradesco PN | 18,34 | +0,05% | 7,96M |
+| B3 ON | 17,53 | +0,92% | 15,84M |
+| Motiva ON | 16,42 | +0,24% | 4,28M |
+| CPFL ON | 44,76 | +0,07% | 989,7K |
+| COPEL ON | 15,97 | +0,31% | 5,19M |
+| Cosan ON | 3,62 | +0,28% | 17,03M |
+| Copasa ON | 57,34 | +0,83% | 1,19M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | Fiagro High | 11,88 | +60,76% | 4,00 |
-| 2 | Contax Participacoes SA em Recuperacao Judicial | 1,46 | +38,19% | 500,00 |
-| 3 | FII Presidente Vargas | 30,99 | +20,44% | 1,00 |
-| 4 | Bombril PN | 1,60 | +19,40% | 141,40mil |
-| 5 | Azevedo & Travassos ON | 8,25 | +19,22% | 2,17M |
-| 6 | Fasa | 0,25 | +19,05% | 499,00mil |
-| 7 | Economatica | 1,24 | +16,98% | 61,80mil |
+| 1 | Fasa | 0,40 | +60,00% | 561,90mil |
+| 2 | Twilio BDR | 50,10 | +26,84% | 60,00 |
+| 3 | Franco Nevada DRC | 7,57 | +25,96% | 2,83mil |
+| 4 | Verisk Analytics BDR | 12,52 | +25,36% | 54,00 |
+| 5 | Sansuy PNB | 2,72 | +12,86% | 1,20mil |
+| 6 | FII Edifício Galeria | 14,00 | +11,11% | 1,96mil |
+| 7 | UiPath DRC | 9,41 | +10,71% | 2,27mil |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| AAL | American Airlines Group Inc. | 13.10 | +0.69% |
-| PATH | UiPath, Inc. | 14.66 | +6.62% |
-| BMNR | Bitmine Immersion Technologies, Inc. | 25.76 | +2.92% |
-| T | AT&T Inc. | 26.51 | +1.73% |
-| AAPL | Apple Inc. | 333.08 | +0.24% |
-| KVUE | Kenvue Inc. | 17.91 | +0.73% |
-| GOOGL | Alphabet Inc. | 349.39 | +3.22% |
-| SOFI | SoFi Technologies, Inc. | 17.65 | +1.91% |
+| NOK | Nokia Oyj | 9.86 | +2.18% |
+| INTC | Intel Corporation | 97.76 | +0.59% |
+| NVDA | NVIDIA Corporation | 211.30 | +0.16% |
+| ONDS | Ondas Inc. | 7.36 | +1.73% |
+| RIG | Transocean Ltd. | 5.87 | +7.70% |
+| SNAP | Snap Inc. | 5.91 | +1.11% |
+| FPS | Forgent Power Solutions, Inc. | 31.90 | +11.38% |
+| TSLA | Tesla, Inc. | 359.20 | +0.06% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
