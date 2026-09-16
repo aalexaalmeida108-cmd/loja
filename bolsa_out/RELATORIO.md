@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 16/09/2026 17:47
+📈 Maiores Altas da Bolsa - 16/09/2026 18:33
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
@@ -30,8 +30,8 @@ Fonte: Investing.com (Brasil)
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
 | NOK | Nokia Oyj | 10.14 | +3.05% |
-| SPCX | Space Exploration Technologies Corp. | 150.88 | +5.15% |
 | INTC | Intel Corporation | 101.05 | +4.03% |
+| SPCX | Space Exploration Technologies Corp. | 150.88 | +5.15% |
 | NVDA | NVIDIA Corporation | 213.90 | +0.82% |
 | CIFR | Cipher Digital Inc. | 16.72 | +10.80% |
 | KEEL | Keel Infrastructure Corp. | 3.40 | +3.66% |
