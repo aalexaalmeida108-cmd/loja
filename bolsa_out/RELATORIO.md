@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 17/09/2026 20:20
+📈 Maiores Altas da Bolsa - 18/09/2026 13:54
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NOK | Nokia Oyj | 10.60 | +4.54% |
-| INTC | Intel Corporation | 108.80 | +7.67% |
-| NVDA | NVIDIA Corporation | 219.34 | +2.54% |
-| NU | Nu Holdings Ltd. | 13.84 | +0.22% |
-| AAL | American Airlines Group Inc. | 12.94 | +1.89% |
-| SPCX | Space Exploration Technologies Corp. | 154.81 | +2.60% |
-| MARA | MARA Holdings, Inc. | 11.64 | +5.43% |
-| ONDS | Ondas Inc. | 7.39 | +2.64% |
+| NOK | Nokia Oyj | 10.68 | +0.71% |
+| NVDA | NVIDIA Corporation | 219.52 | +0.08% |
+| MARA | MARA Holdings, Inc. | 12.89 | +10.70% |
+| CRWV | CoreWeave, Inc. | 80.15 | +0.34% |
+| BMNR | Bitmine Immersion Technologies, Inc. | 25.74 | +7.75% |
+| MSTR | Strategy Inc | 149.87 | +13.32% |
+| AAL | American Airlines Group Inc. | 13.02 | +0.58% |
+| AMZN | Amazon.com, Inc. | 253.76 | +1.02% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
