@@ -1,42 +1,42 @@
-📈 Maiores Altas da Bolsa - 18/09/2026 16:53
+📈 Maiores Altas da Bolsa - 18/09/2026 19:11
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 15,07 | +0,87% | 7,65M |
-| Allos ON | 28,72 | +1,52% | 3,55M |
-| Banco do Brasil ON | 23,07 | +1,27% | 32,69M |
-| Minerva ON | 3,98 | +4,46% | 30,72M |
-| B3 ON | 17,67 | +0,40% | 48,26M |
-| Motiva ON | 16,23 | +0,81% | 15,63M |
-| CPFL ON | 45,36 | +0,42% | 1,02M |
-| Copasa ON | 56,17 | +0,18% | 1,95M |
-| Cyrela ON | 26,57 | +3,47% | 10,04M |
-| Embraer ON | 96,92 | +1,37% | 2,48M |
+| Rumo ON | 15,08 | +0,20% | 14,44M |
+| Allos ON | 28,72 | +2,05% | 5,02M |
+| Banco do Brasil ON | 23,05 | +1,84% | 59,72M |
+| Minerva ON | 3,97 | +4,46% | 33,45M |
+| Motiva ON | 16,14 | +0,25% | 19,34M |
+| CPFL ON | 45,34 | +0,62% | 2,04M |
+| Copasa ON | 56,24 | +0,82% | 3,2M |
+| Cyrela ON | 26,67 | +3,86% | 11,53M |
+| Embraer ON | 97,08 | +1,54% | 5,04M |
+| Equatorial ON | 39,51 | +1,02% | 8,73M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | Fiset Pesca | 0,270 | +22,73% | 23,00mil |
-| 2 | FII Novo Horizonte | 14,41 | +21,91% | 3,00 |
-| 3 | Microstrategy DRC | 11,23 | +15,42% | 5,26M |
-| 4 | Coinbase BDR | 40,04 | +10,82% | 681,27mil |
-| 5 | CVC Brasil ON Forward | 1,56 | +9,86% | 500,00 |
-| 6 | Agrogalaxy ON | 0,71 | +9,23% | 283,80mil |
-| 7 | Estrela PN | 1,850 | +8,82% | 1,00mil |
+| 1 | Oncoclinicas ON | 1,04 | +24,04% | 6,05M |
+| 2 | Fiset Pesca | 0,270 | +22,73% | 23,00mil |
+| 3 | FII Novo Horizonte | 14,41 | +21,91% | 3,00 |
+| 4 | Microstrategy DRC | 11,29 | +15,21% | 5,38M |
+| 5 | Ambipar ON | 0,18 | +12,50% | 7,62M |
+| 6 | Coinbase BDR | 39,93 | +10,49% | 734,04mil |
+| 7 | Chipotle Mexican Grill BDR | 8,62 | +9,95% | 303,00 |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NOK | Nokia Oyj | 10.66 | +0.52% |
-| NVDA | NVIDIA Corporation | 219.78 | +0.20% |
-| MARA | MARA Holdings, Inc. | 13.26 | +13.87% |
-| CRWV | CoreWeave, Inc. | 81.20 | +1.65% |
-| BMNR | Bitmine Immersion Technologies, Inc. | 26.08 | +9.15% |
-| KEEL | Keel Infrastructure Corp. | 4.01 | +10.94% |
-| AAL | American Airlines Group Inc. | 13.01 | +0.50% |
-| MSTR | Strategy Inc | 153.26 | +15.89% |
+| NOK | Nokia Oyj | 10.68 | +0.75% |
+| NVDA | NVIDIA Corporation | 222.27 | +1.34% |
+| MARA | MARA Holdings, Inc. | 13.24 | +13.75% |
+| T | AT&T Inc. | 25.40 | +0.04% |
+| PFE | Pfizer Inc. | 27.66 | +0.07% |
+| KEEL | Keel Infrastructure Corp. | 4.01 | +11.08% |
+| CRWV | CoreWeave, Inc. | 81.36 | +1.85% |
+| P | Everpure, Inc. | 104.14 | +0.14% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
