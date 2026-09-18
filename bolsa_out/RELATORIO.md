@@ -1,10 +1,10 @@
-📈 Maiores Altas da Bolsa - 18/09/2026 19:11
+📈 Maiores Altas da Bolsa - 18/09/2026 19:45
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 15,08 | +0,20% | 14,44M |
+| Rumo ON | 15,08 | +0,20% | 15,18M |
 | Allos ON | 28,72 | +2,05% | 5,02M |
 | Banco do Brasil ON | 23,05 | +1,84% | 59,72M |
 | Minerva ON | 3,97 | +4,46% | 33,45M |
@@ -29,14 +29,14 @@ Fonte: Investing.com (Brasil)
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NOK | Nokia Oyj | 10.68 | +0.75% |
 | NVDA | NVIDIA Corporation | 222.27 | +1.34% |
+| NOK | Nokia Oyj | 10.68 | +0.75% |
 | MARA | MARA Holdings, Inc. | 13.24 | +13.75% |
-| T | AT&T Inc. | 25.40 | +0.04% |
 | PFE | Pfizer Inc. | 27.66 | +0.07% |
+| SKHY | SK hynix Inc. | 187.50 | +2.46% |
 | KEEL | Keel Infrastructure Corp. | 4.01 | +11.08% |
 | CRWV | CoreWeave, Inc. | 81.36 | +1.85% |
-| P | Everpure, Inc. | 104.14 | +0.14% |
+| BMNR | Bitmine Immersion Technologies, Inc. | 25.99 | +8.79% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
