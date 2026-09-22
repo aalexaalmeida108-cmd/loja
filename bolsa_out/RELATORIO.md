@@ -1,30 +1,30 @@
-📈 Maiores Altas da Bolsa - 22/09/2026 17:47
+📈 Maiores Altas da Bolsa - 22/09/2026 18:35
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 15,70 | +1,88% | 11,41M |
-| Allos ON | 29,81 | +0,37% | 5,87M |
-| Ambev ON | 15,55 | +0,70% | 18,71M |
-| Bradesco ON | 16,27 | +1,56% | 6,08M |
-| Bradesco PN | 18,42 | +1,43% | 37,4M |
-| Minerva ON | 3,99 | +1,79% | 14,67M |
-| Bradespar PN | 21,24 | +1,58% | 3,02M |
-| B3 ON | 18,51 | +1,54% | 74,86M |
-| Motiva ON | 16,62 | +0,73% | 6,66M |
-| Cemig PN | 11,36 | +0,62% | 7,98M |
+| Rumo ON | 15,70 | +1,62% | 13,18M |
+| Allos ON | 29,72 | +0,07% | 11,64M |
+| Ambev ON | 15,60 | +1,03% | 24,1M |
+| Bradesco ON | 16,30 | +1,75% | 8,09M |
+| Bradesco PN | 18,43 | +1,49% | 44,5M |
+| Minerva ON | 3,99 | +2,55% | 15,94M |
+| Bradespar PN | 21,32 | +1,96% | 3,32M |
+| B3 ON | 18,43 | +1,10% | 83,64M |
+| Motiva ON | 16,66 | +1,15% | 8,64M |
+| Cemig PN | 11,36 | +0,62% | 10,29M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | FII Panamby | 20,78 | +18,20% | 16,00 |
-| 2 | V2 Recebiveis Imobiliarios | 10,28 | +16,82% | 5,60mil |
+| 1 | FII Panamby | 20,78 | +18,20% | 17,00 |
+| 2 | V2 Recebiveis Imobiliarios | 10,28 | +16,82% | 6,16mil |
 | 3 | Fiset Reflorestamento | 0,080 | +14,29% | 8,00mil |
-| 4 | FII Kinea II Real Estate Equity | 0,25 | +13,64% | 1,21mil |
-| 5 | Twilio BDR | 57,55 | +9,20% | 4,57mil |
-| 6 | FII Torre Norte | 125,00 | +8,70% | 169,00 |
-| 7 | MongoDB BDR | 111,30 | +8,60% | 1,28mil |
+| 4 | Abbott BDR | 50,01 | +13,87% | 218,00 |
+| 5 | FII Kinea II Real Estate Equity | 0,25 | +13,64% | 1,21mil |
+| 6 | Ambipar ON | 0,22 | +10,00% | 3,16M |
+| 7 | Casas Bahia ON | 0,99 | +10,00% | 22,94M |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
