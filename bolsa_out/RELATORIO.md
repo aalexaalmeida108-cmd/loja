@@ -1,42 +1,36 @@
-📈 Maiores Altas da Bolsa - 22/09/2026 20:26
+📈 Maiores Altas da Bolsa - 23/09/2026 14:40
 Fonte: Investing.com (Brasil)
 
 📊 Altas no Pregão (principais ações)
 | Ativo | Último | Var% | Vol |
 |-------|--------|------|-----|
-| Rumo ON | 15,66 | +1,62% | 13,18M |
-| Allos ON | 29,72 | +0,07% | 11,64M |
-| Ambev ON | 15,60 | +1,10% | 24,1M |
-| Bradesco ON | 16,30 | +1,75% | 8,09M |
-| Bradesco PN | 18,43 | +1,49% | 44,5M |
-| Minerva ON | 4,02 | +2,55% | 15,94M |
-| Bradespar PN | 21,32 | +1,96% | 3,32M |
-| B3 ON | 18,43 | +1,10% | 83,64M |
-| Motiva ON | 16,69 | +1,15% | 8,64M |
-| Cemig PN | 11,36 | +0,62% | 10,29M |
+| Rumo ON | 16,03 | +2,36% | 7,93M |
+| Azzas 2154 ON | 14,90 | +0,20% | 1,89M |
+| B3 ON | 18,25 | +0,04% | 26,39M |
+| Cosan ON | 3,84 | +2,67% | 23,97M |
+| Copasa ON | 56,51 | +0,37% | 2,91M |
+| Embraer ON | 98,49 | +0,09% | 2,73M |
 
 🚀 Top Maiores Altas (Investing)
 | # | Ativo | Último | Var% | Vol |
 |---|-------|--------|------|-----|
-| 1 | FII Panamby | 20,78 | +18,20% | 17,00 |
-| 2 | V2 Recebiveis Imobiliarios | 10,28 | +16,82% | 6,16mil |
-| 3 | Fiset Reflorestamento | 0,080 | +14,29% | 8,00M |
-| 4 | Abbott BDR | 50,01 | +13,87% | 218,00 |
-| 5 | FII Kinea II Real Estate Equity | 0,25 | +13,64% | 1,21mil |
-| 6 | Casas Bahia ON | 0,99 | +10,00% | 22,94M |
-| 7 | Ambipar ON | 0,22 | +10,00% | 3,16M |
+| 1 | João Fortes ON | 2,29 | +21,81% | 7,90mil |
+| 2 | Contax Participacoes SA em Recuperacao Judicial | 1,62 | +14,08% | 1,10mil |
+| 3 | Trevisa PN | 3,25 | +10,92% | 5,50mil |
+| 4 | FII Panamby | 22,91 | +10,25% | 34,00 |
+| 5 | Recrusul PN | 0,34 | +13,33% | 4,35M |
+| 6 | Okta BDR | 52,45 | +6,95% | 165,00 |
+| 7 | Pátria Infraestrutura Energia Core FIP Infra | 32,74 | +6,26% | 2,25mil |
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| GRAB | Grab Holdings Limited | 3.17 | +8.93% |
-| WBD | Warner Bros. Discovery, Inc. | 30.83 | +0.10% |
-| SOFI | SoFi Technologies, Inc. | 17.16 | +1.12% |
-| NVDA | NVIDIA Corporation | 228.87 | +0.66% |
-| INTC | Intel Corporation | 123.86 | +1.71% |
-| AAL | American Airlines Group Inc. | 13.61 | +0.29% |
-| NU | Nu Holdings Ltd. | 14.16 | +0.71% |
-| ONDS | Ondas Inc. | 7.72 | +4.61% |
+| IONQ | IonQ, Inc. | 42.69 | +4.78% |
+| SMCI | Super Micro Computer, Inc. | 41.58 | +0.08% |
+| PLTR | Palantir Technologies Inc. | 191.27 | +3.39% |
+| TSLA | Tesla, Inc. | 379.33 | +0.11% |
+| CRWV | CoreWeave, Inc. | 87.42 | +0.76% |
+| T | AT&T Inc. | 25.55 | +1.79% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
