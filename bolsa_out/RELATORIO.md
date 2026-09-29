@@ -1,15 +1,17 @@
-📈 Maiores Altas da Bolsa - 28/09/2026 21:29
+📈 Maiores Altas da Bolsa - 29/09/2026 15:26
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NVDA | NVIDIA Corporation | 228.86 | +1.68% |
-| AMC | AMC Entertainment Holdings, Inc. | 3.29 | +11.90% |
-| ONDS | Ondas Inc. | 7.68 | +0.52% |
-| WBD | Warner Bros. Discovery, Inc. | 30.90 | +0.13% |
-| KOD | Kodiak Sciences Inc. | 89.92 | +177.96% |
-| NKE | NIKE, Inc. | 36.39 | +1.79% |
+| IOVA | Iovance Biotherapeutics, Inc. | 14.90 | +35.61% |
+| INTC | Intel Corporation | 116.38 | +0.30% |
+| CCL | Carnival Corporation Ltd. | 24.98 | +12.82% |
+| SPCX | Space Exploration Technologies Corp. | 147.76 | +1.58% |
+| NU | Nu Holdings Ltd. | 12.38 | +1.19% |
+| GRAB | Grab Holdings Limited | 3.13 | +0.97% |
+| PLUG | Plug Power Inc. | 1.91 | +2.96% |
+| NOK | Nokia Oyj | 10.36 | +2.37% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
