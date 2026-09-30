@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 30/09/2026 15:32
+📈 Maiores Altas da Bolsa - 30/09/2026 19:47
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NU | Nu Holdings Ltd. | 12.49 | +1.17% |
-| INTC | Intel Corporation | 119.27 | +2.88% |
-| NVDA | NVIDIA Corporation | 230.68 | +1.53% |
-| SPCX | Space Exploration Technologies Corp. | 151.26 | +1.36% |
-| PLUG | Plug Power Inc. | 1.96 | +2.62% |
-| ITUB | Itaú Unibanco Holding S.A. | 8.55 | +5.63% |
-| PATH | UiPath, Inc. | 12.81 | +4.02% |
-| VALE | Vale S.A. | 13.51 | +1.58% |
+| NU | Nu Holdings Ltd. | 12.66 | +2.51% |
+| WBD | Warner Bros. Discovery, Inc. | 30.95 | +0.32% |
+| NVDA | NVIDIA Corporation | 228.38 | +0.51% |
+| SPCX | Space Exploration Technologies Corp. | 150.86 | +1.09% |
+| INTC | Intel Corporation | 120.23 | +3.71% |
+| ITUB | Itaú Unibanco Holding S.A. | 8.53 | +5.44% |
+| AAPL | Apple Inc. | 333.02 | +1.10% |
+| PLUG | Plug Power Inc. | 1.94 | +1.57% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
