@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 29/09/2026 20:07
+📈 Maiores Altas da Bolsa - 30/09/2026 15:15
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 149.24 | +2.59% |
-| IOVA | Iovance Biotherapeutics, Inc. | 14.45 | +31.48% |
-| NU | Nu Holdings Ltd. | 12.35 | +0.98% |
-| CCL | Carnival Corporation Ltd. | 25.11 | +13.41% |
-| GRAB | Grab Holdings Limited | 3.12 | +0.81% |
-| AAL | American Airlines Group Inc. | 13.61 | +0.67% |
-| PLUG | Plug Power Inc. | 1.91 | +2.69% |
-| NOK | Nokia Oyj | 10.36 | +2.37% |
+| NU | Nu Holdings Ltd. | 12.51 | +1.26% |
+| INTC | Intel Corporation | 119.43 | +3.02% |
+| NVDA | NVIDIA Corporation | 230.77 | +1.57% |
+| SPCX | Space Exploration Technologies Corp. | 151.66 | +1.62% |
+| GRAB | Grab Holdings Limited | 3.13 | +0.32% |
+| PLUG | Plug Power Inc. | 1.96 | +2.62% |
+| ITUB | Itaú Unibanco Holding S.A. | 8.59 | +6.18% |
+| PATH | UiPath, Inc. | 12.81 | +3.98% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
