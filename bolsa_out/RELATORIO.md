@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 30/09/2026 20:09
+📈 Maiores Altas da Bolsa - 01/10/2026 15:45
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NU | Nu Holdings Ltd. | 12.66 | +2.51% |
-| WBD | Warner Bros. Discovery, Inc. | 30.95 | +0.32% |
-| NVDA | NVIDIA Corporation | 228.38 | +0.51% |
-| SPCX | Space Exploration Technologies Corp. | 150.86 | +1.09% |
-| INTC | Intel Corporation | 120.23 | +3.71% |
-| ITUB | Itaú Unibanco Holding S.A. | 8.53 | +5.44% |
-| AAPL | Apple Inc. | 333.02 | +1.10% |
-| PLUG | Plug Power Inc. | 1.94 | +1.57% |
+| NU | Nu Holdings Ltd. | 13.15 | +3.83% |
+| INTC | Intel Corporation | 120.71 | +0.40% |
+| NVDA | NVIDIA Corporation | 231.74 | +1.47% |
+| NOK | Nokia Oyj | 10.35 | +2.02% |
+| GRAB | Grab Holdings Limited | 3.12 | +0.16% |
+| NKE | NIKE, Inc. | 36.14 | +2.09% |
+| MU | Micron Technology, Inc. | 1,082.52 | +1.63% |
+| RKT | Rocket Companies, Inc. | 11.82 | +2.74% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
