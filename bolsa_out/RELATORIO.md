@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 01/10/2026 20:22
+📈 Maiores Altas da Bolsa - 02/10/2026 15:11
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NU | Nu Holdings Ltd. | 13.29 | +4.98% |
-| NVDA | NVIDIA Corporation | 230.86 | +1.09% |
-| NOK | Nokia Oyj | 10.37 | +2.27% |
-| GRAB | Grab Holdings Limited | 3.12 | +0.32% |
-| STLA | Stellantis N.V. | 4.69 | +7.57% |
-| RKT | Rocket Companies, Inc. | 11.97 | +4.00% |
-| SNAP | Snap Inc. | 5.65 | +4.63% |
-| F | Ford Motor Company | 12.27 | +1.74% |
+| NVDA | NVIDIA Corporation | 234.69 | +1.66% |
+| SPCX | Space Exploration Technologies Corp. | 158.65 | +7.15% |
+| NU | Nu Holdings Ltd. | 13.40 | +0.79% |
+| NOK | Nokia Oyj | 10.57 | +1.93% |
+| TSLA | Tesla, Inc. | 371.73 | +4.98% |
+| BBD | Banco Bradesco S.A. | 3.60 | +2.56% |
+| SMCI | Super Micro Computer, Inc. | 43.38 | +3.48% |
+| ITUB | Itaú Unibanco Holding S.A. | 8.47 | +0.22% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
