@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 02/10/2026 20:09
+📈 Maiores Altas da Bolsa - 05/10/2026 18:18
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 158.96 | +7.35% |
-| NVDA | NVIDIA Corporation | 233.95 | +1.34% |
-| NU | Nu Holdings Ltd. | 13.43 | +1.05% |
-| NOK | Nokia Oyj | 10.60 | +2.22% |
-| TSLA | Tesla, Inc. | 370.59 | +4.65% |
-| BBD | Banco Bradesco S.A. | 3.65 | +3.99% |
-| ITUB | Itaú Unibanco Holding S.A. | 8.59 | +1.70% |
-| VALE | Vale S.A. | 13.76 | +2.30% |
+| WBD | Warner Bros. Discovery, Inc. | 30.95 | +0.03% |
+| CTVA | Corteva, Inc. | 12.39 | +3.94% |
+| NU | Nu Holdings Ltd. | 15.18 | +13.03% |
+| BBD | Banco Bradesco S.A. | 4.33 | +18.75% |
+| SPCX | Space Exploration Technologies Corp. | 171.09 | +7.63% |
+| NVDA | NVIDIA Corporation | 238.90 | +2.12% |
+| ITUB | Itaú Unibanco Holding S.A. | 9.92 | +15.48% |
+| VALE | Vale S.A. | 14.15 | +2.83% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
