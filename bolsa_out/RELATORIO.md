@@ -1,17 +1,12 @@
-📈 Maiores Altas da Bolsa - 06/10/2026 20:12
+📈 Maiores Altas da Bolsa - 07/10/2026 16:11
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 171.92 | +0.49% |
-| NVDA | NVIDIA Corporation | 239.24 | +0.14% |
-| NU | Nu Holdings Ltd. | 15.66 | +3.16% |
-| BBD | Banco Bradesco S.A. | 4.51 | +4.16% |
-| NOK | Nokia Oyj | 10.97 | +7.55% |
-| OPCH | Option Care Health, Inc. | 31.00 | +32.65% |
-| AAL | American Airlines Group Inc. | 13.00 | +1.33% |
-| DNN | Denison Mines Corp. | 2.71 | +3.04% |
+| GRAB | Grab Holdings Limited | 3.07 | +0.00% |
+| SMCI | Super Micro Computer, Inc. | 45.40 | +4.46% |
+| OPEN | Opendoor Technologies Inc. | 2.28 | +0.44% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
