@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 08/10/2026 21:07
+📈 Maiores Altas da Bolsa - 09/10/2026 15:38
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| MDT | Medtronic plc | 87.75 | +2.62% |
-| CMG | Chipotle Mexican Grill, Inc. | 32.68 | +6.21% |
-| GRAB | Grab Holdings Limited | 3.11 | +0.97% |
-| BAC | Bank of America Corporation | 53.61 | +0.17% |
-| APLD | Applied Digital Corporation | 23.85 | +0.17% |
-| SKYD | Skydance Corporation | 9.28 | +4.39% |
-| T | AT&T Inc. | 24.87 | +1.63% |
-| CDE | Coeur Mining, Inc. | 16.87 | +2.24% |
+| SPCX | Space Exploration Technologies Corp. | 161.03 | +0.29% |
+| NU | Nu Holdings Ltd. | 15.95 | +3.71% |
+| GRAB | Grab Holdings Limited | 3.18 | +2.25% |
+| NOK | Nokia Oyj | 10.35 | +2.02% |
+| PCG | PG&E Corporation | 13.10 | +3.35% |
+| SNAP | Snap Inc. | 6.25 | +6.64% |
+| BBD | Banco Bradesco S.A. | 4.31 | +1.65% |
+| NIO | NIO Inc. | 3.55 | +4.11% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
