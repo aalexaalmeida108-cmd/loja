@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 09/10/2026 20:25
+📈 Maiores Altas da Bolsa - 12/10/2026 18:31
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 162.57 | +1.25% |
-| NU | Nu Holdings Ltd. | 16.12 | +4.81% |
-| GRAB | Grab Holdings Limited | 3.19 | +2.57% |
-| PCG | PG&E Corporation | 13.13 | +3.63% |
-| BBD | Banco Bradesco S.A. | 4.30 | +1.42% |
-| NOK | Nokia Oyj | 10.36 | +2.17% |
-| SNAP | Snap Inc. | 6.23 | +6.31% |
-| ITUB | Itaú Unibanco Holding S.A. | 10.16 | +3.36% |
+| SPCX | Space Exploration Technologies Corp. | 163.42 | +0.52% |
+| T | AT&T Inc. | 22.49 | +1.40% |
+| SNAP | Snap Inc. | 6.53 | +4.82% |
+| MDT | Medtronic plc | 91.93 | +3.90% |
+| CCC | CCC Intelligent Solutions Holdings Inc. | 7.59 | +8.12% |
+| VZ | Verizon Communications Inc. | 42.78 | +2.71% |
+| AGNC | AGNC Investment Corp. | 8.68 | +0.12% |
+| AAPL | Apple Inc. | 340.97 | +1.29% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
