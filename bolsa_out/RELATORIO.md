@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 12/10/2026 18:49
+📈 Maiores Altas da Bolsa - 13/10/2026 16:43
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 163.42 | +0.52% |
-| T | AT&T Inc. | 22.49 | +1.40% |
-| SNAP | Snap Inc. | 6.53 | +4.82% |
-| MDT | Medtronic plc | 91.93 | +3.90% |
-| CCC | CCC Intelligent Solutions Holdings Inc. | 7.59 | +8.12% |
-| VZ | Verizon Communications Inc. | 42.78 | +2.71% |
-| AGNC | AGNC Investment Corp. | 8.68 | +0.12% |
-| AAPL | Apple Inc. | 340.97 | +1.29% |
+| FRMI | Fermi Inc. | 3.77 | +16.00% |
+| INTC | Intel Corporation | 102.39 | +1.03% |
+| ONDS | Ondas Inc. | 6.70 | +0.53% |
+| NVDA | NVIDIA Corporation | 228.00 | +0.74% |
+| SNAP | Snap Inc. | 6.54 | +0.15% |
+| IREN | IREN Limited | 34.81 | +0.04% |
+| T | AT&T Inc. | 22.83 | +1.53% |
+| RKT | Rocket Companies, Inc. | 10.94 | +0.69% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
