@@ -1,13 +1,12 @@
-📈 Maiores Altas da Bolsa - 14/10/2026 14:45
+📈 Maiores Altas da Bolsa - 14/10/2026 15:07
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| RIG | Transocean Ltd. | 5.68 | +0.53% |
-| AAPL | Apple Inc. | 342.00 | +0.21% |
-| PFE | Pfizer Inc. | 29.48 | +3.91% |
-| T | AT&T Inc. | 23.05 | +0.88% |
+| AAPL | Apple Inc. | 342.08 | +0.24% |
+| T | AT&T Inc. | 23.11 | +1.14% |
+| PFE | Pfizer Inc. | 29.39 | +3.60% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
