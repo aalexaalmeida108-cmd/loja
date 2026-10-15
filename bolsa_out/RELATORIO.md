@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 15/10/2026 18:38
+📈 Maiores Altas da Bolsa - 15/10/2026 20:31
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
@@ -10,8 +10,8 @@ Fonte: Investing.com (Brasil)
 | CIFR | Cipher Digital Inc. | 10.04 | +1.01% |
 | ONDS | Ondas Inc. | 6.35 | +3.42% |
 | AAL | American Airlines Group Inc. | 12.28 | +4.16% |
-| OPEN | Opendoor Technologies Inc. | 2.32 | +16.58% |
 | RXRX | Recursion Pharmaceuticals, Inc. | 4.16 | +11.23% |
+| OPEN | Opendoor Technologies Inc. | 2.32 | +16.58% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
