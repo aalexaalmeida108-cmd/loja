@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 19/10/2026 16:25
+📈 Maiores Altas da Bolsa - 19/10/2026 19:49
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| INTC | Intel Corporation | 93.09 | +3.60% |
-| CLF | Cleveland-Cliffs Inc. | 14.40 | +18.77% |
-| NVDA | NVIDIA Corporation | 218.13 | +1.87% |
-| SPCX | Space Exploration Technologies Corp. | 147.19 | +0.79% |
-| IREN | IREN Limited | 28.05 | +3.93% |
-| NOK | Nokia Oyj | 9.18 | +0.38% |
-| CIFR | Cipher Digital Inc. | 9.07 | +1.00% |
-| AMZN | Amazon.com, Inc. | 263.37 | +5.35% |
+| INTC | Intel Corporation | 92.03 | +2.43% |
+| CLF | Cleveland-Cliffs Inc. | 14.10 | +16.34% |
+| NVDA | NVIDIA Corporation | 217.09 | +1.38% |
+| SPCX | Space Exploration Technologies Corp. | 147.96 | +1.32% |
+| AMZN | Amazon.com, Inc. | 262.45 | +4.98% |
+| IREN | IREN Limited | 27.73 | +2.74% |
+| CCC | CCC Intelligent Solutions Holdings Inc. | 7.63 | +0.26% |
+| WULF | TeraWulf Inc. | 12.06 | +3.25% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
