@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 21/10/2026 15:11
+📈 Maiores Altas da Bolsa - 21/10/2026 18:09
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 157.70 | +6.71% |
-| SMCI | Super Micro Computer, Inc. | 35.54 | +9.46% |
-| CRWV | CoreWeave, Inc. | 62.22 | +0.15% |
-| NVDA | NVIDIA Corporation | 221.49 | +2.32% |
-| INTC | Intel Corporation | 92.68 | +1.09% |
-| NOK | Nokia Oyj | 9.28 | +2.94% |
-| AAL | American Airlines Group Inc. | 12.57 | +3.84% |
-| NU | Nu Holdings Ltd. | 15.10 | +0.07% |
+| SPCX | Space Exploration Technologies Corp. | 159.31 | +7.79% |
+| NVDA | NVIDIA Corporation | 221.97 | +2.54% |
+| SMCI | Super Micro Computer, Inc. | 35.57 | +9.55% |
+| AAL | American Airlines Group Inc. | 12.23 | +1.03% |
+| INTC | Intel Corporation | 92.96 | +1.39% |
+| NOK | Nokia Oyj | 9.25 | +2.55% |
+| IREN | IREN Limited | 27.84 | +4.58% |
+| SKYD | Skydance Corporation | 7.87 | +10.77% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
