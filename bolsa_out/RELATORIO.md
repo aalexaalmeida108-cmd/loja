@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 22/10/2026 18:51
+📈 Maiores Altas da Bolsa - 23/10/2026 14:52
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| AAL | American Airlines Group Inc. | 12.60 | +2.98% |
-| NFLX | Netflix, Inc. | 67.05 | +3.09% |
-| CMCSA | Comcast Corporation | 22.84 | +3.44% |
-| RIG | Transocean Ltd. | 6.08 | +0.66% |
-| T | AT&T Inc. | 22.74 | +3.79% |
-| RKT | Rocket Companies, Inc. | 11.74 | +5.67% |
-| GRAB | Grab Holdings Limited | 2.85 | +1.06% |
-| QGEN | Qiagen N.V. | 50.22 | +0.44% |
+| SPCX | Space Exploration Technologies Corp. | 146.97 | +1.53% |
+| NOK | Nokia Oyj | 8.10 | +2.79% |
+| INTC | Intel Corporation | 86.81 | +1.55% |
+| NU | Nu Holdings Ltd. | 14.97 | +1.63% |
+| BBD | Banco Bradesco S.A. | 3.98 | +0.72% |
+| RIG | Transocean Ltd. | 6.47 | +6.50% |
+| ONDS | Ondas Inc. | 6.24 | +3.59% |
+| ITUB | Itaú Unibanco Holding S.A. | 9.52 | +0.34% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
