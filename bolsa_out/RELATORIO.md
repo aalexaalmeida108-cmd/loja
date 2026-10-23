@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 23/10/2026 14:56
+📈 Maiores Altas da Bolsa - 23/10/2026 17:54
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 147.43 | +1.85% |
-| NOK | Nokia Oyj | 8.10 | +2.79% |
-| INTC | Intel Corporation | 86.71 | +1.43% |
-| NU | Nu Holdings Ltd. | 15.03 | +2.07% |
-| BBD | Banco Bradesco S.A. | 4.00 | +1.14% |
-| RIG | Transocean Ltd. | 6.47 | +6.50% |
-| ONDS | Ondas Inc. | 6.23 | +3.52% |
-| ITUB | Itaú Unibanco Holding S.A. | 9.53 | +0.47% |
+| SPCX | Space Exploration Technologies Corp. | 147.49 | +1.89% |
+| NU | Nu Holdings Ltd. | 15.16 | +2.92% |
+| NOK | Nokia Oyj | 8.14 | +3.30% |
+| INTC | Intel Corporation | 86.96 | +1.72% |
+| BBD | Banco Bradesco S.A. | 4.07 | +3.04% |
+| RIG | Transocean Ltd. | 6.41 | +5.43% |
+| ONDS | Ondas Inc. | 6.20 | +2.99% |
+| ITUB | Itaú Unibanco Holding S.A. | 9.67 | +1.90% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
