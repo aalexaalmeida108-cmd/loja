@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 23/10/2026 18:35
+📈 Maiores Altas da Bolsa - 23/10/2026 20:44
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
