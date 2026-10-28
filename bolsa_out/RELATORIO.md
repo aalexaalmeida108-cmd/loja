@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 27/10/2026 20:04
+📈 Maiores Altas da Bolsa - 28/10/2026 15:38
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SOFI | SoFi Technologies, Inc. | 16.40 | +13.42% |
-| SPCX | Space Exploration Technologies Corp. | 148.58 | +1.14% |
-| INTC | Intel Corporation | 93.74 | +3.61% |
-| NVDA | NVIDIA Corporation | 217.94 | +0.90% |
-| GRAB | Grab Holdings Limited | 2.72 | +0.37% |
-| NOK | Nokia Oyj | 8.89 | +3.30% |
-| AAL | American Airlines Group Inc. | 12.61 | +3.36% |
-| CRWV | CoreWeave, Inc. | 59.57 | +7.94% |
+| STLA | Stellantis N.V. | 4.73 | +14.25% |
+| SOFI | SoFi Technologies, Inc. | 17.00 | +3.63% |
+| NOK | Nokia Oyj | 9.20 | +3.54% |
+| INTC | Intel Corporation | 95.31 | +1.67% |
+| SKHY | SK hynix Inc. | 163.48 | +12.47% |
+| CRWV | CoreWeave, Inc. | 62.07 | +4.20% |
+| IREN | IREN Limited | 27.81 | +1.35% |
+| ONDS | Ondas Inc. | 6.68 | +0.45% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
