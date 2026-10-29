@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 28/10/2026 20:24
+📈 Maiores Altas da Bolsa - 29/10/2026 15:46
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| STLA | Stellantis N.V. | 4.68 | +13.04% |
-| SOFI | SoFi Technologies, Inc. | 17.14 | +4.51% |
-| ORCL | Oracle Corporation | 144.54 | +10.73% |
-| INTC | Intel Corporation | 95.53 | +1.91% |
-| NOK | Nokia Oyj | 9.22 | +3.71% |
-| CRWV | CoreWeave, Inc. | 63.93 | +7.32% |
-| IREN | IREN Limited | 28.84 | +5.10% |
-| F | Ford Motor Company | 11.95 | +2.05% |
+| ADT | ADT Inc. | 9.93 | +33.97% |
+| NOK | Nokia Oyj | 9.30 | +0.81% |
+| PURR | Hyperliquid Strategies Inc. | 11.93 | +19.66% |
+| F | Ford Motor Company | 12.27 | +2.64% |
+| NCLH | Norwegian Cruise Line Holdings Ltd. | 18.24 | +13.54% |
+| SOFI | SoFi Technologies, Inc. | 17.50 | +2.13% |
+| AAL | American Airlines Group Inc. | 12.89 | +2.46% |
+| ONDS | Ondas Inc. | 6.86 | +0.00% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
