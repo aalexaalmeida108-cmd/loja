@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 29/10/2026 16:07
+📈 Maiores Altas da Bolsa - 29/10/2026 20:05
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| ADT | ADT Inc. | 9.91 | +33.81% |
-| NOK | Nokia Oyj | 9.29 | +0.70% |
-| NU | Nu Holdings Ltd. | 12.03 | +0.50% |
-| F | Ford Motor Company | 12.25 | +2.51% |
-| PURR | Hyperliquid Strategies Inc. | 11.76 | +17.95% |
-| AAL | American Airlines Group Inc. | 12.94 | +2.82% |
-| SOFI | SoFi Technologies, Inc. | 17.53 | +2.30% |
-| NCLH | Norwegian Cruise Line Holdings Ltd. | 18.24 | +13.58% |
+| ADT | ADT Inc. | 9.87 | +33.20% |
+| NOK | Nokia Oyj | 9.31 | +0.98% |
+| NU | Nu Holdings Ltd. | 12.05 | +0.67% |
+| NCLH | Norwegian Cruise Line Holdings Ltd. | 18.22 | +13.45% |
+| SOFI | SoFi Technologies, Inc. | 17.61 | +2.74% |
+| AAL | American Airlines Group Inc. | 12.78 | +1.59% |
+| F | Ford Motor Company | 12.36 | +3.43% |
+| PURR | Hyperliquid Strategies Inc. | 12.29 | +23.27% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
