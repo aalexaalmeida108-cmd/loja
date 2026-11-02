@@ -1,16 +1,17 @@
-📈 Maiores Altas da Bolsa - 30/10/2026 20:07
+📈 Maiores Altas da Bolsa - 02/11/2026 19:05
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| RIVN | Rivian Automotive, Inc. | 12.16 | +6.20% |
-| RKT | Rocket Companies, Inc. | 12.80 | +7.38% |
-| T | AT&T Inc. | 21.41 | +2.34% |
-| NFLX | Netflix, Inc. | 62.08 | +0.05% |
-| CMCSA | Comcast Corporation | 23.22 | +4.27% |
-| VALE | Vale S.A. | 11.39 | +1.88% |
-| RIG | Transocean Ltd. | 6.94 | +3.74% |
+| SPCX | Space Exploration Technologies Corp. | 137.12 | +1.78% |
+| AAL | American Airlines Group Inc. | 13.08 | +3.81% |
+| NU | Nu Holdings Ltd. | 11.68 | +0.60% |
+| KVUE | Kenvue Inc. | 19.60 | +0.20% |
+| GRAB | Grab Holdings Limited | 2.91 | +7.38% |
+| RIVN | Rivian Automotive, Inc. | 13.17 | +8.31% |
+| T | AT&T Inc. | 21.46 | +0.23% |
+| PFE | Pfizer Inc. | 31.06 | +1.77% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
