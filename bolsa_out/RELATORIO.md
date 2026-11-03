@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 02/11/2026 19:26
+📈 Maiores Altas da Bolsa - 03/11/2026 16:56
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 137.13 | +1.79% |
-| AAL | American Airlines Group Inc. | 13.07 | +3.74% |
-| NU | Nu Holdings Ltd. | 11.69 | +0.68% |
-| KVUE | Kenvue Inc. | 19.60 | +0.20% |
-| GRAB | Grab Holdings Limited | 3.00 | +10.70% |
-| RIVN | Rivian Automotive, Inc. | 13.20 | +8.53% |
-| T | AT&T Inc. | 21.44 | +0.14% |
-| PFE | Pfizer Inc. | 31.03 | +1.67% |
+| GRAB | Grab Holdings Limited | 3.13 | +9.27% |
+| NVDA | NVIDIA Corporation | 206.42 | +2.16% |
+| ORCL | Oracle Corporation | 124.31 | +4.27% |
+| SPCX | Space Exploration Technologies Corp. | 140.93 | +3.35% |
+| RKT | Rocket Companies, Inc. | 13.79 | +0.15% |
+| NU | Nu Holdings Ltd. | 11.64 | +0.13% |
+| CIFR | Cipher Digital Inc. | 7.95 | +15.96% |
+| NOK | Nokia Oyj | 8.52 | +2.65% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
