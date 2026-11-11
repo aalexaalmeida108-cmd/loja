@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 10/11/2026 21:59
+📈 Maiores Altas da Bolsa - 10/11/2026 22:23
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| SPCX | Space Exploration Technologies Corp. | 144.00 | +1.36% |
-| CRWV | CoreWeave, Inc. | 52.53 | +7.25% |
-| MARA | MARA Holdings, Inc. | 7.30 | +9.97% |
-| TTD | The Trade Desk, Inc. | 15.36 | +2.88% |
-| NOK | Nokia Oyj | 8.31 | +1.59% |
-| AMD | Advanced Micro Devices, Inc. | 524.50 | +3.13% |
-| WULF | TeraWulf Inc. | 12.66 | +2.28% |
-| AMZN | Amazon.com, Inc. | 271.64 | +1.76% |
+| SPCX | Space Exploration Technologies Corp. | 143.09 | +1.47% |
+| CRWV | CoreWeave, Inc. | 48.73 | +10.41% |
+| MARA | MARA Holdings, Inc. | 7.34 | +10.54% |
+| TTD | The Trade Desk, Inc. | 15.42 | +2.88% |
+| AAL | American Airlines Group Inc. | 14.17 | +0.07% |
+| NOK | Nokia Oyj | 8.35 | +2.08% |
+| AMD | Advanced Micro Devices, Inc. | 527.19 | +3.66% |
+| WULF | TeraWulf Inc. | 12.87 | +3.96% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
