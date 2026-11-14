@@ -1,4 +1,4 @@
-📈 Maiores Altas da Bolsa - 13/11/2026 22:12
+📈 Maiores Altas da Bolsa - 13/11/2026 22:36
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
@@ -10,6 +10,7 @@ Fonte: Investing.com (Brasil)
 | CBRS | Cerebras Systems Inc. | 106.00 | +8.44% |
 | SNAP | Snap Inc. | 5.23 | +0.19% |
 | AGNC | AGNC Investment Corp. | 8.21 | +0.16% |
+| RIG | Transocean Ltd. | 5.57 | +4.61% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
