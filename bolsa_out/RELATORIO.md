@@ -1,17 +1,17 @@
-📈 Maiores Altas da Bolsa - 17/11/2026 18:29
+📈 Maiores Altas da Bolsa - 17/11/2026 18:52
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NVDA | NVIDIA Corporation | 159.99 | +2.47% |
-| SLS | SELLAS Life Sciences Group, Inc. | 15.99 | +114.06% |
-| INTC | Intel Corporation | 55.98 | +0.97% |
-| SPCX | Space Exploration Technologies Corp. | 142.74 | +3.92% |
-| IREN | IREN Limited | 16.75 | +2.17% |
-| SNAP | Snap Inc. | 5.47 | +7.47% |
-| NIO | NIO Inc. | 2.83 | +4.04% |
-| CRWV | CoreWeave, Inc. | 50.75 | +1.74% |
+| NVDA | NVIDIA Corporation | 157.63 | +0.95% |
+| SLS | SELLAS Life Sciences Group, Inc. | 16.80 | +124.90% |
+| SPCX | Space Exploration Technologies Corp. | 141.85 | +3.27% |
+| SNAP | Snap Inc. | 5.48 | +7.66% |
+| NIO | NIO Inc. | 2.81 | +3.33% |
+| CRWV | CoreWeave, Inc. | 51.82 | +3.89% |
+| CIFR | Cipher Digital Inc. | 6.60 | +0.92% |
+| AMD | Advanced Micro Devices, Inc. | 507.46 | +0.63% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
