@@ -1,17 +1,16 @@
-📈 Maiores Altas da Bolsa - 23/11/2026 22:11
+📈 Maiores Altas da Bolsa - 24/11/2026 19:53
 Fonte: Investing.com (Brasil)
 
 🌍 Yahoo (mundial) top altas
 | Símbolo | Nome | Preço | Var% |
 |---------|------|-------|------|
-| NVDA | NVIDIA Corporation | 168.44 | +34.18% |
-| INTC | Intel Corporation | 59.66 | +16.28% |
-| IREN | IREN Limited | 14.64 | +28.26% |
-| SNDK | Sandisk Corporation | 89.59 | +13.06% |
-| SPCX | Space Exploration Technologies Corp. | 133.35 | +5.78% |
-| CRWV | CoreWeave, Inc. | 48.33 | +25.16% |
-| NOK | Nokia Oyj | 7.55 | +10.90% |
-| GRAB | Grab Holdings Limited | 2.81 | +2.53% |
+| INSM | Insmed Incorporated | 170.10 | +14.09% |
+| RIG | Transocean Ltd. | 4.83 | +2.99% |
+| F | Ford Motor Company | 11.94 | +2.49% |
+| NIO | NIO Inc. | 2.58 | +0.39% |
+| NU | Nu Holdings Ltd. | 11.88 | +0.68% |
+| ADT | ADT Inc. | 9.91 | +0.10% |
+| T | AT&T Inc. | 22.84 | +2.42% |
 
 ---
 Gerado automaticamente. Valores podem ter atraso.
